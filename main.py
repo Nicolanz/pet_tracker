@@ -21,4 +21,4 @@ collar_1.save()
 """
  Verification
 """
-print("Verificacion exitosa")
+print("Creacion de objetos exitosa")
