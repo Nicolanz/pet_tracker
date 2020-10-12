@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logoIcon.png">
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- CSS Styles-->
+    <link rel="stylesheet" href="styles/generalStyles.css">
+    <link rel="stylesheet" href="styles/stylesHome.css">
+    <!--footer Icons link-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+
+    <title>Pets Tracker</title>
+</head>
+
+<body>
+    <!-- Main boostrap container -->
+    <div class="container-fluid">
+        <!-- Header: nav, bakground image, sign up and dog image  -->
+        <div class="header">
+            <!-- Nav menu  -->
+            <nav class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex flex-grow flex-nowrap align-items-center justify-content-between">
+                <h3>Pets Tracker</h3>
+                <button class="btn btn-default">Log In</button>
+            </nav>
+            <!-- content of the header  -->
+            <div class="headerContent">
+                <!-- Background park image -->
+                <img src="images/bakgroundPark.jpg" id="parkImage" alt="">
+                <!-- Properties: dog and sign up target  -->
+                <div class='properties d-flex'>
+                    <!-- Dog Image  -->
+                    <img src="images/dogRunning.png" id="dog">
+                    <!-- Bootstrap sign up -->
+                    <div class="col-4 targetOne">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Sign up</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Username</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Password</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Confirm password</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <button class="btn btn-default">Submit</button>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="mainfooter" role="contentinfo">
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <!--Column1-->
+                            <div class="footer-pad">
+                            <h4>Heading 1</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">Payment Center</a></li>
+                                    <li><a href="#">Contact Directory</a></li>
+                                    <li><a href="#">Forms</a></li>
+                                    <li><a href="#">News and Updates</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                        <h4>Heading 2</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Website Tutorial</a></li>
+                            <li><a href="#">Accessibility</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Webmaster</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                        <h4>Heading 3</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Parks and Recreation</a></li>
+                            <li><a href="#">Public Works</a></li>
+                            <li><a href="#">Police Department</a></li>
+                            <li><a href="#">Fire</a></li>
+                            <li><a href="#">Mayor and City Council</a></li>
+                            <li>
+                            <a href="#"></a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                        <div class="col-md-3">
+                            <h4>Follow Us</h4>
+                            <ul class="social-network social-circle">
+                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>				
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 copy">
+                            <p class="text-center">&copy; Copyright 2020 - Infinity Systems.  All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
