@@ -6,9 +6,14 @@ body{
 nav{
     min-height: 100px;
     max-height: 100px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     opacity: 1;
-    background-color: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #53895B;
+    background: -webkit-linear-gradient(59deg, #1E7272, #53895B);
+    background: linear-gradient(59deg, #1E7272, #53895B); 
+}
+nav h3{
+    color: white;
 }
 .btn-default{
     background-color: #1E7272;
