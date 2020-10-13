@@ -2,7 +2,7 @@
 """
 Contains the class DBStorage
 """
-
+import models
 from models.base_model import BaseModel, Base
 from models.collar import Collar
 from models.pet import Pet
