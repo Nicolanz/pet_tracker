@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/logoIcon.png">
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- CSS Styles-->
+    <link rel="stylesheet" href="../static/styles/generalStyles.css">
+    <link rel="stylesheet" href="../static/styles/stylesHome.css">
+    <!--footer Icons link-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+
+    <title>Pets Tracker</title>
+</head>
+
+<body>
+    <!-- Main boostrap container -->
+    <div>
+        <!-- Header: nav, bakground image, sign up and dog image  -->
+        <div class="header">
+            <!-- Nav menu  -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Pet Tracker</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#description">Description <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#collarInfo">Collar Info</a>
+                    </li>
+                  </ul>
+                  <button id="qsLoginBtn" href="/login" class="btn btn-default">Log In</button>
+                </div>
+              </nav>
+            <!-- content of the header  -->
+            <div class="headerContent">
+                <!-- Background park image -->
+                <img src="../static/images/pruebaImagen2.jpg" class="img-fluid" id="parkImage" alt="">
+                <!-- Properties: dog and sign up target  -->
+                <div class='properties d-flex flex-row flex-nowrap justify-content-xl-around justify-content-center align-items-end'>
+                    <!-- Dog Image  -->
+                    <div class="divDog col-8 col-md-5 col-lg-4 col-xl-4">
+                        <img src="../static/images/dogRunning.png" class="img-fluid" id="dog">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Section of the website -->
+        <section class="col-12 d-flex flex-row flex-wrap container">
+            <div id ="description" class="d-flex flex-row flex-wrap justify-content-center">
+                <h1 class="col-12 d-flex justify-content-center">Description</h1>
+                <p class="col-lg-6 col-12 font-weight-light">
+                    Pet Tracker offers you a comfortable solution to let you know the current location of
+                    your pets. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quae recusandae voluptatem quia, corrupti
+                    eum, esse blanditiis totam ipsam ut maiores quos reprehenderit necessitatibus repudiandae nemo, quo nesciunt similique
+                    modi.
+                </p>
+            </div>
+            <div id="collarInfo" class="col-12 d-flex flex-row flex-nowrap justify-content-around ">
+                <div class="col-4">
+                    <h2>Collar Info</h2>
+                    <p class="text-justify">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa tempora non nihil unde omnis corporis dolorem totam eius.
+                        Ratione molestiae voluptatem, quaerat eum est eligendi. 
+                    </p>
+                    <h3>Title</h3>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis suscipit, vitae dolorem ex temporibus repellat!
+                        Placeat a recusandae ipsam ut molestias unde! Voluptas illo quod consectetur reprehenderit voluptatem harum
+                        obcaecati!</p>
+                    <h3>Title</h3>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis suscipit, vitae dolorem ex temporibus repellat!
+                        Placeat a recusandae ipsam ut molestias unde! Voluptas illo quod consectetur reprehenderit voluptatem harum
+                        obcaecati! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit veniam itaque accusamus ab doloribus
+                        pariatur impedit, laborum eveniet eligendi cum perferendis. Omnis, sequi! Similique molestiae mollitia, ipsum debitis
+                        corrupti totam. </p>
+                    <h3>Title</h3>
+                    <p class="text-justify" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor mollitia veritatis quia aliquid vero saepe porro.
+                        Minima beatae hic esse sequi doloribus aliquam tempora delectus impedit, quasi dolores explicabo consequuntur.</p>
+                </div>
+                <div class="squares col-lg-8 d-flex flex-wrap justify-content-center align-items-around">
+                    <div class="square col-xl-5">
+                        <div class="squareImages">
+                            <img class="sizeImgs" src="../static/images/collarImage1.png" alt="">
+                        </div>
+                        <div class="contentSquare d-flex flex-column flex-wrap align-items-center justify-content-center">
+                            <h5 class="mt-3">tittle</h5>
+                            <p class="ml-4 mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Nobis cum</p>
+                            <button class="btn btn-default">Continue</button>
+                        </div>
+                    </div>
+                    <div class="square col-xl-5">
+                        <div class="squareImages">
+                            <img class="sizeImgs" src="../static/images/collarImage2.png" alt="">
+                        </div>
+                        <div class="contentSquare d-flex flex-column flex-wrap align-items-center justify-content-center">
+                            <h5 class="mt-3">tittle</h5>
+                            <p class="ml-4 mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Nobis cum</p>
+                            <button class="btn btn-default">Continue</button>
+                        </div>
+                    </div>
+                    <div class="square col-xl-5">
+                        <div class="squareImages">
+                            <img class="sizeImgs" src="../static/images/collarImage3.png" alt="">
+                        </div>
+                        <div class="contentSquare d-flex flex-column flex-wrap align-items-center justify-content-center">
+                            <h5 class="mt-3">tittle</h5>
+                            <p class="ml-4 mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Nobis cum</p>
+                            <button class="btn btn-default">Continue</button>
+                        </div>
+                    </div>
+                    <div class="square col-xl-5">
+                        <div class="squareImages">
+                            <img class="sizeImgs" src="../static/images/dog3.jpeg" alt="">
+                        </div>
+                        <div class="contentSquare d-flex flex-column flex-wrap align-items-center justify-content-center">
+                            <h5 class="mt-3">tittle</h5>
+                            <p class="ml-4 mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Nobis cum</p>
+                            <button class="btn btn-default">Continue</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section> 
+        <footer class="mainfooter" role="contentinfo">
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <!--Column1-->
+                            <div class="footer-pad">
+                            <h4>Info</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Description</a></li>
+                                    <li><a href="#">Collars</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                        <h4>Run it</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Log In</a></li>
+                            <li><a href="#">Sign Up</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                        <h4>Team Members</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Juan Olivares</a></li>
+                            <li><a href="#">Bryan Builes</a></li>
+                            <li><a href="#">Erika Osorio</a></li>
+                            <li><a href="#">Nicolas Zarate</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                        <div class="col-md-3">
+                            <h4>Follow Us</h4>
+                            <ul class="social-network social-circle">
+                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>				
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 copy">
+                            <p class="text-center">&copy; Copyright 2020 - Infinity Systems.  All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

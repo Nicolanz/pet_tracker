@@ -1,0 +1,107 @@
+
+.header{
+    /* border: 4px solid black; */
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    min-height: auto;
+}
+.headerContent{
+    /* border: 1px solid black; */
+    height: 700px;
+    position: RELATIVE;
+}
+
+.properties{
+    width: 100%;
+    height: auto;
+    margin-top: 300px;
+    /* border: 1px solid blue; */
+}
+#parkImage{
+    position: absolute;
+    width: 100%;
+    height: 700px;
+    z-index: -1;
+    /* border: 2px solid blue; */
+
+}
+.divDog{
+    /* margin-left: 9%; */
+    height: auto;
+    /* border: 1px solid blue; */
+}
+#dog{
+    width:100%;
+    height: 280px;
+    /* border: 1px solid blue; */
+
+}
+
+
+/* SECTION STYLES */
+section{
+    height: auto;
+    margin-top:100px;
+    /* border: 1px solid rgb(80, 79, 79); */
+}
+h1{
+    font-size: 5vw;
+}
+#description p{
+    text-align:justify;
+}
+#collarInfo{
+    height: auto;
+    margin-top:100px;
+    /* border: 1px solid rgb(80, 79, 79); */
+}
+.squares{
+    /* border: 1px solid rgb(80, 79, 79); */
+    height:900px;
+
+}
+.square{
+    height:auto;
+    /* margin: 1%; */
+    /* border: 1px solid rgb(80, 79, 79); */
+    border-radius: 0px 40px 0px 0px ;
+}
+.squareImages{
+    width: 100%;
+    height: 230px;
+}
+.sizeImgs{
+    border-radius: 40px 40px 0px 0px ;
+    height: 100%;
+    width: 100%;
+    border: 1px solid grey;
+}
+.contentSquare{
+    border: 1px solid grey;
+    border-radius: 0px 0px 40px 40px ;
+
+}
+.square p{
+    text-align: justify;
+    font-size: 13px;
+}
+
+
+
+
+/* MEDIA QUERIES */
+/* @media (max-width: 1200px) {
+.divDog{
+    padding: 0;
+    height: 0px;
+    width: 0px;
+    border: 0;
+}
+#dog{
+    width:0%;
+    height: 0px;
+    padding:0px;
+}
+} */
+
