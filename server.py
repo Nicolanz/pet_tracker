@@ -97,7 +97,7 @@ def callback_handling():
     if user_exist is False:
         print("Creating new user ...")
         new_user = User(email=userinfo['email'],
-                        nickname=userinfo['nickname'])
+                        nickname=userinfo['nickname'], password=[12345])
         new_user.save()
 
     return redirect('/dashboard')
@@ -125,4 +125,4 @@ def dashboard():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=env.get('PORT', 3000))
+    app.run(host='127.0.0.1', port=env.get('PORT', 5001))
