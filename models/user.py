@@ -10,12 +10,12 @@ from sqlalchemy.orm import relationship
 class User(BaseModel, Base):
     __tablename__ = 'users'
     email = Column(String(128), nullable=False)
-    password = Column(String(128), nullable=False)
     name = Column(String(128), nullable=True)
     documento = Column(Integer, nullable=True)
     Phone = Column(String(128), nullable=True)
     address = Column(String(128), nullable=True)
     nickname = Column(String(128), nullable=False)
+    auth_id = Column(String(128), nullable=True)
     collars = relationship("Collar", backref="user")
     pets = relationship("Pet", backref="user")
 
