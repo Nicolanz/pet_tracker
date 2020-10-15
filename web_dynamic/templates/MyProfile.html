@@ -3,27 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../static/images/logoIcon.png" />
+    <link rel="icon" href="../static/images/logoIcon.png?{{ cache_id }}" />
     <!-- CSS Bootstrap -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css?{{ cache_id }}"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
     <!-- CSS Styles-->
-    <link rel="stylesheet" href="../static/styles/generalStyles.css" />
-    <link rel="stylesheet" href="../static/styles/stylesMyProfile.css" />
+    <link
+      rel="stylesheet"
+      href="../static/styles/generalStyles.css?{{ cache_id }}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/styles/stylesMyProfile.css?{{ cache_id }}"
+    />
     <!--footer Icons link-->
     <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
       rel="stylesheet"
     />
-
     <title>Pets Tracker</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="../static/scripts/profilescript.js?{{ cache_id }}"
+    ></script>
   </head>
 
   <body>
+    <input id="sub" type="hidden" name="myHiddenField" value="{{ userinfo }}" />
     <!-- Main boostrap container -->
     <div class="container-fluid">
       <!-- Header: nav, bakground image, sign up and dog image  -->
@@ -33,7 +44,9 @@
           class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex flex-grow flex-nowrap align-items-center justify-content-between"
         >
           <h3>Pets Tracker</h3>
-          <button class="btn btn-default">Iniciar</button>
+          <a id="qsLogoutBtn" href="/logout"
+            ><button class="btn btn-default btn-logout">Logout</button>
+          </a>
         </nav>
         <!-- content of the header  -->
         <div class="headerContent">
@@ -49,18 +62,7 @@
       <div class="container-fluid align-items-center justify-content-between">
         <div class="container col-11">
           <div class="row">
-            <div class="col-4">
-              <img
-                src="../static/images/dogProfile.jpg"
-                class="img-circle"
-                id="dogProfile"
-                alt="..."
-              />
-            </div>
-            <div class="col-8 info">
-              <h5>Firulais</h5>
-              <p>Age: 7</p>
-            </div>
+            <section class="places"></section>
           </div>
         </div>
       </div>

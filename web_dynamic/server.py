@@ -16,10 +16,13 @@ from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
 from models import storage
 from models.user import User
-
+from models.pet import Pet
+import uuid
 
 import constants
 
+
+id_user = None
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -79,7 +82,6 @@ def callback_handling():
     auth0.authorize_access_token()
     resp = auth0.get('userinfo')
     userinfo = resp.json()
-    print("Helo Userinfo", userinfo)
 
     session[constants.JWT_PAYLOAD] = userinfo
     session[constants.PROFILE_KEY] = {
@@ -89,18 +91,19 @@ def callback_handling():
     }
     users = storage.all(User)
     user_exist = False
+    global id_user
     for user in users.values():
-        print(user.email)
-        if user.email == userinfo['email']:
-            print("yes user exist ...")
+        if user.auth_id == userinfo['sub']:
             user_exist = True
+            id_user = user.id
+            break
     if user_exist is False:
-        print("Creating new user ...")
         new_user = User(email=userinfo['email'],
-                        nickname=userinfo['nickname'], password=[12345])
+                        nickname=userinfo['nickname'], auth_id=userinfo['sub'])
         new_user.save()
+        id_user = new_user.id
 
-    return redirect('/dashboard')
+    return redirect('/MyProfile')
 
 
 @app.route('/login')
@@ -116,12 +119,16 @@ def logout():
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 
 
-@app.route('/dashboard')
+@app.route('/MyProfile')
 @requires_auth
 def dashboard():
-    return render_template('dashboard.html',
-                           userinfo=session[constants.PROFILE_KEY],
-                           userinfo_pretty=json.dumps(session[constants.JWT_PAYLOAD], indent=4))
+    cache_id = str(uuid.uuid4())
+    # lista = []
+    # # for user in storage.all(User).values():
+    # #     if user.sub == "a0t14527":
+    # #         for pets in user.pets:
+    # #             lista.append(pets.to_dict())
+    return render_template('MyProfile.html', cache_id=cache_id, userinfo="a3d3be48-6dea-44cd-964e-6c2ed9feb362")
 
 
 if __name__ == "__main__":
