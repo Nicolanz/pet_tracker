@@ -71,7 +71,14 @@ def requires_auth(f):
 # Controllers API
 @app.route('/')
 def home():
+    print("home...")
     return render_template('home.html')
+
+
+@app.route('/login')
+def login():
+    print("login...")
+    return auth0.authorize_redirect(redirect_uri=AUTH0_CALLBACK_URL, audience=AUTH0_AUDIENCE)
 
 
 @app.route('/callback')
@@ -84,36 +91,26 @@ def callback_handling():
     session[constants.JWT_PAYLOAD] = userinfo
     session[constants.PROFILE_KEY] = {
         'user_id': userinfo['sub'],
-        'name': userinfo['name'],
+        'nickname': userinfo['nickname'],
         'picture': userinfo['picture']
     }
+
+    # verifies if the user is log in or sign in
+    # to add a new user
     users = storage.all(User)
     user_exist = False
     for user in users.values():
-        print(user.email)
-        if user.email == userinfo['email']:
+        if user.auth_id == userinfo['sub']:
+            print(user.email)
             print("yes user exist ...")
             user_exist = True
     if user_exist is False:
         print("Creating new user ...")
-        new_user = User(email=userinfo['email'],
+        new_user = User(auth_id=userinfo['sub'], email=userinfo['email'],
                         nickname=userinfo['nickname'])
         new_user.save()
 
     return redirect('/dashboard')
-
-
-@app.route('/login')
-def login():
-    return auth0.authorize_redirect(redirect_uri=AUTH0_CALLBACK_URL, audience=AUTH0_AUDIENCE)
-
-
-@app.route('/logout')
-def logout():
-    session.clear()
-    params = {'returnTo': url_for(
-        'home', _external=True), 'client_id': AUTH0_CLIENT_ID}
-    return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 
 
 @app.route('/dashboard')
@@ -122,6 +119,14 @@ def dashboard():
     return render_template('dashboard.html',
                            userinfo=session[constants.PROFILE_KEY],
                            userinfo_pretty=json.dumps(session[constants.JWT_PAYLOAD], indent=4))
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    params = {'returnTo': url_for(
+        'home', _external=True), 'client_id': AUTH0_CLIENT_ID}
+    return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 
 
 if __name__ == "__main__":

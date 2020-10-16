@@ -9,7 +9,8 @@ from models.pet import Pet
 """
  Objects creations
 """
-user_1 = User(nickname="bryan", password="12345",
+# creating User must have nickname and email
+user_1 = User(nickname="bryan",
               email="1482@holbertonschool.com")
 user_1.save()
 
