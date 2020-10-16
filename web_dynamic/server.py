@@ -123,12 +123,8 @@ def logout():
 @requires_auth
 def dashboard():
     cache_id = str(uuid.uuid4())
-    # lista = []
-    # # for user in storage.all(User).values():
-    # #     if user.sub == "a0t14527":
-    # #         for pets in user.pets:
-    # #             lista.append(pets.to_dict())
-    return render_template('MyProfile.html', cache_id=cache_id, userinfo="29617999-d479-4ae7-b9a9-863f1a38f386")
+    # remplazar el userinfo id por el del objeto
+    return render_template('MyProfile.html', cache_id=cache_id, userinfo="1680b061-1e2d-4993-ade6-79c4e1faabd0")
 
 
 @app.route('/settings_user')
