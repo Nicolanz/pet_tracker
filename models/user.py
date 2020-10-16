@@ -15,6 +15,7 @@ class User(BaseModel, Base):
     phone = Column(String(128), nullable=True)
     address = Column(String(128), nullable=True)
     nickname = Column(String(128), nullable=False)
+    auth_id = Column(String(128), nullable=True)
     collars = relationship("Collar", backref="user")
     pets = relationship("Pet", backref="user")
     # Creating a new Auth id for communication with Auth0

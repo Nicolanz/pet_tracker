@@ -5,6 +5,7 @@ import json
 from os import environ as env
 from werkzeug.exceptions import HTTPException
 
+
 from dotenv import load_dotenv, find_dotenv
 from flask import Flask
 from flask import jsonify
@@ -16,10 +17,12 @@ from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
 from models import storage
 from models.user import User
-
+import uuid
 
 import constants
 
+
+id_user = None
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -31,7 +34,7 @@ AUTH0_DOMAIN = env.get(constants.AUTH0_DOMAIN)
 AUTH0_BASE_URL = 'https://' + AUTH0_DOMAIN
 AUTH0_AUDIENCE = env.get(constants.AUTH0_AUDIENCE)
 
-app = Flask(__name__, static_url_path='/public', static_folder='./public')
+app = Flask(__name__)
 app.secret_key = constants.SECRET_KEY
 app.debug = True
 
@@ -86,7 +89,6 @@ def callback_handling():
     auth0.authorize_access_token()
     resp = auth0.get('userinfo')
     userinfo = resp.json()
-    print("Helo Userinfo", userinfo)
 
     session[constants.JWT_PAYLOAD] = userinfo
     session[constants.PROFILE_KEY] = {
@@ -99,26 +101,19 @@ def callback_handling():
     # to add a new user
     users = storage.all(User)
     user_exist = False
+    global id_user
     for user in users.values():
         if user.auth_id == userinfo['sub']:
-            print(user.email)
-            print("yes user exist ...")
             user_exist = True
+            id_user = user.id
+            break
     if user_exist is False:
-        print("Creating new user ...")
-        new_user = User(auth_id=userinfo['sub'], email=userinfo['email'],
-                        nickname=userinfo['nickname'])
+        new_user = User(email=userinfo['email'],
+                        nickname=userinfo['nickname'], auth_id=userinfo['sub'])
         new_user.save()
+        id_user = new_user.id
 
-    return redirect('/dashboard')
-
-
-@app.route('/dashboard')
-@requires_auth
-def dashboard():
-    return render_template('dashboard.html',
-                           userinfo=session[constants.PROFILE_KEY],
-                           userinfo_pretty=json.dumps(session[constants.JWT_PAYLOAD], indent=4))
+    return redirect('/MyProfile')
 
 
 @app.route('/logout')
@@ -129,5 +124,13 @@ def logout():
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 
 
+@app.route('/MyProfile')
+@requires_auth
+def dashboard():
+    cache_id = str(uuid.uuid4())
+
+    return render_template('MyProfile.html', cache_id=cache_id, userinfo="a3d3be48-6dea-44cd-964e-6c2ed9feb362")
+
+
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=env.get('PORT', 3000))
+    app.run(host='0.0.0.0', port=env.get('PORT', 5001))
