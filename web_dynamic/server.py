@@ -5,7 +5,6 @@ import json
 from os import environ as env
 from werkzeug.exceptions import HTTPException
 
-
 from dotenv import load_dotenv, find_dotenv
 from flask import Flask
 from flask import jsonify
@@ -17,6 +16,7 @@ from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
 from models import storage
 from models.user import User
+from models.pet import Pet
 import uuid
 
 import constants
@@ -74,14 +74,7 @@ def requires_auth(f):
 # Controllers API
 @app.route('/')
 def home():
-    print("home...")
     return render_template('home.html')
-
-
-@app.route('/login')
-def login():
-    print("login...")
-    return auth0.authorize_redirect(redirect_uri=AUTH0_CALLBACK_URL, audience=AUTH0_AUDIENCE)
 
 
 @app.route('/callback')
@@ -93,12 +86,9 @@ def callback_handling():
     session[constants.JWT_PAYLOAD] = userinfo
     session[constants.PROFILE_KEY] = {
         'user_id': userinfo['sub'],
-        'nickname': userinfo['nickname'],
+        'name': userinfo['name'],
         'picture': userinfo['picture']
     }
-
-    # verifies if the user is log in or sign in
-    # to add a new user
     users = storage.all(User)
     user_exist = False
     global id_user
@@ -116,6 +106,11 @@ def callback_handling():
     return redirect('/MyProfile')
 
 
+@app.route('/login')
+def login():
+    return auth0.authorize_redirect(redirect_uri=AUTH0_CALLBACK_URL, audience=AUTH0_AUDIENCE)
+
+
 @app.route('/logout')
 def logout():
     session.clear()
@@ -128,7 +123,11 @@ def logout():
 @requires_auth
 def dashboard():
     cache_id = str(uuid.uuid4())
-
+    # lista = []
+    # # for user in storage.all(User).values():
+    # #     if user.sub == "a0t14527":
+    # #         for pets in user.pets:
+    # #             lista.append(pets.to_dict())
     return render_template('MyProfile.html', cache_id=cache_id, userinfo="a3d3be48-6dea-44cd-964e-6c2ed9feb362")
 
 
