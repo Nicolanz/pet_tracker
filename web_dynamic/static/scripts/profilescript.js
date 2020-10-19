@@ -7,7 +7,7 @@ $(document).ready(function () {
     type: 'GET',
   }).done(function (data) {
     for (const pets of data) {
-      $('.places ').append(
+      $('.pets ').append(
         '<div class="col-18 info"><h5>' +
           pets.name +
           '</h5><p>race: ' +
