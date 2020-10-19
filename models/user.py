@@ -11,7 +11,7 @@ class User(BaseModel, Base):
     __tablename__ = 'users'
     email = Column(String(128), nullable=False)
     name = Column(String(128), nullable=True)
-    documento = Column(Integer, nullable=True)
+    documento = Column(Integer, nullable=True, default=0000000000)
     Phone = Column(String(128), nullable=True)
     address = Column(String(128), nullable=True)
     nickname = Column(String(128), nullable=False)
