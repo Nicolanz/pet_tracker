@@ -30,6 +30,11 @@
       rel="stylesheet"
     />
     <title>Pets Tracker</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="../static/scripts/settings_user.js?{{ cache_id }}"
+    ></script>
   </head>
 
   <body>
@@ -57,42 +62,72 @@
           />
         </div>
       </div>
-      
+
       <!-- Adding boostrap  -->
-        <div class="container-fluid align-items-center justify-content-between">
-          <div class="container col-4">
-              <div class="box">
-                <form>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nombre Completo</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value=>
-                  </div>  
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Nombre Usuario</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Celular</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Dirección</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                </form>
+      <div class="container-fluid align-items-center justify-content-between">
+        <div class="container col-4">
+          <div class="box">
+            <form>
+              <div class="form-group">
+                <label for="fullname1">Nombre Completo</label>
+                <input type="text" class="form-control" id="fullname1" />
               </div>
+              <div class="form-group">
+                <label for="username1">Nombre Usuario</label>
+                <input type="text" class="form-control" id="username1" />
+              </div>
+              <div class="form-group">
+                <label for="cel1">Celular</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="cel1"
+                  name="phone"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                  aria-describedby="telHelp"
+                />
+                <small id="telHelp" class="form-text text-muted"
+                  >Formato: XXX-XXX-XX-XX.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="document1">Documento</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="document1"
+                  min="100000000"
+                  max="9999999999"
+                />
+              </div>
+              <div class="form-group">
+                <label for="addres1">Dirección</label>
+                <input type="text" class="form-control" id="addres1" />
+              </div>
+              <div class="form-group">
+                <label for="email1">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email1"
+                  aria-describedby="emailHelp"
+                  value=""
+                />
+                <small id="emailHelp" class="form-text text-muted"
+                  >We'll never share your email with anyone else.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="password1">Password</label>
+                <input type="password" class="form-control" id="password1" />
+              </div>
+              <button type="submit" id="boton-guardar" class="btn btn-primary">
+                Guardar
+              </button>
+            </form>
           </div>
         </div>
+      </div>
       <footer class="mainfooter" role="contentinfo">
         <div class="footer-middle">
           <div class="container">

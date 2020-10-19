@@ -128,7 +128,13 @@ def dashboard():
     # #     if user.sub == "a0t14527":
     # #         for pets in user.pets:
     # #             lista.append(pets.to_dict())
-    return render_template('MyProfile.html', cache_id=cache_id, userinfo="a3d3be48-6dea-44cd-964e-6c2ed9feb362")
+    return render_template('MyProfile.html', cache_id=cache_id, userinfo="29617999-d479-4ae7-b9a9-863f1a38f386")
+
+
+@app.route('/settings_user')
+def settinguser():
+    cache_id = str(uuid.uuid4())
+    return render_template('settings_user.html', cache_id=cache_id)
 
 
 if __name__ == "__main__":
