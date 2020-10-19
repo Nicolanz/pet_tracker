@@ -1,0 +1,21 @@
+
+
+.container {
+    margin-top: 5%;
+    width: 100%;
+
+   display: flex; 
+   flex-direction: row;
+   justify-content: space-between;
+}
+.Border {
+    border: 5px solid black;
+}
+.pet {
+    width: 330px;
+    height: auto;
+}
+.Border {
+    background: white;
+
+}
