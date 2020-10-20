@@ -18,16 +18,16 @@
     />
     <link
       rel="stylesheet"
-      href="../static/styles/stylesMyProfile.css?{{ cache_id }}"
+      href="../static/styles/stylesUserPets.css?{{ cache_id }}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/styles/pet_location.css?{{ cache_id }}"
     />
     <!--footer Icons link-->
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="../static/styles/pet_location.css?{{ cache_id }}"
     />
     <title>Pets Tracker</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -36,50 +36,82 @@
       src="../static/scripts/pet_location.js?{{ cache_id }}"
     ></script>
   </head>
-
   <body>
+    <input id="sub" type="hidden" name="myHiddenField" value="{{ userinfo }}" />
     <!-- Main boostrap container -->
-    <div class="container-fluid">
+    <div class="d-flex flex-column justify-content-between">
       <!-- Header: nav, bakground image, sign up and dog image  -->
       <div class="header">
         <!-- Nav menu  -->
-        <nav
-          class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex flex-grow flex-nowrap align-items-center justify-content-between"
-        >
-          <h3>Pets Tracker</h3>
-          <a id="qsLogoutBtn" href="/logout"
-            ><button class="btn btn-default btn-logout">Logout</button>
-          </a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <svg
+            width="2em"
+            height="2em"
+            viewBox="0 0 16 16"
+            class="bi bi-person"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+            />
+          </svg>
+          <a class="navbar-brand" href="#">UserName</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/MyProfile"
+                  >My pets<span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home page</a>
+              </li>
+            </ul>
+            <button id="qsLoginBtn" href="/login" class="btn btn-default">
+              Log out
+            </button>
+          </div>
         </nav>
-        <!-- content of the header  -->
-        <div class="headerContent">
-          <!-- Background park image -->
-          <img
-            src="../static/images/pruebaImagen2.jpg"
-            class="img-fluid"
-            id="parkImage"
-            alt=""
-          />
-        </div>
       </div>
       <div class="container">
         <!-- Information of the pet -->
         <div class="Border">
-          <div class="pet">Pet Information</div>
-          <div class="Button">Refresh</div>
+          <div class="pet"><h2>Information</h2></div>
+          <button type="submit" id="boton-location" class="btn btn-primary">
+            Localizar
+          </button>
         </div>
-      <!-- Representation of the map -->
-        <div class="Border">
-          <div id="map"></div>
-          <p><iframe
-          width="500"
-          height="500"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQxpJBu62z9e1WuzVIfUmf7bIFj16cBeQ
-              &q=40.4517491,-79.94974239999999&zoom=15" allowfullscreen>
-          </iframe></p>
+        <!-- Representation of the map -->
+        <div class="Border_map">
+          <div id="map">
+            <p>
+              <iframe
+                id="map_loc"
+                width="500"
+                height="500"
+                frameborder="0"
+                style="border: 0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQxpJBu62z9e1WuzVIfUmf7bIFj16cBeQ
+                &q=40.4517491,-79.94974239999999&zoom=15"
+                allowfullscreen
+              >
+              </iframe>
+            </p>
           </div>
-
+        </div>
       </div>
 
       <footer class="mainfooter" role="contentinfo">
@@ -89,44 +121,32 @@
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Heading 1</h4>
+                  <h4>Team Members</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#"></a></li>
-                    <li><a href="#">Payment Center</a></li>
-                    <li><a href="#">Contact Directory</a></li>
-                    <li><a href="#">Forms</a></li>
-                    <li><a href="#">News and Updates</a></li>
-                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Juan Olivares</a></li>
+                    <li><a href="#">Bryan Builes</a></li>
+                    <li><a href="#">Erika Osorio</a></li>
+                    <li><a href="#">Nicolas Zarate</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Heading 2</h4>
+                  <h4>Info</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Website Tutorial</a></li>
-                    <li><a href="#">Accessibility</a></li>
-                    <li><a href="#">Disclaimer</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Webmaster</a></li>
+                    <li><a href="#">Description</a></li>
+                    <li><a href="#">Collars</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Heading 3</h4>
+                  <h4>Run it</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Parks and Recreation</a></li>
-                    <li><a href="#">Public Works</a></li>
-                    <li><a href="#">Police Department</a></li>
-                    <li><a href="#">Fire</a></li>
-                    <li><a href="#br">Mayor and City Council</a></li>
-                    <li>
-                      <a href="#"></a>
-                    </li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Sign Up</a></li>
                   </ul>
                 </div>
               </div>
@@ -175,4 +195,3 @@
     ></script>
   </body>
 </html>
-

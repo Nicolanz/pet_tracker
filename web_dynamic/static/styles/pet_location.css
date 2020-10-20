@@ -1,21 +1,25 @@
-
-
 .container {
-    margin-top: 5%;
-    width: 100%;
+  margin-top: 5%;
+  width: 100%;
 
-   display: flex; 
-   flex-direction: row;
-   justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .Border {
-    border: 5px solid black;
+  border: 5px solid black;
+  padding: 5px;
+  border-radius: 10px;
 }
+.Border_map {
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
 .pet {
-    width: 330px;
-    height: auto;
+  width: 330px;
+  height: auto;
 }
 .Border {
-    background: white;
-
+  background: white;
 }

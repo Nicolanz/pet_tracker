@@ -124,13 +124,21 @@ def logout():
 def dashboard():
     cache_id = str(uuid.uuid4())
     # remplazar el userinfo id por el del objeto
-    return render_template('MyProfile.html', cache_id=cache_id, userinfo="1680b061-1e2d-4993-ade6-79c4e1faabd0")
+    return render_template('MyProfile.html', cache_id=cache_id, userinfo="ce390c64-b8f0-42cc-939d-f84878e8840e")
 
 
 @app.route('/settings_user')
+@requires_auth
 def settinguser():
     cache_id = str(uuid.uuid4())
     return render_template('settings_user.html', cache_id=cache_id)
+
+
+@app.route('/pet_location')
+@requires_auth
+def pet_map():
+    cache_id = str(uuid.uuid4())
+    return render_template('pet_location.html', cache_id=cache_id)
 
 
 if __name__ == "__main__":
