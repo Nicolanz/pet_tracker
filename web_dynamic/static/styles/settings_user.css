@@ -1,22 +1,21 @@
-
 /* Changing size of the Form settings */
 .box {
-    width: auto;
-    height: auto;
-    border-radius: 15px;
-    border: 1px solid white;
-    background-color: white;
-    padding: 30px;
-    margin-top: 30px;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 30px;
+  margin-top: 30px;
 }
 
 .box form {
-    width: 100%;
+  width: 100%;
 }
 
 .container-fluid {
-    width: 100%;
-    padding: 0px;
-    margin-right: auto;
-    margin-left: auto;
+  width: 100%;
+  padding: 0px;
+  margin-right: auto;
+  margin-left: auto;
 }
