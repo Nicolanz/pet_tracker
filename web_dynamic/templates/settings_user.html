@@ -29,7 +29,7 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
       rel="stylesheet"
     />
-    <title>Pets Tracker</title>
+    <title>Pets Tracker | User Settings</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script
       type="text/javascript"
@@ -75,11 +75,11 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="/MyProfile"
-                  >My pets<span class="sr-only">(current)</span></a
+                  >My pets</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/settings_user?user-id={{ user_id }}">My profile</a>
+                <a class="nav-link" href="/settings_user?user-id={{ user_id }}">My profile<span class="sr-only">(current)</span></a>
               </li>
             </ul>
             <a id="qsLogoutBtn" href="/logout">
@@ -88,10 +88,10 @@
           </div>
         </nav>
       </div>
-
+      <br>
       <!-- Adding boostrap  -->
       <div class="container-fluid align-items-center justify-content-between">
-        <div class="container col-4">
+        <div class="container col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
           <div class="box">
             <form>
               <div class="form-group">
@@ -145,7 +145,7 @@
                 <label for="password1">Password</label>
                 <input type="password" class="form-control" id="password1" />
               </div>
-              <button type="button" id="boton-guardar" class="btn btn-primary">
+              <button type="button" id="boton-guardar" class="btn btn-default">
                 Guardar
               </button>
             </form>

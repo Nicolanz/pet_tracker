@@ -22,13 +22,44 @@ body > div{
     /* border:1px solid grey; */
     height: 50px;
 }
-.iconos>a{
+.pet_target a{
     width:20%;
     height: 50px;
     /* border:1px solid black; */
     color: black;
 }
-.iconos > a:hover{
+.pet_target a:hover{
     color: grey;
     transition: ease-in 0.2s;
+}
+/* MEDIA QUERIES */
+@media (min-width: 750px) {
+    #img1{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+        
+    }
+    #img2{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+    }
+}
+@media (max-width: 750px) {
+    #img3{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+        
+    }
+    #img4{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+    }
 }

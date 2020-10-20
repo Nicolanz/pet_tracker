@@ -39,7 +39,7 @@
   <body>
     <input id="pet_id" type="hidden" name="myHiddenField" value="{{ pet_id }}" />
     <!-- Main boostrap container -->
-    <div class="d-flex flex-column justify-content-between">
+    <div class="d-flex flex-column">
       <!-- Header: nav, bakground image, sign up and dog image  -->
       <div class="header">
         <!-- Nav menu  -->
@@ -86,9 +86,10 @@
           </div>
         </nav>
       </div>
-      <div class="container">
+
+      <div class="contenedor col-12 d-flex flex-row">
         <!-- Information of the pet -->
-        <div class="Border">
+        <div class="information border">
           <div class="pet"><h2>Information</h2></div>
           <button type="submit" id="boton-location" class="btn btn-primary">
             Localizar
