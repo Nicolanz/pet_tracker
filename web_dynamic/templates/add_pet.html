@@ -29,17 +29,25 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
       rel="stylesheet"
     />
-    <title>Pets Tracker | User Settings</title>
+    <title>Pets Tracker</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script
       type="text/javascript"
-      src="../static/scripts/settings_user.js?{{ cache_id }}"
+      src="../static/scripts/add_pet.js?{{ cache_id }}"
     ></script>
     <!-- Message to success saving new data -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
   </head>
   <body>
-    <input id="user_id" type="hidden" name="myHiddenField" value="{{ user_id }}" />
+    <input
+      id="user_id"
+      type="hidden"
+      name="myHiddenField"
+      value="{{ user_id }}"
+    />
     <!-- Main boostrap container -->
     <div class="d-flex flex-column justify-content-between">
       <!-- Header: nav, bakground image, sign up and dog image  -->
@@ -75,11 +83,13 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="/MyProfile"
-                  >My pets</a
+                  >My pets<span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/settings_user?user-id={{ user_id }}">My profile<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/settings_user?user-id={{ user_id }}"
+                  >My profile</a
+                >
               </li>
             </ul>
             <a id="qsLogoutBtn" href="/logout">
@@ -88,65 +98,63 @@
           </div>
         </nav>
       </div>
-      <br>
+
       <!-- Adding boostrap  -->
       <div class="container-fluid align-items-center justify-content-between">
-        <div class="container col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+        <div class="container col-4">
           <div class="box">
             <form>
               <div class="form-group">
-                <label for="fullname1">Nombre Completo</label>
-                <input type="text" class="form-control" id="fullname1" />
-              </div>
-              <div class="form-group">
-                <label for="username1">Nombre Usuario</label>
-                <input type="text" class="form-control" id="username1" />
-              </div>
-              <div class="form-group">
-                <label for="cel1">Celular</label>
+                <label for="fullname1">Nombre mascota</label>
                 <input
-                  id="cel1"
-                  name="phone"
-                  type="tel"
+                  type="text"
                   class="form-control"
-                  pattern="[0-9]{10}"
-                  aria-describedby="telHelp"
+                  id="fullname1"
+                  required
                 />
               </div>
               <div class="form-group">
-                <label for="document1">Documento</label>
+                <label for="specie1">Especie</label>
                 <input
-                  id="document1"
-                  type="number"
+                  type="text"
                   class="form-control"
-                  id="document1"
-                  min="100000000"
-                  max="9999999999"
-                />
-              </div>
-              <div class="form-group">
-                <label for="addres1">Dirección</label>
-                <input type="text" class="form-control" id="addres1" />
-              </div>
-              <div class="form-group">
-                <label for="email1">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email1"
-                  aria-describedby="emailHelp"
-                  value=""
+                  id="specie1"
+                  aria-describedby="specieHelp"
                 />
                 <small id="emailHelp" class="form-text text-muted"
-                  >We'll never share your email with anyone else.</small
+                  >Gato, perro, etc.</small
                 >
               </div>
               <div class="form-group">
-                <label for="password1">Password</label>
-                <input type="password" class="form-control" id="password1" />
+                <label for="race1">Raza</label>
+                <input type="text" class="form-control" id="race1" />
               </div>
-              <button type="button" id="boton-guardar" class="btn btn-default">
-                Guardar
+              <div class="form-group">
+                <label for="sex1">Sexo</label>
+                <input type="text" class="form-control" id="sex1" />
+              </div>
+              <div class="form-group">
+                <label for="birthday1">Fecha de cumpleaños</label>
+                <input
+                  type="date"
+                  name="birthday"
+                  class="form-control"
+                  id="birthday1"
+                  min="2010-01-01"
+                  max="2050-12-31"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="color1">Color</label>
+                <input type="text" class="form-control" id="color1" />
+              </div>
+              <div class="form-group">
+                <label for="description1">Descripcion</label>
+                <input type="text" class="form-control" id="description1" />
+              </div>
+              <button type="button" id="boton-pet" class="btn btn-primary">
+                Registrar mascota
               </button>
             </form>
           </div>

@@ -63,3 +63,6 @@ body > div{
         padding: 0;
     }
 }
+#add_pet {
+  width: 50%;
+}

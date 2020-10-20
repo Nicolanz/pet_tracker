@@ -3,3 +3,4 @@
 .vscode/
 web_dynamic/.DS_Store
 .gitignore
+*__pycache__*

@@ -1,13 +1,10 @@
 const $ = window.$;
 $(document).ready(function () {
-  /*Obtener datos almacenados*/
-  // const user_id1 = sessionStorage.getItem('user_id');
-  
+
   const user_id = document.getElementById('user_id').value;
   $.ajax('http://localhost:5000/api/v1/users/' + user_id, {
     type: 'GET',
-    }).done( data => {;
-  
+  }).done((data) => {
     $('#email1').val(data.email);
     $('#fullname1').val(data.name);
     $('#username1').val(data.nickname);
@@ -40,11 +37,14 @@ $(document).ready(function () {
       }),
     });
 
-    let notyf = new Notyf({duration: 5000, position: {
-    x: 'center',
-    y: 'botton',
-    },});
+    let notyf = new Notyf({
+      duration: 5000,
+      position: {
+        x: 'center',
+        y: 'botton',
+      },
+    });
     // Display a success notification
-    notyf.success('Your changes have been successfully saved!');  
+    notyf.success('Tus cambios se han guardado satisfactoriamente!');
   });
 });
