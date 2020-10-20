@@ -13,7 +13,7 @@ $(document).ready(function () {
     type: 'GET',
   }).done(function (data) {
     for (const pets of data) {
-      let new_date = new Date(pet.birthday);
+      let new_date = new Date(pets.birthday);
       let birthday = new_date.toISOString().split('T')[0];
       $('.pet').prepend(
         '<div class="pet_target col-10 container-fluid d-flex align-items-center justify-content-center flex-row flex-wrap bg-light rounded">' +
