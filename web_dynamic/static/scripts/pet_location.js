@@ -1,12 +1,11 @@
 const $ = window.$;
 $(document).ready(() => {
-  const pet_id = '54342490-44c4-45b9-aa09-e2613f0c71fc';
+  const pet_id = document.getElementById('pet_id').value;
   $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
     type: 'GET',
   }).done((pet_dict) => {
     let new_date = new Date(pet_dict.birthday);
     let birthday = new_date.toISOString().split('T')[0];
-
     $('.pet').append(
       '<ul>' +
         '<li><b>Name: </b> ' +
@@ -43,4 +42,5 @@ $(document).ready(() => {
       longitude +
       '&zoom=15';
   });
+
 });
