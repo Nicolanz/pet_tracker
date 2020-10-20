@@ -42,5 +42,4 @@ $(document).ready(() => {
       longitude +
       '&zoom=15';
   });
-
 });
