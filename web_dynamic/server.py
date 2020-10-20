@@ -104,7 +104,7 @@ def callback_handling():
         new_user.save()
         user_id = new_user.id
     # Id temporal
-    user_id = "995d9c8e-ac51-4511-b105-ca68b93249f2"
+    user_id = "58faf264-a166-44d0-b00b-7ddc514da9e2"
     return redirect('/MyProfile')
 
 

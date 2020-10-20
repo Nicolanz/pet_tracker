@@ -3,7 +3,12 @@ $(document).ready(function () {
   const user_id = document.getElementById('sub').value;
   // sessionStorage.setItem('user_id', user_id);
   // const user_id1 = sessionStorage.getItem('user_id');
-  // $.ajax('http://localhost:5000/api/v1/users/' + '995d9c8e-ac51-4511-b105-ca68b93249f2' + '/pets', {
+  // $.ajax('http://localhost:5000/api/v1/users/' + 'user_id' + '/pets', {
+  $.ajax('http://localhost:5000/api/v1/users/' + user_id, {
+    type: 'GET',
+  }).done(function (data) {
+      $('#username').append(data.nickname);
+  });
   $.ajax('http://localhost:5000/api/v1/users/' + user_id + '/pets', {
     type: 'GET',
   }).done(function (data) {
@@ -16,9 +21,9 @@ $(document).ready(function () {
           '<div class="col-xl-5 col-lg-5 col-12 datos d-flex flex-column flex-wrap">' +
             '<h4 class="align-self-center navbar-brand">' + pets.name + '</h4>' +
             '<ul class="list-group">' +
-              '<li class="list-group-item"><b>Age:</b> 2 years</li>' +
-              '<li class="list-group-item"><b>Address:</b> Trans 34b #2-6</li>' +
-              '<li class="list-group-item"><b>Collar Id:</b> 242.334.112.552</li>' +
+              '<li class="list-group-item"><b>Raza:</b>' + pets.race + '</li>' +
+              '<li class="list-group-item"><b>Sexo:</b>' + pets.sex + '</li>' +
+              '<li class="list-group-item"><b>Cumpleaños:</b>' + pets.birthday + '</li>' +
               '</ul>' +
               '</div>' +
               '<div class="iconos d-flex justify-content-center col-xl-3 col-lg-3 col-6">' +
