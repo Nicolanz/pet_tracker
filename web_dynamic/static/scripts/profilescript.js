@@ -1,4 +1,4 @@
-}const $ = window.$;
+const $ = window.$;
 $(document).ready(function () {
   const user_id = document.getElementById('sub').value;
   // sessionStorage.setItem('user_id', user_id);
