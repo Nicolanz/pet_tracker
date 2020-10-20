@@ -1,7 +1,6 @@
 const $ = window.$;
 $(document).ready(function () {
-  /*Obtener datos almacenados*/
-  // const user_id1 = sessionStorage.getItem('user_id');
+ 
   const user_id = document.getElementById('user_id').value;
   console.log(user_id);
 
@@ -9,7 +8,7 @@ $(document).ready(function () {
     const pet_name = document.getElementById('fullname1').value;
     const birthday = document.getElementById('birthday1').value;
     if (pet_name === '') {
-      var notyf = new Notyf({
+      let notyf = new Notyf({
         duration: 7000,
         position: {
           x: 'center',
@@ -18,7 +17,7 @@ $(document).ready(function () {
       });
       notyf.error('Debes rellenar los campos de nombre.');
     } else if (birthday === '') {
-      var notyf = new Notyf({
+      let notyf = new Notyf({
         duration: 7000,
         position: {
           x: 'center',
@@ -58,7 +57,7 @@ $(document).ready(function () {
         },
       });
       // Display a success notification
-      notyf.success('Your pet have been created!');
+      notyf.success('Su mascota ha sido agregada!');
     }
   });
 });
