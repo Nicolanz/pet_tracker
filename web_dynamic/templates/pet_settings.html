@@ -20,6 +20,10 @@
       rel="stylesheet"
       href="../static/styles/stylesUserPets.css?{{ cache_id }}"
     />
+    <link
+      rel="stylesheet"
+      href="../static/styles/pet_settings.css?{{ cache_id }}"
+    />
     <!--footer Icons link-->
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
@@ -29,11 +33,13 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script
       type="text/javascript"
-      src="../static/scripts/profilescript.js?{{ cache_id }}"
+      src="../static/scripts/pet_settings.js?{{ cache_id }}"
     ></script>
+    <!-- Message to success saving new data -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
   </head>
   <body>
-    <input id="sub" type="hidden" name="myHiddenField" value="{{ user_id }}" />
+    <input id="pet_id" type="hidden" name="myHiddenField" value="{{ pet_id }}" />
     <!-- Main boostrap container -->
     <div class="d-flex flex-column justify-content-between">
       <!-- Header: nav, bakground image, sign up and dog image  -->
@@ -68,14 +74,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#description"
+                <a class="nav-link" href="/MyProfile"
                   >My pets<span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/settings_user?user-id={{ user_id }}"
-                  >My profile</a
-                >
+                <a class="nav-link" href="/pet_settings?pet-id={{ pet_id }}">My profile</a>
               </li>
             </ul>
             <a id="qsLogoutBtn" href="/logout">
@@ -84,13 +88,57 @@
           </div>
         </nav>
       </div>
-      <div class="pet contentProfile d-flex flex-column align-items-center">
-        <br /><br />
-        <a href="/add_pet?user-id={{ user_id }}" id="add_pet">
-          <button class="btn btn-default w-100" id="qsLoginBtn">
-            Add Pet +
-          </button>
-        </a>
+
+      <!-- Adding boostrap  -->
+      <div class="container-fluid align-items-center justify-content-between">
+        <div class="container col-4">
+          <div class="box">
+            <form>
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" />
+              </div>
+              <div class="form-group">
+                <label for="birthday">Fecha de Nacimiento</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="birthday"
+                  min="2010-01-01"
+                  max="2050-12-31"
+                />
+              </div>
+                <!-- <input type="text" class="form-control" id="birthday" /> -->
+              <div class="form-group">
+                <label for="race">Raza</label>
+                <input type="text" class="form-control" id="race" />
+              </div>
+              <div class="form-group">
+                <label for="color">Color</label>
+                <input type="text" class="form-control" id="color" />
+              </div>
+              <div class="form-group">
+                <label for="sex">sex</label>
+                <input type="text" class="form-control" id="sex" />
+              </div>
+              <div class="form-group">
+                <label for="specie">Especie</label>
+                <input type="text" class="form-control" id="specie" />
+              </div>
+              <div class="form-group">
+                <label for="hair">Tipo de Pelo</label>
+                <input type="text" class="form-control" id="hair" />
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" />
+              </div>
+              <button type="button" id="boton-guardar" class="btn btn-primary">
+                Guardar
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
       <footer class="mainfooter" role="contentinfo">
         <div class="footer-middle">
@@ -171,5 +219,6 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
   </body>
 </html>
