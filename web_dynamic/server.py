@@ -104,7 +104,7 @@ def callback_handling():
         new_user.save()
         user_id = new_user.id
     # Id temporal
-    user_id = "995d9c8e-ac51-4511-b105-ca68b93249f2"
+    user_id = "ce390c64-b8f0-42cc-939d-f84878e8840e"
     return redirect('/MyProfile')
 
 
@@ -142,6 +142,14 @@ def pet_map():
     cache_id = str(uuid.uuid4())
     pet_id = request.args.get('pet-id')
     return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id)
+
+
+@app.route('/add_pet')
+@requires_auth
+def add_pet():
+    cache_id = str(uuid.uuid4())
+    user_id = request.args.get('user-id')
+    return render_template('add_pet.html', cache_id=cache_id, user_id=user_id)
 
 
 if __name__ == "__main__":
