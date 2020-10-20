@@ -9,6 +9,7 @@ $(document).ready(function () {
   }).done(function (data) {
       $('#username').append(data.nickname);
   });
+
   $.ajax('http://localhost:5000/api/v1/users/' + user_id + '/pets', {
     type: 'GET',
   }).done(function (data) {

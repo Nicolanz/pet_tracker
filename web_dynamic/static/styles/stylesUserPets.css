@@ -32,3 +32,6 @@ body > div{
     color: grey;
     transition: ease-in 0.2s;
 }
+#add_pet {
+  width: 50%;
+}

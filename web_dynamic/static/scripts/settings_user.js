@@ -1,7 +1,5 @@
 const $ = window.$;
 $(document).ready(function () {
-  /*Obtener datos almacenados*/
-  // const user_id1 = sessionStorage.getItem('user_id');
 
   const user_id = document.getElementById('user_id').value;
   $.ajax('http://localhost:5000/api/v1/users/' + user_id, {
@@ -47,6 +45,6 @@ $(document).ready(function () {
       },
     });
     // Display a success notification
-    notyf.success('Your changes have been successfully saved!');
+    notyf.success('Tus cambios se han guardado satisfactoriamente!');
   });
 });
