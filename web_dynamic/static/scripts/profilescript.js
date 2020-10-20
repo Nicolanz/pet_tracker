@@ -1,4 +1,4 @@
-const $ = window.$;
+}const $ = window.$;
 $(document).ready(function () {
   const user_id = document.getElementById('sub').value;
   // sessionStorage.setItem('user_id', user_id);
@@ -13,6 +13,8 @@ $(document).ready(function () {
     type: 'GET',
   }).done(function (data) {
     for (const pets of data) {
+      let new_date = new Date(pet.birthday);
+      let birthday = new_date.toISOString().split('T')[0];
       $('.pet').prepend(
         '<div class="pet_target col-10 container-fluid d-flex align-items-center justify-content-center flex-row flex-wrap bg-light rounded">' +
           '<div class="foto col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">' +
@@ -23,7 +25,7 @@ $(document).ready(function () {
             '<ul class="list-group">' +
               '<li class="list-group-item"><b>Raza:</b>' + pets.race + '</li>' +
               '<li class="list-group-item"><b>Sexo:</b>' + pets.sex + '</li>' +
-              '<li class="list-group-item"><b>Cumpleaños:</b>' + pets.birthday + '</li>' +
+              '<li class="list-group-item"><b>Cumpleaños:</b>' + birthday + '</li>' +
               '</ul>' +
               '</div>' +
               '<div class="iconos d-flex justify-content-center col-xl-3 col-lg-3 col-6">' +
