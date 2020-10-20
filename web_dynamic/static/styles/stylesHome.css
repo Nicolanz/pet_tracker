@@ -1,4 +1,3 @@
-
 .header{
     /* border: 4px solid black; */
     display: flex;
@@ -11,7 +10,6 @@
     height: 700px;
     position: RELATIVE;
 }
-
 .properties{
     width: 100%;
     height: auto;
@@ -24,7 +22,6 @@
     height: 700px;
     z-index: -1;
     /* border: 2px solid blue; */
-
 }
 .divDog{
     /* margin-left: 9%; */
@@ -35,10 +32,7 @@
     width:100%;
     height: 280px;
     /* border: 1px solid blue; */
-
 }
-
-
 /* SECTION STYLES */
 section{
     height: auto;
@@ -59,7 +53,6 @@ h1{
 .squares{
     /* border: 1px solid rgb(80, 79, 79); */
     height:900px;
-
 }
 .square{
     height:auto;
@@ -80,16 +73,11 @@ h1{
 .contentSquare{
     border: 1px solid grey;
     border-radius: 0px 0px 40px 40px ;
-
 }
 .square p{
     text-align: justify;
     font-size: 13px;
 }
-
-
-
-
 /* MEDIA QUERIES */
 /* @media (max-width: 1200px) {
 .divDog{
@@ -104,4 +92,3 @@ h1{
     padding:0px;
 }
 } */
-

@@ -1,0 +1,34 @@
+/* Dogs prfoile */
+body > div{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    max-height: auto;
+}
+.contentProfile{
+    /* border: 1px solid black; */
+    margin-top: 30px;
+}
+.pet_target{
+    margin-top: 30px;
+    /* border: 1px solid black; */
+    min-height: 350px;
+    max-height: 2000px;
+}
+.datos > h4{
+    font-size: 30px;
+}
+.iconos{
+    /* border:1px solid grey; */
+    height: 50px;
+}
+.iconos>a{
+    width:20%;
+    height: 50px;
+    /* border:1px solid black; */
+    color: black;
+}
+.iconos > a:hover{
+    color: grey;
+    transition: ease-in 0.2s;
+}

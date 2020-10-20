@@ -22,7 +22,7 @@ def get_users():
     return jsonify(list_users)
 
 
-@app_views.route('/users/<user_id>', methods=['DELETE'],
+@app_views.route('/users/<user_id>', methods=['DELETE', 'GET'],
                  strict_slashes=False)
 # @swag_from('documentation/user/delete_user.yml', methods=['DELETE'])
 def delete_user(user_id):
@@ -35,9 +35,11 @@ def delete_user(user_id):
     if not user:
         abort(404)
 
+    if request.method == "GET":
+        return jsonify(user.to_dict())
+
     storage.delete(user)
     storage.save()
-
     return make_response(jsonify({}), 200)
 
 
@@ -77,17 +79,18 @@ def put_user(user_id):
     if not request.get_json():
         abort(400, description="Not a JSON")
 
-    ignore = ['id', 'email', 'created_at', 'updated_at']
+    ignore = ['id', 'created_at', 'updated_at']
 
     data = request.get_json()
     for key, value in data.items():
-        if key not in ignore:
+        if key not in ignore:  # and key in valid:
             setattr(user, key, value)
     storage.save()
     return make_response(jsonify(user.to_dict()), 200)
 
 
-@app_views.route('/users/<user_id>/pets', methods=['GET'], strict_slashes=False)
+@app_views.route('/users/<user_id>/pets', methods=['GET'],
+                 strict_slashes=False)
 # @swag_from('documentation/-----.yml', methods=['GET'])
 def user_all_pet(user_id):
     """
@@ -128,7 +131,8 @@ def post_pet(user_id):
     return make_response(jsonify(instance.to_dict()), 201)
 
 
-@app_views.route('/users/<user_id>/collars', methods=['GET'], strict_slashes=False)
+@app_views.route('/users/<user_id>/collars', methods=['GET'],
+                 strict_slashes=False)
 # @swag_from('documentation/-----.yml', methods=['GET'])
 def user_all_collars(user_id):
     """

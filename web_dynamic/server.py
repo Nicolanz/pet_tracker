@@ -11,15 +11,29 @@ from flask import jsonify
 from flask import redirect
 from flask import render_template
 from flask import session
+<<<<<<< HEAD
+=======
+from flask import request
+>>>>>>> develop
 from flask import url_for
 from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
 from models import storage
 from models.user import User
+<<<<<<< HEAD
 
 
 import constants
 
+=======
+from models.pet import Pet
+import uuid
+
+import constants
+
+
+user_id = None
+>>>>>>> develop
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -79,7 +93,10 @@ def callback_handling():
     auth0.authorize_access_token()
     resp = auth0.get('userinfo')
     userinfo = resp.json()
+<<<<<<< HEAD
     print("Helo Userinfo", userinfo)
+=======
+>>>>>>> develop
 
     session[constants.JWT_PAYLOAD] = userinfo
     session[constants.PROFILE_KEY] = {
@@ -89,6 +106,7 @@ def callback_handling():
     }
     users = storage.all(User)
     user_exist = False
+<<<<<<< HEAD
     for user in users.values():
         print(user.email)
         if user.email == userinfo['email']:
@@ -101,6 +119,22 @@ def callback_handling():
         new_user.save()
 
     return redirect('/dashboard')
+=======
+    global user_id
+    for user in users.values():
+        if user.auth_id == userinfo['sub']:
+            user_exist = True
+            user_id = user.id
+            break
+    if user_exist is False:
+        new_user = User(email=userinfo['email'],
+                        nickname=userinfo['nickname'], auth_id=userinfo['sub'])
+        new_user.save()
+        user_id = new_user.id
+    # Id temporal
+    user_id = "995d9c8e-ac51-4511-b105-ca68b93249f2"
+    return redirect('/MyProfile')
+>>>>>>> develop
 
 
 @app.route('/login')
@@ -116,12 +150,36 @@ def logout():
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 
 
+<<<<<<< HEAD
 @app.route('/dashboard')
 @requires_auth
 def dashboard():
     return render_template('dashboard.html',
                            userinfo=session[constants.PROFILE_KEY],
                            userinfo_pretty=json.dumps(session[constants.JWT_PAYLOAD], indent=4))
+=======
+@app.route('/MyProfile')
+@requires_auth
+def dashboard():
+    cache_id = str(uuid.uuid4())
+    return render_template('MyProfile.html', cache_id=cache_id, user_id=user_id)
+
+
+@app.route('/settings_user')
+@requires_auth
+def settinguser():
+    cache_id = str(uuid.uuid4())
+    user_id = request.args.get('user-id')
+    return render_template('settings_user.html', cache_id=cache_id, user_id=user_id)
+
+
+@app.route('/pet_location')
+@requires_auth
+def pet_map():
+    cache_id = str(uuid.uuid4())
+    pet_id = request.args.get('pet-id')
+    return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id)
+>>>>>>> develop
 
 
 if __name__ == "__main__":
