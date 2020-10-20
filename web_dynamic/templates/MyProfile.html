@@ -16,7 +16,7 @@
     <script type="text/javascript" src="../static/scripts/profilescript.js?{{ cache_id }}"></script>
   </head>
   <body>
-    <input id="sub" type="hidden" name="myHiddenField" value="{{ userinfo }}" />
+    <input id="sub" type="hidden" name="myHiddenField" value="{{ user_id }}" />
     <!-- Main boostrap container -->
     <div class="d-flex flex-column justify-content-between">
       <!-- Header: nav, bakground image, sign up and dog image  -->
@@ -36,10 +36,12 @@
                 <a class="nav-link" href="#description">My pets<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/settings_user">My profile</a>
+                <a class="nav-link" href="/settings_user?user-id={{ user_id }}">My profile</a>
               </li>
             </ul>
-            <button id="qsLoginBtn" href="/login" class="btn btn-default">Log out</button>
+            <a id="qsLogoutBtn" href="/logout">
+              <button class="btn btn-default btn-logout">Logout</button>
+            </a>
           </div>
         </nav>
       </div>

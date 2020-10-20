@@ -1,10 +1,13 @@
 const $ = window.$;
 $(document).ready(function () {
   /*Obtener datos almacenados*/
-  const user_id1 = sessionStorage.getItem('user_id');
-  $.ajax('http://0.0.0.0:5000/api/v1/users/' + user_id1, {
+  // const user_id1 = sessionStorage.getItem('user_id');
+  
+  const user_id = document.getElementById('user_id').value;
+  $.ajax('http://localhost:5000/api/v1/users/' + user_id, {
     type: 'GET',
-  }).done(function (data) {
+    }).done( data => {;
+  
     $('#email1').val(data.email);
     $('#fullname1').val(data.name);
     $('#username1').val(data.nickname);
@@ -23,9 +26,10 @@ $(document).ready(function () {
     const full_name = document.getElementById('fullname1').value;
 
     /*Update the data in data base */
-    $.ajax('http://0.0.0.0:5000/api/v1/users/' + user_id1, {
+    $.ajax('http://localhost:5000/api/v1/users/' + user_id, {
       type: 'PUT',
       contentType: 'application/json',
+      dataType: 'json',
       data: JSON.stringify({
         name: full_name,
         nickname: user_name,
@@ -34,7 +38,13 @@ $(document).ready(function () {
         email: email,
         documento: documento,
       }),
-      dataType: 'json',
     });
+
+    let notyf = new Notyf({duration: 5000, position: {
+    x: 'center',
+    y: 'botton',
+    },});
+    // Display a success notification
+    notyf.success('Your changes have been successfully saved!');  
   });
 });

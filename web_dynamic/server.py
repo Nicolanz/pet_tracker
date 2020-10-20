@@ -11,6 +11,7 @@ from flask import jsonify
 from flask import redirect
 from flask import render_template
 from flask import session
+from flask import request
 from flask import url_for
 from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
@@ -22,7 +23,7 @@ import uuid
 import constants
 
 
-id_user = None
+user_id = None
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -91,18 +92,19 @@ def callback_handling():
     }
     users = storage.all(User)
     user_exist = False
-    global id_user
+    global user_id
     for user in users.values():
         if user.auth_id == userinfo['sub']:
             user_exist = True
-            id_user = user.id
+            user_id = user.id
             break
     if user_exist is False:
         new_user = User(email=userinfo['email'],
                         nickname=userinfo['nickname'], auth_id=userinfo['sub'])
         new_user.save()
-        id_user = new_user.id
-
+        user_id = new_user.id
+    # Id temporal
+    user_id = "995d9c8e-ac51-4511-b105-ca68b93249f2"
     return redirect('/MyProfile')
 
 
@@ -123,22 +125,23 @@ def logout():
 @requires_auth
 def dashboard():
     cache_id = str(uuid.uuid4())
-    # remplazar el userinfo id por el del objeto
-    return render_template('MyProfile.html', cache_id=cache_id, userinfo="ce390c64-b8f0-42cc-939d-f84878e8840e")
+    return render_template('MyProfile.html', cache_id=cache_id, user_id=user_id)
 
 
 @app.route('/settings_user')
 @requires_auth
 def settinguser():
     cache_id = str(uuid.uuid4())
-    return render_template('settings_user.html', cache_id=cache_id)
+    user_id = request.args.get('user-id')
+    return render_template('settings_user.html', cache_id=cache_id, user_id=user_id)
 
 
 @app.route('/pet_location')
 @requires_auth
 def pet_map():
     cache_id = str(uuid.uuid4())
-    return render_template('pet_location.html', cache_id=cache_id)
+    pet_id = request.args.get('pet-id')
+    return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id)
 
 
 if __name__ == "__main__":
