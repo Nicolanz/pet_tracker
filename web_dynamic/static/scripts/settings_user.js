@@ -1,7 +1,5 @@
 const $ = window.$;
 $(document).ready(function () {
-  /*Obtener datos almacenados*/
-  // const user_id1 = sessionStorage.getItem('user_id');
   
   const user_id = document.getElementById('user_id').value;
   $.ajax('http://localhost:5000/api/v1/users/' + user_id, {
@@ -39,7 +37,7 @@ $(document).ready(function () {
         documento: documento,
       }),
     });
-
+    
     let notyf = new Notyf({duration: 5000, position: {
     x: 'center',
     y: 'botton',

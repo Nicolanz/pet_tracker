@@ -132,7 +132,7 @@ def dashboard():
 @requires_auth
 def settinguser():
     cache_id = str(uuid.uuid4())
-    user_id = request.args.get('user-id')
+    # user_id = request.args.get('user-id')
     return render_template('settings_user.html', cache_id=cache_id, user_id=user_id)
 
 
@@ -142,6 +142,14 @@ def pet_map():
     cache_id = str(uuid.uuid4())
     pet_id = request.args.get('pet-id')
     return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id)
+
+
+@app.route('/pet_settings')
+@requires_auth
+def pet_settings():
+    cache_id = str(uuid.uuid4())
+    pet_id = request.args.get('pet-id')
+    return render_template('pet_settings.html', cache_id=cache_id, pet_id=pet_id)
 
 
 if __name__ == "__main__":
