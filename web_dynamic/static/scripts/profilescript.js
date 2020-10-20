@@ -34,7 +34,7 @@ $(document).ready(function () {
           '</svg>' +
           '</a>' +
           '</div>' +
-          '</div>'
+          '</div>'  
       );
     }
   });
