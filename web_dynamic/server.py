@@ -104,7 +104,6 @@ def callback_handling():
         new_user.save()
         user_id = new_user.id
     # Id temporal
-    # user_id = "58faf264-a166-44d0-b00b-7ddc514da9e2"
     return redirect('/MyProfile')
 
 
@@ -130,7 +129,7 @@ def dashboard():
 
 @app.route('/settings_user')
 @requires_auth
-def settinguser():
+def settings_user():
     cache_id = str(uuid.uuid4())
     # user_id = request.args.get('user-id')
     return render_template('settings_user.html', cache_id=cache_id, user_id=user_id)
@@ -138,7 +137,7 @@ def settinguser():
 
 @app.route('/pet_location')
 @requires_auth
-def pet_map():
+def pet_location():
     cache_id = str(uuid.uuid4())
     pet_id = request.args.get('pet-id')
     return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id)
