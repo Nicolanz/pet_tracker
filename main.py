@@ -21,7 +21,11 @@ pet_1 = Pet(user_id=user_1.id, name="Napa",
             race="labrador", birthday=date(2020, 9, 26), color="Yellow", specie="Perro", description="Cute new born")
 pet_1.save()
 
+<<<<<<< HEAD
+pet_2 = Pet(user_id=user_1.id, name="Napa", race="labrador")
+=======
 pet_2 = Pet(user_id=user_1.id, name="firulais", race="labrador")
+>>>>>>> develop
 pet_2.save()
 
 collar_1 = Collar(user_id=user_1.id, pet_id=pet_1.id)
