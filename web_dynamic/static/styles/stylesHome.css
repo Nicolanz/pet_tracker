@@ -78,7 +78,7 @@ h1{
     font-size: 13px;
 }
 /* MEDIA QUERIES */
-@media (max-width: 970px) {
+@media (max-width: 980px) {
 .sizeImgs{
     height: 0%;
     width: 0%;
