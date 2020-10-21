@@ -35,3 +35,10 @@ body > div{
 #add_pet {
   width: 50%;
 }
+
+element.style {
+    background: white;
+    box-shadow: 0 2px 4px 1px #e6e6e677;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 6px 0;
+}
