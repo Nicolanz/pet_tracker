@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# pet_tracker
-=======
 # Pet tracker - Web application
 
 Pet tracker is a web application developed for the company infinity systems. The objective of Pet tracker is to provide a service or platform to locate a lost pet on a map previously registered by the user. Additionally, it will have forms and detailed information management for each pet so that it can be easily identified.
@@ -87,4 +84,3 @@ No known bugs at this time.
 ## License
 
 Public Domain. No copy write protection.
->>>>>>> develop
