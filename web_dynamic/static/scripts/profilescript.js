@@ -22,11 +22,11 @@ $(document).ready(function () {
           '<img src="../static/images/dog.png" class="img-thumbnail img-fluid w-75 h-75 rounded" alt="...">' +
           '</div>' +
           '<div class="col-xl-5 col-lg-5 col-12 datos d-flex flex-column flex-wrap">' +
-            '<h4 class="align-self-center navbar-brand">' + pets.name + '</h4>' +
+            '<h4 class="align-self-center navbar-brand"> ' + pets.name + '</h4>' +
             '<ul class="list-group">' +
-              '<li class="list-group-item"><b>Raza:</b>' + pets.race + '</li>' +
-              '<li class="list-group-item"><b>Sexo:</b>' + pets.sex + '</li>' +
-              '<li class="list-group-item"><b>Cumpleaños:</b>' + birthday + '</li>' +
+              '<li class="list-group-item"><b>Raza:</b> ' + pets.race + '</li>' +
+              '<li class="list-group-item"><b>Sexo:</b> ' + pets.sex + '</li>' +
+              '<li class="list-group-item"><b>Cumpleaños:</b> ' + birthday + '</li>' +
               '</ul>' +
               '</div>' +
               '<div class="iconos d-flex justify-content-center col-xl-3 col-lg-3 col-6">' +
