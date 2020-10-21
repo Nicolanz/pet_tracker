@@ -17,7 +17,7 @@ $(document).ready(function () {
       $('.pet').prepend(
         '<div class="pet_target col-7 container-fluid d-flex align-items-center justify-content-center flex-row flex-wrap bg-light rounded">' +
           '<div class="foto col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">' +
-          '<img src="../static/images/dog.png" class="img-thumbnail img-fluid w-75 h-75 rounded" alt="...">' +
+          '<img src="../static/images/dog.png" class="img-thumbnail img-fluid w-100 h-100 rounded" alt="...">' +
           '</div>' +
           '<div class="col-xl-5 col-lg-5 col-12 datos d-flex flex-column flex-wrap">' +
             '<div class="col-12 d-flex flex-nowrap justify-content-center">'+

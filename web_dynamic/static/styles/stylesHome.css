@@ -58,17 +58,16 @@ h1{
     height:auto;
     /* margin: 1%; */
     /* border: 1px solid rgb(80, 79, 79); */
-    border-radius: 0px 40px 0px 0px ;
 }
 .squareImages{
     width: 100%;
-    height: 230px;
+    height: 240px;
 }
 .sizeImgs{
-    border-radius: 40px 40px 0px 0px ;
+    /* border-radius: 40px 40px 40px 40px ; */
     height: 100%;
     width: 100%;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
 }
 .contentSquare{
     border: 1px solid grey;
@@ -79,16 +78,23 @@ h1{
     font-size: 13px;
 }
 /* MEDIA QUERIES */
-/* @media (max-width: 1200px) {
-.divDog{
-    padding: 0;
-    height: 0px;
-    width: 0px;
-    border: 0;
+@media (max-width: 970px) {
+.sizeImgs{
+    height: 0%;
+    width: 0%;
+    padding:0;
+    margin:0;
 }
-#dog{
-    width:0%;
+.squareImages{
+    width: 0%;
     height: 0px;
-    padding:0px;
+    padding:0;
+    margin:0;
 }
-} */
+.squares{
+    /* border: 1px solid rgb(80, 79, 79); */
+    height:0px;
+    padding:0;
+    margin:0;
+}
+}
