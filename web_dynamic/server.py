@@ -24,6 +24,7 @@ import constants
 
 
 user_id = None
+name = None
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -93,19 +94,24 @@ def callback_handling():
     users = storage.all(User)
     user_exist = False
     global user_id
+    global name
     for user in users.values():
         if user.auth_id == userinfo['sub']:
             user_exist = True
             user_id = user.id
+            name = user.nickname
             break
     if user_exist is False:
         new_user = User(email=userinfo['email'],
                         nickname=userinfo['nickname'], auth_id=userinfo['sub'])
         new_user.save()
         user_id = new_user.id
+        name = new_user.nickname
     # Id temporal
-    user_id = "58faf264-a166-44d0-b00b-7ddc514da9e2"
+    #user_id = "58faf264-a166-44d0-b00b-7ddc514da9e2"
+    user_id = "995d9c8e-ac51-4511-b105-ca68b93249f2"
     return redirect('/MyProfile')
+
 
 @app.route('/login')
 def login():
@@ -129,15 +135,15 @@ def dashboard():
 
 @app.route('/settings_user')
 @requires_auth
-def settinguser():
+def settings_user():
     cache_id = str(uuid.uuid4())
     # user_id = request.args.get('user-id')
-    return render_template('settings_user.html', cache_id=cache_id, user_id=user_id)
+    return render_template('settings_user.html', cache_id=cache_id, user_id=user_id, name=name)
 
 
 @app.route('/pet_location')
 @requires_auth
-def pet_map():
+def pet_location():
     cache_id = str(uuid.uuid4())
     pet_id = request.args.get('pet-id')
     return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id)
@@ -148,7 +154,7 @@ def pet_map():
 def pet_settings():
     cache_id = str(uuid.uuid4())
     pet_id = request.args.get('pet-id')
-    return render_template('pet_settings.html', cache_id=cache_id, pet_id=pet_id)
+    return render_template('pet_settings.html', cache_id=cache_id, pet_id=pet_id, name=name)
 
 
 @app.route('/add_pet')
