@@ -162,27 +162,10 @@ $(document).ready(function () {
     });
   }
 });
-// // Function to remove pets onclick
-// function remove (pet_id) {
-//   const result = confirm('¿Esta seguro que desea eliminar la mascota?');
-//   console.log(typeof pet_id)
-//   if (result) {
-//     // alert('borrando...');
-//     $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
-//       type: 'DELETE',
-//       success: function () {
-//         alert('Pet eliminado correctamente!');
-//       },
-//       error: function (xhr, status, error) {
-//         const err = JSON.parse(xhr.responseText);
-//         alert(err.Message);
-//         alert('Error Eliminando Pet');
-//       },
-//     });
-//     // $.ajax({
-//     //   url: 'http://localhost:5000/api/v1/pets/' + pet_id,
-//     //   type: 'DELETE'
-//     // });
-//     location.reload();
-//   }
-// }
+// Function to remove pets onclick
+function remove (pet_id) {
+  if (confirm('¿Esta seguro de que desea eliminar a su mascota?')){
+      axios.delete('http://localhost:5000/api/v1/pets/'+ pet_id );
+      location.reload();
+  }
+}
