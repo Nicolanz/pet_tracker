@@ -1,8 +1,14 @@
 const $ = window.$;
 $(document).ready(function () {
   const pet_id = document.getElementById('pet_id').value;
-  console.log(pet_id);
-
+  const userId = document.getElementById('user_id').value;
+  
+  $.ajax('http://localhost:5000/api/v1/users/' + userId, {
+    type: 'GET'
+  }).done(function (data) {
+    $('#username').append(data.nickname);
+  });
+  
   $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
     type: 'GET',
   }).done((pet_dict) => {

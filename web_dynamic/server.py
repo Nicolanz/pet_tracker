@@ -38,6 +38,7 @@ AUTH0_AUDIENCE = env.get(constants.AUTH0_AUDIENCE)
 app = Flask(__name__)
 app.secret_key = constants.SECRET_KEY
 app.debug = True
+# cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 
 @app.errorhandler(Exception)
@@ -140,7 +141,12 @@ def settings_user():
 def pet_location():
     cache_id = str(uuid.uuid4())
     pet_id = request.args.get('pet-id')
-    return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id)
+    user_id = request.args.get('user-id')
+    pet = storage.get(Pet, pet_id)
+    collar_id = "2222222"
+    if len(pet.collars) == 1:
+        collar_id = pet.collars[0].numero_ref
+    return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id, user_id=user_id, collar_id=collar_id)
 
 
 @app.route('/pet_settings')
@@ -148,7 +154,8 @@ def pet_location():
 def pet_settings():
     cache_id = str(uuid.uuid4())
     pet_id = request.args.get('pet-id')
-    return render_template('pet_settings.html', cache_id=cache_id, pet_id=pet_id)
+    user_id = request.args.get('user-id')
+    return render_template('pet_settings.html', cache_id=cache_id, pet_id=pet_id, user_id=user_id)
 
 
 @app.route('/add_pet')
