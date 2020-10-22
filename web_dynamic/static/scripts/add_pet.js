@@ -1,8 +1,6 @@
 const $ = window.$;
 $(document).ready(function () {
- 
   const user_id = document.getElementById('user_id').value;
-  console.log(user_id);
 
   $('#boton-pet').click(function () {
     const pet_name = document.getElementById('fullname1').value;

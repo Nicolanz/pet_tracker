@@ -1,13 +1,14 @@
 const $ = window.$;
 $(document).ready(function () {
   const pet_id = document.getElementById('pet_id').value;
-  
+  console.log(pet_id);
+
   $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
     type: 'GET',
-    }).done((pet_dict) => {
+  }).done((pet_dict) => {
     let new_date = new Date(pet_dict.birthday);
     let birthday = new_date.toISOString().split('T')[0];
-  
+
     $('#name').val(pet_dict.name);
     $('#birthday').val(birthday);
     $('#race').val(pet_dict.race);
@@ -20,28 +21,28 @@ $(document).ready(function () {
 
   $('#boton-guardar').click(function () {
     const name = document.getElementById('name').value;
-    if (name === "") {
-        let notyf = new Notyf({
-            duration: 5000, 
-            position: {
-                x: 'center',
-                y: 'top',
-            },
-            });
-        notyf.error('Nombre es requisito!'); 
-        return
+    if (name === '') {
+      let notyf = new Notyf({
+        duration: 5000,
+        position: {
+          x: 'center',
+          y: 'top',
+        },
+      });
+      notyf.error('Nombre es requisito!');
+      return;
     }
     const birthday = document.getElementById('birthday').value;
-    if (birthday === "") {
-        let notyf = new Notyf({
-            duration: 5000, 
-            position: {
-                x: 'center',
-                y: 'top',
-            },
-         });
-        notyf.error('Fecha de nacimiento es requisito!'); 
-        return
+    if (birthday === '') {
+      let notyf = new Notyf({
+        duration: 5000,
+        position: {
+          x: 'center',
+          y: 'top',
+        },
+      });
+      notyf.error('Fecha de nacimiento es requisito!');
+      return;
     }
     const race = document.getElementById('race').value;
     const color = document.getElementById('color').value;
@@ -67,11 +68,14 @@ $(document).ready(function () {
       }),
     });
 
-    let notyf = new Notyf({duration: 5000, position: {
-    x: 'center',
-    y: 'top',
-    },});
+    let notyf = new Notyf({
+      duration: 5000,
+      position: {
+        x: 'center',
+        y: 'top',
+      },
+    });
     // Display a success notification
-    notyf.success('Tus cambios se han guardado satisfactoriamente!');  
+    notyf.success('Tus cambios se han guardado satisfactoriamente!');
   });
 });
