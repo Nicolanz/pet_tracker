@@ -99,7 +99,6 @@ $(document).ready(function () {
           responseType: 'json',
         })
           .then(function (response) {
-            console.log(response.data.status);
             if (response.data.status === 'EXIST') {
               axios({
                 method: 'delete',
@@ -189,19 +188,8 @@ $(document).ready(function () {
 });
 // Function to remove pets onclick
 function remove(pet_id) {
-  const result = confirm('¿Esta seguro que desea eliminar la mascota?');
-  if (result) {
-    alert('borrando...');
-    $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
-      type: 'DELETE',
-      success: function () {
-        alert('Pet eliminado correctamente!');
-      },
-    });
-    // $.ajax({
-    //   url: 'http://localhost:5000/api/v1/pets/' + pet_id,
-    //   type: 'DELETE'
-    // });
+  if (confirm('¿Esta seguro de que desea eliminar a su mascota?')) {
+    axios.delete('http://localhost:5000/api/v1/pets/' + pet_id);
     location.reload();
   }
 }
