@@ -12,24 +12,11 @@
       crossorigin="anonymous"
     />
     <!-- CSS Styles-->
-    <link
-      rel="stylesheet"
-      href="../static/styles/generalStyles.css?{{ cache_id }}"
-    />
-    <link
-      rel="stylesheet"
-      href="../static/styles/stylesUserPets.css?{{ cache_id }}"
-    />
-    <link
-      rel="stylesheet"
-      href="../static/styles/pet_location.css?{{ cache_id }}"
-    />
+    <link rel="stylesheet" href="../static/styles/generalStyles.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/pet_location.css?{{ cache_id }}"/>
     <!--footer Icons link-->
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
-      rel="stylesheet"
-    />
-    <title>Pets Tracker</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}" rel="stylesheet"/>
+    <title>Pets Tracker | Location</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script
       type="text/javascript"
@@ -39,7 +26,7 @@
   <body>
     <input id="pet_id" type="hidden" name="myHiddenField" value="{{ pet_id }}" />
     <!-- Main boostrap container -->
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column justify-content-between">
       <!-- Header: nav, bakground image, sign up and dog image  -->
       <div class="header">
         <!-- Nav menu  -->
@@ -73,11 +60,11 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="/MyProfile"
-                  >My pets<span class="sr-only">(current)</span></a
+                  >My pets</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/">Home page</a>
+                <a class="nav-link" href="/">Settings<span class="sr-only">(current)</span></a>
               </li>
             </ul>
             <a id="qsLogoutBtn" href="/logout">
@@ -86,35 +73,29 @@
           </div>
         </nav>
       </div>
-
-      <div class="contenedor col-12 d-flex flex-row">
+      <!-- container of the content: info and map -->
+      <div class="container contenedor d-flex flex-row flex-wrap border rounded">
         <!-- Information of the pet -->
-        <div class="information border">
-          <div class="pet"><h2>Information</h2></div>
-          <button type="submit" id="boton-location" class="btn btn-primary">
-            Localizar
-          </button>
-        </div>
-        <!-- Representation of the map -->
-        <div class="Border_map">
-          <div id="map">
-            <p>
-              <iframe
-                id="map_loc"
-                width="500"
-                height="500"
-                frameborder="0"
-                style="border: 0"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQxpJBu62z9e1WuzVIfUmf7bIFj16cBeQ
-                &q=40.4517491,-79.94974239999999&zoom=15"
-                allowfullscreen
-              >
-              </iframe>
-            </p>
+        <div class="col-12 col-sm-6">
+          <div class="col-12" id="location-btn">
+            <button type="submit" id="boton-location" class="btn btn-default w-100">Localizar</button>
+          </div>
+          <div class="pet_info">
+            <!-- Dynamic content -->
           </div>
         </div>
+        <!-- Map Box -->
+        <div class="map_box col-12 col-sm-6 h-600">
+          <iframe
+            id="map_loc"
+            class="col-12"
+            frameborder="0"
+            style="border: 0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQxpJBu62z9e1WuzVIfUmf7bIFj16cBeQ
+            &q=40.4517491,-79.94974239999999&zoom=15"
+            allowfullscreen></iframe>
+        </div>
       </div>
-
       <footer class="mainfooter" role="contentinfo">
         <div class="footer-middle">
           <div class="container">
