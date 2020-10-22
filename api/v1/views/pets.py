@@ -66,3 +66,15 @@ def delete_pet(pet_id=None):
         abort(404)
     else:
         return (jsonify(dicti), 200)
+
+
+@app_views.route('/pets/<pet_id>/collars', methods=['GET'], strict_slashes=False)
+def collar_pet(pet_id):
+    """Check if the pet already has a collar """
+    pet = storage.get(Pet, pet_id)
+
+    if not pet:
+        abort(404)
+    if len(pet.collars) >= 1:
+        return (jsonify({"status": "EXIST"}), 200)
+    return (jsonify({"status": "NO EXIST"}), 200)
