@@ -49,10 +49,8 @@ $(document).ready(function () {
             '</ul>' +
             '<br>'+'<br>'+
             '<div class="col-12 d-flex flex-row flex-nowrap justify-content-center">'+
-              
-              '<input type="password" class="form-control col-9 " id="inputPassword2" placeholder="Collar Id">'+
+	    '<input class="form-control col-9 " placeholder="Collar Id">'+
               '<button type="submit" class="btn btn-default ml-2" >+</button>'+
-              
             '</div>'+
             '</div>' +
               '<div class="iconos d-flex justify-content-center col-xl-3 col-lg-3 col-6">' +
@@ -84,8 +82,13 @@ $(document).ready(function () {
 function remove(pet_id){
   const result = confirm("¿Esta seguro que desea eliminar la mascota?");
   if (result){
+    alert("borrando...");
     $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
-    type: 'DELETE',
+      type: 'DELETE'
+    });
+    $.ajax({
+      url: 'http://localhost:5000/api/v1/pets/' + pet_id,
+      type: 'DELETE'
     });
     location.reload();
   }
