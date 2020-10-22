@@ -21,16 +21,15 @@ def allcollars(collar_id=None):
     else:
         flag = 0
         for v in storage.all(Collar).values():
-            if v.id == collar_id:
-                attr = (v.to_dict())
+            if v.numero_ref == collar_id:
                 flag = 1
         if flag == 0:
-            abort(404)
+            return (jsonify({"status": "NO EXIST"}), 200)
         else:
-            return (jsonify(attr))
+            return (jsonify({"status": "EXIST"}))
 
 
-@app_views.route('/collars/<collar_id>', methods=['PUT'], strict_slashes=False)
+@ app_views.route('/collars/<collar_id>', methods=['PUT'], strict_slashes=False)
 def change_collar(collar_id=None):
     """ change an class atribute """
     lista = [""]
@@ -62,8 +61,8 @@ def change_collar(collar_id=None):
         return (jsonify(attr), 200)
 
 
-@app_views.route('/collars/<collar_id>',
-                 methods=['DELETE'], strict_slashes=False)
+@ app_views.route('/collars/<collar_id>',
+                  methods=['DELETE'], strict_slashes=False)
 def delete_collar(collar_id):
     """
     Deletes a Collar Object
@@ -80,8 +79,8 @@ def delete_collar(collar_id):
     return make_response(jsonify({}), 200)
 
 
-@app_views.route('/collars',
-                 methods=['POST'], strict_slashes=False)
+@ app_views.route('/collars',
+                  methods=['POST'], strict_slashes=False)
 def create_collars():
     """ Post and create object """
     if not request.json:
@@ -89,7 +88,7 @@ def create_collars():
     if 'user_id' not in request.json:
         abort(400, "Missing user_id")
     result = request.get_json()
-    lista = ["user_id", "pet_id"]
+    lista = ["user_id", "pet_id", "numero_ref"]
     for security in result.keys():
         if security not in lista:
             abort(400, "agumento {} no apropiado".format(security))

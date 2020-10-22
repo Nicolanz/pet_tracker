@@ -6,30 +6,27 @@ $(document).ready(() => {
   }).done((pet_dict) => {
     let new_date = new Date(pet_dict.birthday);
     let birthday = new_date.toISOString().split('T')[0];
-    $('.pet').append(
-      '<ul>' +
-        '<li><b>Name: </b> ' +
-        pet_dict.name +
-        '</li>' +
-        '<li>Color: ' +
-        pet_dict.color +
-        '</li>' +
-        '<li>Race: ' +
-        pet_dict.race +
-        '</li>' +
-        '<li>Sex : ' +
-        pet_dict.sex +
-        '</li>' +
-        '<li>Birthday: ' +
-        birthday +
-        '</li>' +
-        '<li>Specie: ' +
-        pet_dict.specie +
-        '</li>' +
-        '<li>Description: ' +
-        pet_dict.description +
-        '</li>' +
-        '</ul>'
+    $('.pet_info').append(
+      '<div class="row">' +
+        '<div class="col-12">' +
+          '<!-- Category -->' +
+          '<div class="single category">' +
+            '<h3 class="side-title">Information</h3>' +
+            '<ul class="list-unstyled">' +
+              '<li>Name <span class="pull-right">' + pet_dict.name + '</span></li>' +
+              '<li>Color <span class="pull-right">' + pet_dict.color + '</span></li>' +
+              '<li>Race <span class="pull-right">' + pet_dict.race + '</span></li>' +
+              '<li>Sexo <span class="pull-right">' + pet_dict.sex + '</span></li>' +
+              '<li>Birthday<span class="pull-right">' + birthday + '</span></li>' +
+              '<li>Specie <span class="pull-right">' + pet_dict.specie + '</span></li>' +
+              '<li>Description: <a href="#demo" class="pull-right" data-toggle="collapse">Ver mas...</a>' +
+                '<br>' +
+                '<div id="demo" class="collapse text-justify">' + pet_dict.description + '</div>' +
+              '</li>' +
+            '</ul>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
     );
   });
   $('#boton-location').click(function () {
