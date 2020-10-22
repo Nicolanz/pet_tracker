@@ -1,138 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/images/logoIcon.png?{{ cache_id }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../static/images/logoIcon.png?{{ cache_id }}" />
     <!-- CSS Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css?{{ cache_id }}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css?{{ cache_id }}"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
     <!-- CSS Styles-->
-    <link rel="stylesheet" href="../static/styles/generalStyles.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/stylesHome.css?{{ cache_id }}"/>
+    <link
+      rel="stylesheet"
+      href="../static/styles/generalStyles.css?{{ cache_id }}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/styles/stylesHome.css?{{ cache_id }}"
+    />
     <!--footer Icons link-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}" rel="stylesheet"/>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
+      rel="stylesheet"
+    />
     <title>Pets Tracker | Home</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
   <body>
-    <input id="sub" type="hidden" name="myHiddenField" value="{{ userinfo }}"/>
-      <!-- Main boostrap container -->
+    <input id="sub" type="hidden" name="myHiddenField" value="{{ userinfo }}" />
+    <!-- Main boostrap container -->
     <div>
-        <!-- Header: nav, bakground image, sign up and dog image  -->
-        <div class="header">
-            <!-- Nav menu  -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Pet Tracker</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#description">Description <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#collarInfo">Collar Info</a>
-                    </li>
-                  </ul>
-                  <a id="qsLoginBtn" href="/login">
-                    <button class="btn btn-default btn-login">Log In</button>
-                  </a>
-                </div>
-              </nav>
-            <!-- content of the header  -->
-            <div class="headerContent">
-                <!-- Background park image -->
-                <img src="../static/images/pruebaImagen2.jpg" class="img-fluid" id="parkImage" alt="">
-                <!-- Properties: dog and sign up target  -->
-                <div class='properties d-flex flex-row flex-nowrap justify-content-xl-around justify-content-center align-items-end'>
-                    <!-- Dog Image  -->
-                    <div class="divDog col-8 col-md-5 col-lg-4 col-xl-4">
-                        <img src="../static/images/dogRunning.png" class="img-fluid" id="dog">
-                    </div>
-                </div>
+      <!-- Header: nav, bakground image, sign up and dog image  -->
+      <div class="header">
+        <!-- Nav menu  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Pet Tracker</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#description"
+                  >Description <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#collarInfo">Collar Info</a>
+              </li>
+            </ul>
+            <a id="qsLoginBtn" href="/login">
+              <button class="btn btn-default btn-login">Log In</button>
+            </a>
+          </div>
+        </nav>
+        <!-- content of the header  -->
+        <div class="headerContent">
+          <!-- Background park image -->
+          <img
+            src="../static/images/pruebaImagen2.jpg"
+            class="img-fluid"
+            id="parkImage"
+            alt=""
+          />
+          <!-- Properties: dog and sign up target  -->
+          <div
+            class="properties d-flex flex-row flex-nowrap justify-content-xl-around justify-content-center align-items-end"
+          >
+            <!-- Dog Image  -->
+            <div class="divDog col-8 col-md-5 col-lg-4 col-xl-4">
+              <img
+                src="../static/images/dogRunning.png"
+                class="img-fluid"
+                id="dog"
+              />
             </div>
+          </div>
         </div>
-        <!-- Section of the website -->
-        <section class="col-12 d-flex flex-row flex-wrap container">
-            <div id ="description" class="d-flex flex-row flex-wrap justify-content-center">
-                <h1 class="col-12 d-flex justify-content-center">Description</h1>
-                <p class="col-lg-6 col-12 font-weight-light">
-                    Pet Tracker le ofrece una solución cómoda para saber la ubicación actual de
-                    tus mascotas.
-                    Pet Tracker es una aplicación web para rastrear en tiempo real la ubicación de una mascota que
-                    está usando un collar con GPS, el propósito de la aplicación web es que el propietario pueda acceder a la
-                    información de sus mascotas en tiempo real y con la ubicación exacta, el único requisito es obtener la manilla GPS
-                    y acceder con Internet a la aplicación web, iniciar sesión y registrar a su mascota. Asi podrá iniciar el rastreo de su mascota desde
-                    una tablet, un celular o cualquier otro dispositivo
-                </p>
+      </div>
+      <!-- Section of the website -->
+      <section class="col-12 d-flex flex-row flex-wrap container">
+        <div
+          id="description"
+          class="d-flex flex-row flex-wrap justify-content-center"
+        >
+          <h1 class="col-12 d-flex justify-content-center">Description</h1>
+          <p class="col-lg-6 col-12 font-weight-light">
+            Pet Tracker le ofrece una solución cómoda para saber la ubicación
+            actual de tus mascotas. Pet Tracker es una aplicación web para
+            rastrear en tiempo real la ubicación de una mascota que está usando
+            un collar con GPS, el propósito de la aplicación web es que el
+            propietario pueda acceder a la información de sus mascotas en tiempo
+            real y con la ubicación exacta, el único requisito es obtener la
+            manilla GPS y acceder con Internet a la aplicación web, iniciar
+            sesión y registrar a su mascota. Asi podrá iniciar el rastreo de su
+            mascota desde una tablet, un celular o cualquier otro dispositivo
+          </p>
+        </div>
+        <div
+          id="collarInfo"
+          class="col-12 d-flex flex-row flex-wrap justify-content-around"
+        >
+          <div class="col-12 col-md-12 col-md-6 col-lg-5 col-xl-4">
+            <h2>Collar</h2>
+            <p class="text-justify">
+              Superficie de corte de piedras preciosas: tamaño mini y de moda,
+              fácil de llevar.<br />
+              Equipado con un cuello ajustable y cómodo.<br />
+              IP67 resistente al agua: es resistente al agua y adecuado para
+              usar en una variedad de entornos.<br />
+              Carga magnética <br /><br />
+            </p>
+            <h3>Especificaciones del collar</h3>
+            <p class="text-justify">
+              Condición 100% a estrenar<br />
+              Material de la cubierta: ABS<br />
+              Color: azul (opcional)<br />
+              Batería: batería de polímero integrada de 500mA<br />
+              GSM: 850/900/1800/1900mhz (solo admite Red 2G)<br />
+              Grado impermeable: IP67<br />
+              Precisión de posicionamiento GPS: 10m<br />
+              Voltaje de funcionamiento: 5V<br />
+              Tamaño: approx.5.33 * 2,9*2,3 cm/2,1*1,1 * 0.9in<br />
+              Peso: aprox.23g/4,3 oz<br /><br />
+            </p>
+            <h3>Lista de Paquete</h3>
+            <p class="text-justify">
+              1 * collar de seguimiento para mascotas<br />
+              1 * cable USB<br />
+              1 * manual de usuario<br />
+              1 * Collar de perro<br /><br />
+            </p>
+            <h3>Historial de la ubicación de la mascota</h3>
+            <p class="text-justify">
+              Este reporte mostrará por cada mascota la siguiente
+              información:<br />
+              Nombre de la mascota<br />
+              Ubicación de la mascota<br />
+            </p>
+          </div>
+          <div
+            class="squares col-0 col-md-6 col-lg-7 col-xl-8 d-flex flex-wrap justify-content-center align-items-center"
+          >
+            <div class="square col-5">
+              <div class="squareImages">
+                <img
+                  class="img-thumbnail img-fluid rounded sizeImgs"
+                  src="../static/images/collarImage1.png"
+                  alt=""
+                />
+              </div>
             </div>
-            <div id="collarInfo" class="col-12 d-flex flex-row flex-wrap justify-content-around ">
-                <div class="col-12 col-md-12 col-md-6 col-lg-5 col-xl-4">
-                    <h2>Collar</h2>
-                    <p class="text-justify">
-                        Superficie de corte de piedras preciosas: tamaño mini y de moda, fácil de llevar.<br>
-                        Equipado con un cuello ajustable y cómodo.<br>
-                        IP67 resistente al agua: es resistente al agua y adecuado para usar en una variedad 
-                        de entornos.<br>
-                        Carga magnética <br><br>
-                    </p>
-                    <h3>Especificaciones del collar</h3>
-                    <p class="text-justify">
-                      Condición 100% a estrenar<br>
-                      Material de la cubierta: ABS<br>
-                      Color: azul (opcional)<br>
-                      Batería: batería de polímero integrada de 500mA<br>
-                      GSM: 850/900/1800/1900mhz (solo admite Red 2G)<br>
-                      Grado impermeable: IP67<br>
-                      Precisión de posicionamiento GPS: 10m<br>
-                      Voltaje de funcionamiento: 5V<br>
-                      Tamaño: approx.5.33 * 2,9*2,3 cm/2,1*1,1 * 0.9in<br>
-                      Peso: aprox.23g/4,3 oz<br><br>
-
-                    </p>
-                    <h3>Lista de Paquete</h3>
-                    <p class="text-justify">
-                      1 * collar de seguimiento para mascotas<br>
-                      1 * cable USB<br>
-                      1 * manual de usuario<br>
-                      1 * Collar de perro<br><br>
-
-                    </p>
-                    <h3>Historial de la ubicación de la mascota
-                    </h3>
-                    <p class="text-justify" >
-                      Este reporte mostrará por cada mascota la siguiente información:<br>
-                      Nombre de la mascota<br>
-                      Ubicación de la mascota<br>
-                    </p>
-                </div>
-                <div class="squares col-0 col-md-6 col-lg-7 col-xl-8 d-flex flex-wrap justify-content-center align-items-center">
-                    <div class="square col-5">
-                        <div class="squareImages">
-                            <img class="img-thumbnail img-fluid rounded sizeImgs" src="../static/images/collarImage1.png" alt="">
-                        </div>
-                        
-                    </div>
-                    <div class="square col-5">
-                        <div class="squareImages">
-                            <img class="img-thumbnail img-fluid rounded sizeImgs" src="../static/images/collarImage2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="square col-5">
-                        <div class="squareImages">
-                            <img class="img-thumbnail img-fluid rounded sizeImgs" src="../static/images/collarImage3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="square col-5">
-                      <div class="squareImages">
-                          <img class="img-thumbnail img-fluid rounded sizeImgs" src="../static/images/dog3.jpeg" alt="">
-                      </div>
-                  </div>
-                    
-                </div>
+            <div class="square col-5">
+              <div class="squareImages">
+                <img
+                  class="img-thumbnail img-fluid rounded sizeImgs"
+                  src="../static/images/collarImage2.png"
+                  alt=""
+                />
+              </div>
             </div>
-        </section> 
+            <div class="square col-5">
+              <div class="squareImages">
+                <img
+                  class="img-thumbnail img-fluid rounded sizeImgs"
+                  src="../static/images/collarImage3.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="square col-5">
+              <div class="squareImages">
+                <img
+                  class="img-thumbnail img-fluid rounded sizeImgs"
+                  src="../static/images/dog3.jpeg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <footer class="mainfooter" role="contentinfo">
         <div class="footer-middle">
           <div class="container">
@@ -140,13 +198,13 @@
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                <h4>Team Members</h4>
-                <ul class="list-unstyled">
-                  <li><a href="#">Juan Olivares</a></li>
-                  <li><a href="#">Bryan Builes</a></li>
-                  <li><a href="#">Erika Osorio</a></li>
-                  <li><a href="#">Nicolas Zarate</a></li>
-                </ul>
+                  <h4>Team Members</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Juan Olivares</a></li>
+                    <li><a href="#">Bryan Builes</a></li>
+                    <li><a href="#">Erika Osorio</a></li>
+                    <li><a href="#">Nicolas Zarate</a></li>
+                  </ul>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
@@ -159,36 +217,58 @@
                   </ul>
                 </div>
               </div>
-            <div class="col-md-3 col-sm-6">
-              <!--Column1-->
-              <div class="footer-pad">
-                <h4>Run it</h4>
-                <ul class="list-unstyled">
-                  <li><a href="#">Log In</a></li>
-                  <li><a href="#">Sign Up</a></li>
+              <div class="col-md-3 col-sm-6">
+                <!--Column1-->
+                <div class="footer-pad">
+                  <h4>Run it</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <h4>Follow Us</h4>
+                <ul class="social-network social-circle">
+                  <li>
+                    <a href="#" class="icoFacebook" title="Facebook"
+                      ><i class="fa fa-facebook"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="icoLinkedin" title="Linkedin"
+                      ><i class="fa fa-linkedin"></i
+                    ></a>
+                  </li>
                 </ul>
               </div>
             </div>
-            <div class="col-md-3">
-              <h4>Follow Us</h4>
-              <ul class="social-network social-circle">
-                <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-              </ul>       
-            </div>
-            </div>
-              <div class="row">
-                <div class="col-md-12 copy">
-                  <p class="text-center">&copy; Copyright 2020 - Infinity Systems.  All rights reserved.</p>
-                </div>
+            <div class="row">
+              <div class="col-md-12 copy">
+                <p class="text-center">
+                  &copy; Copyright 2020 - Infinity Systems. All rights reserved.
+                </p>
               </div>
+            </div>
           </div>
         </div>
       </footer>
     </div>
     <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
