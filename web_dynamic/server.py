@@ -24,6 +24,7 @@ import constants
 
 
 user_id = None
+user_name = None
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -91,19 +92,24 @@ def callback_handling():
         'name': userinfo['name'],
         'picture': userinfo['picture']
     }
+    global user_id
+    global user_name
     users = storage.all(User)
     user_exist = False
-    global user_id
+    # User already exist
     for user in users.values():
         if user.auth_id == userinfo['sub']:
             user_exist = True
             user_id = user.id
+            user_name = user.nickname
             break
+    # Creating a new User
     if user_exist is False:
         new_user = User(email=userinfo['email'],
                         nickname=userinfo['nickname'], auth_id=userinfo['sub'])
         new_user.save()
         user_id = new_user.id
+        user_name = user.nickname
     # Id temporal
     return redirect('/MyProfile')
 
@@ -124,47 +130,72 @@ def logout():
 @app.route('/MyProfile')
 @requires_auth
 def dashboard():
+    global user_id
+    global user_name
+    if (user_id is None):
+        return redirect('/logout')
+
     cache_id = str(uuid.uuid4())
-    return render_template('MyProfile.html', cache_id=cache_id, user_id=user_id)
+    return render_template('MyProfile.html', cache_id=cache_id, user_id=user_id, user_name=user_name)
 
 
 @app.route('/settings_user')
 @requires_auth
 def settings_user():
+    global user_id
+    global user_name
+
     cache_id = str(uuid.uuid4())
-    # user_id = request.args.get('user-id')
-    return render_template('settings_user.html', cache_id=cache_id, user_id=user_id)
+    return render_template('settings_user.html', cache_id=cache_id, user_id=user_id, user_name=user_name)
 
 
 @app.route('/pet_location')
 @requires_auth
 def pet_location():
+    global user_id
+    global user_name
+
+    collar_id = ""
     cache_id = str(uuid.uuid4())
+
     pet_id = request.args.get('pet-id')
-    user_id = request.args.get('user-id')
     pet = storage.get(Pet, pet_id)
-    collar_id = "2222222"
+    if (pet is None or pet.user_id != user_id):
+        return redirect('/MyProfile')
+
     if len(pet.collars) == 1:
         collar_id = pet.collars[0].numero_ref
-    return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id, user_id=user_id, collar_id=collar_id)
+    return render_template('pet_location.html', cache_id=cache_id, pet_id=pet_id, user_id=user_id, collar_id=collar_id, user_name=user_name)
 
 
 @app.route('/pet_settings')
 @requires_auth
 def pet_settings():
+    global user_id
+    global user_name
+
     cache_id = str(uuid.uuid4())
+
     pet_id = request.args.get('pet-id')
-    user_id = request.args.get('user-id')
-    return render_template('pet_settings.html', cache_id=cache_id, pet_id=pet_id, user_id=user_id)
+    pet = storage.get(Pet, pet_id)
+    if (pet is None or pet.user_id != user_id):
+        return redirect('/MyProfile')
+    return render_template('pet_settings.html', cache_id=cache_id, pet_id=pet_id, user_id=user_id, user_name=user_name)
 
 
 @app.route('/add_pet')
 @requires_auth
 def add_pet():
+    global user_id
+    global user_name
+
     cache_id = str(uuid.uuid4())
-    user_id = request.args.get('user-id')
-    return render_template('add_pet.html', cache_id=cache_id, user_id=user_id)
+
+    userId = request.args.get('user-id')
+    if (user_id != userId):
+        return redirect('/MyProfile')
+    return render_template('add_pet.html', cache_id=cache_id, user_id=user_id, user_name=user_name)
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=env.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=env.get('PORT', 5001), threaded=True)
