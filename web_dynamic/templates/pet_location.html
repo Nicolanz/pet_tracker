@@ -77,26 +77,30 @@
       </div>
       <!-- container of the content: info and map -->
       <div class="container contenedor d-flex flex-row flex-wrap border rounded">
-        <!-- Information of the pet -->
-        <div class="col-12 col-sm-6">
+
+        <div class="map_box col-12 col-lg-7">
           <div class="col-12" id="location-btn">
             <button type="submit" id="boton-location" class="btn btn-default w-100">Localizar</button>
           </div>
-          <div class="pet_info">
-            <!-- Dynamic content -->
-          </div>
-        </div>
-        <!-- Map Box -->
-        <div class="map_box col-12 col-sm-6 h-600">
           <iframe
             id="map_loc"
-            class="col-12"
+            class="col-12 my-4"
+            height="600px"
             frameborder="0"
             style="border: 0"
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQxpJBu62z9e1WuzVIfUmf7bIFj16cBeQ
             &q=40.4517491,-79.94974239999999&zoom=15"
             allowfullscreen></iframe>
         </div>
+        <!-- Information of the pet -->
+        <div class="col-12 col-lg-5">
+        
+          <div class="pet_info">
+            <!-- Dynamic content -->
+          </div>
+        </div>
+        <!-- Map Box -->
+        
       </div>
       <footer class="mainfooter" role="contentinfo">
         <div class="footer-middle">
