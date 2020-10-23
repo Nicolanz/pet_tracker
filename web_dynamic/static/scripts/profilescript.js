@@ -31,23 +31,20 @@ $(document).ready(function () {
                 </a>
               </div>
             </div>
-            
             <!-- Pet data -->
             <ul class="list-group">
               <li class="list-group-item"><b>Raza: </b> ${pets.race} </li>
               <li class="list-group-item"><b>Cumpleaños: </b> ${birthday} </li>
               <li class="list-group-item"><b>Sex: </b> ${pets.sex} </li>
             </ul>
-            <br><br> 
-
+            <br><br>
             <!-- Add collar -->
             <div class="col-12 d-flex flex-row flex-nowrap justify-content-center">
               <input type="text" class="form-control col-9 pet-id-${pets.id}" name="collar_id" placeholder="Collar Id">
               <button type="button" class="btn btn-default ml-2 button-add-collar" data-pet-id="${pets.id}" data-user-id="${user_id}">ADD</button>
               <button type="button" class="btn btn-default ml-2 button-delete-collar" data-pet-id="${pets.id}" data-user-id="${user_id}">Delete</button>
             </div>
-          
-          </div> 
+          </div>
 
           <!-- Pet location -->
           <div class="iconos d-flex justify-content-center col-xl-3 col-lg-3 col-6">
@@ -57,7 +54,6 @@ $(document).ready(function () {
                 <path fill-rule="evenodd" d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
               </svg>
             </a>
-          
             <!-- Pet Settings -->
             <a href="/pet_settings?pet-id=${pets.id}" class="d-flex align-items-center" id="img4">
               <svg width="100%" height="70%" viewBox="0 0 16 16" class="bi bi-gear-wide" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +81,6 @@ $(document).ready(function () {
 
       requestApi(userId, petId, collarId);
     });
-    
     $('.button-delete-collar').click((buttonElement) => {
       const petId1 = buttonElement.currentTarget.dataset.petId;
 
@@ -188,11 +183,13 @@ $(document).ready(function () {
     }
   });
 });
-
-/* Function to remove pets onclick */
-function remove(pet_id) {
-  if (confirm('¿Esta seguro de que desea eliminar a su mascota?')) {
-    axios.delete('http://localhost:5000/api/v1/pets/' + pet_id);
-    location.reload();
+// Function to remove pets onclick
+function remove (pet_id) {
+  if (confirm('¿Esta seguro de que desea eliminar a su mascota?')){
+      $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
+	  type: 'DELETE'
+      }).done(function (data) {
+	  location.reload();
+      });
   }
 }
