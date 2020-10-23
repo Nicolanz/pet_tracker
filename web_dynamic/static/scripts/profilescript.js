@@ -156,7 +156,10 @@ $(document).ready(function () {
 // Function to remove pets onclick
 function remove (pet_id) {
   if (confirm('¿Esta seguro de que desea eliminar a su mascota?')){
-      axios.delete('http://localhost:5000/api/v1/pets/'+ pet_id );
-      location.reload();
+      $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
+	  type: 'DELETE'
+      }).done(function (data) {
+	  location.reload();
+      });
   }
 }
