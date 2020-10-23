@@ -36,12 +36,30 @@
       src="../static/scripts/pet_settings.js?{{ cache_id }}"
     ></script>
     <!-- Message to success saving new data -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
   </head>
   <body>
-    <input id="pet_id" type="hidden" name="myHiddenField" value="{{ pet_id }}" />
-    <input id="user_id" type="hidden" name="myHiddenField" value="{{ user_id }}" />
-    <input id="userName" type="hidden" name="myHiddenField" value="{{ user_name }}" />
+    <input
+      id="pet_id"
+      type="hidden"
+      name="myHiddenField"
+      value="{{ pet_id }}"
+    />
+    <input
+      id="user_id"
+      type="hidden"
+      name="myHiddenField"
+      value="{{ user_id }}"
+    />
+    <input
+      id="userName"
+      type="hidden"
+      name="myHiddenField"
+      value="{{ user_name }}"
+    />
     <!-- Main boostrap container -->
     <div class="d-flex flex-column justify-content-between">
       <!-- Header: nav, bakground image, sign up and dog image  -->
@@ -76,12 +94,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="/MyProfile"
-                  >My pets</a
-                >
+                <a class="nav-link" href="/MyProfile">My pets</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="/settings_user">Settings<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/settings_user"
+                  >Settings<span class="sr-only">(current)</span></a
+                >
               </li>
             </ul>
             <a id="qsLogoutBtn" href="/logout">
@@ -115,7 +133,7 @@
                   max="2050-12-31"
                 />
               </div>
-                <!-- <input type="text" class="form-control" id="birthday" /> -->
+              <!-- <input type="text" class="form-control" id="birthday" /> -->
               <div class="form-group">
                 <label for="race">Raza</label>
                 <input type="text" class="form-control" id="race" />
@@ -140,7 +158,11 @@
                 <label for="description">Description</label>
                 <input type="text" class="form-control" id="description" />
               </div>
-              <button type="button" id="boton-guardar" class="btn btn-primary">
+              <button
+                type="button"
+                id="boton-guardar"
+                class="btn btn-default ml-2"
+              >
                 Guardar
               </button>
             </form>

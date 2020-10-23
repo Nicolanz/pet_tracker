@@ -2,7 +2,13 @@ const $ = window.$;
 const alert = window.alert;
 $(document).ready(function () {
   const user_id = document.getElementById('sub').value;
-
+  var notyf = new Notyf({
+    duration: 5000,
+    position: {
+      x: 'center',
+      y: 'top',
+    },
+  });
   $.ajax('http://localhost:5000/api/v1/users/' + user_id + '/pets', {
     type: 'GET',
   }).done(function (data) {
@@ -102,14 +108,14 @@ $(document).ready(function () {
                 url: 'http://localhost:5000/api/v1/collars/' + collar_id,
                 responseType: 'json',
               }).then(function (response) {
-                alert('el collar ha sido eliminado');
+                notyf.success('el collar ha sido eliminado');
               });
             } else {
-              alert('el id del collar no esta asignado al usuario');
+              notyf.error('el id del collar no esta asignado al usuario');
             }
           })
           .catch(function (error) {
-            alert('Verifica si el id es correcto');
+            notyf.error('Verifica si el id es correcto');
           });
       }
     });
@@ -127,9 +133,8 @@ $(document).ready(function () {
         },
         success: function (data) {
           if (data === '[]') {
-            alert(' Id does not exist in the API! ');
+            notyf.error(' Id does not exist in the API! ');
           } else {
-            alert(' Id exist :D in the IP! ');
             verifyCollar(user_id, pet_id, collar_id);
           }
         },
@@ -147,14 +152,13 @@ $(document).ready(function () {
             success: function (data) {
               if (data.status === 'NO EXIST') {
                 CreateCollar(user_id, pet_id, collar_id);
-                alert(' Collar creado satisfactoriamente! ');
               } else {
-                alert(' Collar ya existe ! ');
+                notyf.error(' Collar ya existe ! ');
               }
             },
           });
         } else {
-          alert(' Pet ya tiene collar asignado ! ');
+          notyf.error(' Pet ya tiene collar asignado ! ');
         }
       });
     }
@@ -173,23 +177,23 @@ $(document).ready(function () {
         error: function (xhr, status, error) {
           const err = JSON.parse(xhr.responseText);
           alert(err.Message);
-          alert('Error Eliminando Pet');
+          notyf.error(' Error creando collar ! ');
         },
         success: function () {
           $('.pet-id-' + pet_id).text('Collar id: ' + collar_id);
-          alert(' Collar creado exitosamente ! ');
+          notyf.success(' Collar creado satisfactoriamente! ');
         },
       });
     }
   });
 });
 // Function to remove pets onclick
-function remove (pet_id) {
-  if (confirm('¿Esta seguro de que desea eliminar a su mascota?')){
-      $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
-	  type: 'DELETE'
-      }).done(function (data) {
-	  location.reload();
-      });
+function remove(pet_id) {
+  if (confirm('¿Esta seguro de que desea eliminar a su mascota?')) {
+    $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
+      type: 'DELETE',
+    }).done(function (data) {
+      location.reload();
+    });
   }
 }
