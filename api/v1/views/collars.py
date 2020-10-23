@@ -67,16 +67,19 @@ def delete_collar(collar_id):
     """
     Deletes a Collar Object
     """
-
-    collar = storage.get(Collar, collar_id)
-
-    if not collar:
+    if collar_id is None:
         abort(404)
-
-    storage.delete(collar)
-    storage.save()
-
-    return make_response(jsonify({}), 200)
+    dicti = {}
+    flag = 0
+    for v in storage.all(Collar).values():
+        if v.numero_ref == collar_id:
+            storage.delete(v)
+            storage.save()
+            flag = 1
+    if flag == 0:
+        abort(404)
+    else:
+        return (jsonify(dicti), 200)
 
 
 @ app_views.route('/collars',
