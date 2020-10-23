@@ -1,15 +1,11 @@
 const $ = window.$;
 $(document).ready(() => {
   const pet_id = document.getElementById('pet_id').value;
-  const userId = document.getElementById('user_id').value;
   const collarId = document.getElementById('collar_id').value;
-
+  const userName = document.getElementById('userName').value;
   /* set Username */
-  $.ajax('http://localhost:5000/api/v1/users/' + userId, {
-    type: 'GET'
-  }).done(function (data) {
-    $('#username').append(data.nickname);
-  });
+  $('#username').append(userName);
+
 
   $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
     type: 'GET',
