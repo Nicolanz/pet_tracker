@@ -132,7 +132,7 @@ def logout():
 def dashboard():
     global user_id
     global user_name
-    if (user_name is None):
+    if (user_id is None):
         return redirect('/logout')
 
     cache_id = str(uuid.uuid4())

@@ -1,8 +1,6 @@
 const $ = window.$;
 $(document).ready(function () {
   const user_id = document.getElementById('user_id').value;
-  const userName = document.getElementById('userName').value;
-  $('#username').append(userName);
 
   $.ajax('http://localhost:5000/api/v1/users/' + user_id, {
     type: 'GET',

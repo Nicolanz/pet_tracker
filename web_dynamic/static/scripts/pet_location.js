@@ -2,9 +2,6 @@ const $ = window.$;
 $(document).ready(() => {
   const pet_id = document.getElementById('pet_id').value;
   const collarId = document.getElementById('collar_id').value;
-  const userName = document.getElementById('userName').value;
-  /* set Username */
-  $('#username').append(userName);
 
 
   $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {

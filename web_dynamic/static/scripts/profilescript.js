@@ -2,8 +2,6 @@ const $ = window.$;
 const alert = window.alert;
 $(document).ready(function () {
   const user_id = document.getElementById('sub').value;
-  const userName = document.getElementById('userName').value;
-  $('#username').append(userName);
 
   $.ajax('http://localhost:5000/api/v1/users/' + user_id + '/pets', {
     type: 'GET',
