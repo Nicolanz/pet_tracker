@@ -46,14 +46,14 @@ $(document).ready(function () {
             <ul class="list-group">
               <li class="list-group-item"><b>Raza: </b> ${pets.race} </li>
               <li class="list-group-item"><b>Cumpleaños: </b> ${birthday} </li>
-              <li class="list-group-item"><b>Sex: </b> ${pets.sex} </li>
+              <li class="list-group-item"><b>Sexo: </b> ${pets.sex} </li>
             </ul>
-            
+
             <!-- Add collar -->
             <div class="addCollar d-flex flex-row justify-content-around flex-wrap">
               <input type="text" class="form-control col-12 col-sm-12 col-md-6 col-lg-6 my-md-5 little-form pet-id-${pets.id}" name="collar_id" placeholder="Collar Id">
-              <button type="button" class="btn btn-success col-3 col-sm-3 col-md-2 my-2 col-lg-2  my-md-5  add-delete button-add-collar" data-pet-id="${pets.id}" data-user-id="${user_id}">Add</button>
-              <button type="button" class="btn btn-danger col-4 col-sm-3 col-md-3 my-2 col-lg-3  my-md-5  add-delete button-delete-collar" data-pet-id="${pets.id}" data-user-id="${user_id}">Delete</button>
+              <button type="button" class="btn btn-success col-3 col-sm-3 col-md-2 my-2 col-lg-2  my-md-5  add-delete button-add-collar" data-pet-id="${pets.id}" data-user-id="${user_id}">Agregar</button>
+              <button type="button" class="btn btn-danger col-4 col-sm-3 col-md-3 my-2 col-lg-3  my-md-5  add-delete button-delete-collar" data-pet-id="${pets.id}" data-user-id="${user_id}">Eliminar</button>
             </div>
           </div>
 

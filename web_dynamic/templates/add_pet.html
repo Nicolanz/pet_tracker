@@ -48,7 +48,12 @@
       name="myHiddenField"
       value="{{ user_id }}"
     />
-    <input id="userName" type="hidden" name="myHiddenField" value="{{ user_name }}" />
+    <input
+      id="userName"
+      type="hidden"
+      name="myHiddenField"
+      value="{{ user_name }}"
+    />
 
     <!-- Main boostrap container -->
     <div class="d-flex flex-column justify-content-between">
@@ -85,13 +90,11 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="/MyProfile"
-                  >My pets<span class="sr-only">(current)</span></a
+                  >Mis mascotas<span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/settings_user"
-                  >Settings</a
-                >
+                <a class="nav-link" href="/settings_user">Opciones</a>
               </li>
             </ul>
             <a id="qsLogoutBtn" href="/logout">
@@ -136,10 +139,10 @@
                 <label for="race1">Raza</label>
                 <input type="text" class="form-control" id="race1" />
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="sex1">Sexo</label>
                 <input type="text" class="form-control" id="sex1" />
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="birthday1">Fecha de cumpleaños</label>
                 <input
@@ -160,6 +163,33 @@
                 <label for="description1">Descripcion</label>
                 <input type="text" class="form-control" id="description1" />
               </div>
+              <label for="inlineRadio1">Sexo</label>
+              <br />
+              <div class="form-group form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="Masculino"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Masculino</label
+                >
+              </div>
+              <div class="form-group form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio2"
+                  value="Femenino"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  >Femenino</label
+                >
+              </div>
+              <br />
               <button type="button" id="boton-pet" class="btn btn-default ml-2">
                 Registrar mascota
               </button>
@@ -174,7 +204,7 @@
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Team Members</h4>
+                  <h4>Miembros del equipo</h4>
                   <ul class="list-unstyled">
                     <li><a href="#">Juan Olivares</a></li>
                     <li><a href="#">Bryan Builes</a></li>
@@ -186,10 +216,10 @@
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Info</h4>
+                  <h4>Informacion</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Description</a></li>
-                    <li><a href="#">Collars</a></li>
+                    <li><a href="#">Descripcion</a></li>
+                    <li><a href="#">Collares</a></li>
                   </ul>
                 </div>
               </div>
@@ -219,7 +249,7 @@
                 </ul>
               </div>
             </div>
-            <br>
+            <br />
             <div class="row">
               <div class="col-md-12 copy">
                 <p class="text-center">

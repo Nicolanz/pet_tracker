@@ -46,10 +46,17 @@ $(document).ready(function () {
     }
     const race = document.getElementById('race').value;
     const color = document.getElementById('color').value;
-    const sex = document.getElementById('sex').value;
     const specie = document.getElementById('specie').value;
     const hair = document.getElementById('hair').value;
     const description = document.getElementById('description').value;
+    const sexinput1 = $('#inlineRadio1').is(':checked');
+    const sexinput2 = $('#inlineRadio2').is(':checked');
+    let sex = '';
+    if (sexinput1 === true) {
+      sex = document.getElementById('inlineRadio1').value;
+    } else if (sexinput2 === true) {
+      sex = document.getElementById('inlineRadio2').value;
+    }
 
     /*Update the data in data base */
     $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
