@@ -67,6 +67,7 @@ footer {
   background: -webkit-linear-gradient(59deg, #1E7272, #53895B);
   background: linear-gradient(59deg, #1E7272, #53895B); 
   color: white;
+  height:auto;
   margin-top:100px;
 }
 footer a {

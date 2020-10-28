@@ -13,15 +13,15 @@ $(document).ready(() => {
         <div class="col-12">
         <!-- Category -->
           <div class="single category">
-            <h3 class="side-title">Information</h3>
+            <h3 class="side-title">Informacion</h3>
             <ul class="list-unstyled">
-              <li>Name <span class="pull-right"> ${pet_dict.name} </span></li>
+              <li>Nombre <span class="pull-right"> ${pet_dict.name} </span></li>
               <li>Color <span class="pull-right"> ${pet_dict.color} </span></li>
-              <li>Race <span class="pull-right"> ${pet_dict.race} </span></li>
+              <li>Raza <span class="pull-right"> ${pet_dict.race} </span></li>
               <li>Sexo <span class="pull-right"> ${pet_dict.sex} </span></li>
-              <li>Birthday<span class="pull-right"> ${birthday} </span></li>
-              <li>Specie <span class="pull-right"> ${pet_dict.specie} </span></li>
-              <li>Description: <a href="#demo" class="pull-right" data-toggle="collapse">Ver mas...</a>
+              <li>Cumpleaños<span class="pull-right"> ${birthday} </span></li>
+              <li>Especie <span class="pull-right"> ${pet_dict.specie} </span></li>
+              <li>Descripcion: <a href="#demo" class="pull-right" data-toggle="collapse">Ver mas...</a>
               <br>
                 <div id="demo" class="collapse text-justify"> ${pet_dict.description} </div>
              </li>

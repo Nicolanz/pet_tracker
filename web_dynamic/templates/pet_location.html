@@ -12,10 +12,19 @@
       crossorigin="anonymous"
     />
     <!-- CSS Styles-->
-    <link rel="stylesheet" href="../static/styles/generalStyles.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/pet_location.css?{{ cache_id }}"/>
+    <link
+      rel="stylesheet"
+      href="../static/styles/generalStyles.css?{{ cache_id }}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/styles/pet_location.css?{{ cache_id }}"
+    />
     <!--footer Icons link-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}" rel="stylesheet"/>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
+      rel="stylesheet"
+    />
     <title>Pets Tracker | Location</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script
@@ -24,9 +33,24 @@
     ></script>
   </head>
   <body>
-    <input id="pet_id" type="hidden" name="myHiddenField" value="{{ pet_id }}" />
-    <input id="collar_id" type="hidden" name="myHiddenField" value="{{ collar_id }}" />
-    <input id="userName" type="hidden" name="myHiddenField" value="{{ user_name }}" />
+    <input
+      id="pet_id"
+      type="hidden"
+      name="myHiddenField"
+      value="{{ pet_id }}"
+    />
+    <input
+      id="collar_id"
+      type="hidden"
+      name="myHiddenField"
+      value="{{ collar_id }}"
+    />
+    <input
+      id="userName"
+      type="hidden"
+      name="myHiddenField"
+      value="{{ user_name }}"
+    />
     <!-- Main boostrap container -->
     <div class="d-flex flex-column justify-content-between">
       <!-- Header: nav, bakground image, sign up and dog image  -->
@@ -61,12 +85,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/MyProfile"
-                  >My pets</a
-                >
+                <a class="nav-link" href="/MyProfile">Mis mascotas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/settings_user">Settings<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/settings_user"
+                  >Opciones<span class="sr-only">(current)</span></a
+                >
               </li>
             </ul>
             <a id="qsLogoutBtn" href="/logout">
@@ -76,27 +100,37 @@
         </nav>
       </div>
       <!-- container of the content: info and map -->
-      <div class="container contenedor d-flex flex-row flex-wrap border rounded">
-        <!-- Information of the pet -->
-        <div class="col-12 col-sm-6">
+      <div
+        class="container contenedor d-flex flex-row flex-wrap border rounded"
+      >
+        <div class="map_box col-12 col-lg-7">
           <div class="col-12" id="location-btn">
-            <button type="submit" id="boton-location" class="btn btn-default w-100">Localizar</button>
+            <button
+              type="submit"
+              id="boton-location"
+              class="btn btn-default w-100"
+            >
+              Localizar
+            </button>
           </div>
+          <iframe
+            id="map_loc"
+            class="col-12 my-4"
+            height="600px"
+            frameborder="0"
+            style="border: 0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQxpJBu62z9e1WuzVIfUmf7bIFj16cBeQ
+            &q=40.4517491,-79.94974239999999&zoom=15"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- Information of the pet -->
+        <div class="col-12 col-lg-5">
           <div class="pet_info">
             <!-- Dynamic content -->
           </div>
         </div>
         <!-- Map Box -->
-        <div class="map_box col-12 col-sm-6 h-600">
-          <iframe
-            id="map_loc"
-            class="col-12"
-            frameborder="0"
-            style="border: 0"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQxpJBu62z9e1WuzVIfUmf7bIFj16cBeQ
-            &q=40.4517491,-79.94974239999999&zoom=15"
-            allowfullscreen></iframe>
-        </div>
       </div>
       <footer class="mainfooter" role="contentinfo">
         <div class="footer-middle">
@@ -105,7 +139,7 @@
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Team Members</h4>
+                  <h4>Miembros del equipo</h4>
                   <ul class="list-unstyled">
                     <li><a href="#">Juan Olivares</a></li>
                     <li><a href="#">Bryan Builes</a></li>
@@ -117,10 +151,10 @@
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Info</h4>
+                  <h4>Informacion</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Description</a></li>
-                    <li><a href="#">Collars</a></li>
+                    <li><a href="#">Descripcion</a></li>
+                    <li><a href="#">Collares</a></li>
                   </ul>
                 </div>
               </div>
@@ -150,6 +184,7 @@
                 </ul>
               </div>
             </div>
+            <br />
             <div class="row">
               <div class="col-md-12 copy">
                 <p class="text-center">

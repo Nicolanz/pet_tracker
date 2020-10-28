@@ -7,7 +7,7 @@
 }
 .headerContent{
     /* border: 1px solid black; */
-    height: 700px;
+    /* height: 700px; deleteit*/
     position: RELATIVE;
 }
 .properties{
@@ -17,11 +17,16 @@
     /* border: 1px solid blue; */
 }
 #parkImage{
-    position: absolute;
+    object-fit: cover;
+    /* position: absolute; deleteit*/
     width: 100%;
-    height: 700px;
     z-index: -1;
     /* border: 2px solid blue; */
+}
+.text-title {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
 }
 .divDog{
     /* margin-left: 9%; */
@@ -65,6 +70,7 @@ h1{
 }
 .sizeImgs{
     /* border-radius: 40px 40px 40px 40px ; */
+    object-fit: cover;
     height: 100%;
     width: 100%;
     /* border: 1px solid grey; */
@@ -97,4 +103,18 @@ h1{
     padding:0;
     margin:0;
 }
+}
+.text-title {
+    position: absolute;
+    bottom: 200px;
+    left: 35px;
+    font-size: 53px;
+    font-family: 'League Spartan Bold', arial;
+}
+.text-description {
+    position: absolute;
+    bottom: 80px;
+    left: 35px;
+    font-size: 30px;    
+    font-family: 'League Spartan', arial;
 }

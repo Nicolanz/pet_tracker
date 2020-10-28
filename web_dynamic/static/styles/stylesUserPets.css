@@ -39,16 +39,12 @@ body > div{
     color: grey;
     transition: ease-in 0.2s;
 }
-.pet_target span{
-    width:20%;
-    height: 50px;
-    /* border:1px solid black; */
-    color: black;
+
+.img-circle{
+    border-radius: 60px ;
+    /* border:2px solid black; */
 }
-.pet_target span:hover{
-    color: grey;
-    transition: ease-in 0.2s;
-}
+/* Add Collar Styles */
 
 /* MEDIA QUERIES */
 @media (min-width: 750px) {
