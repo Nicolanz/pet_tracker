@@ -29,7 +29,14 @@ $(document).ready(function () {
       const color = document.getElementById('color1').value;
       const specie = document.getElementById('specie1').value;
       const description = document.getElementById('description1').value;
-      const sex = document.getElementById('sex1').value;
+      const sexinput1 = $('#inlineRadio1').is(':checked');
+      const sexinput2 = $('#inlineRadio2').is(':checked');
+      let sex = '';
+      if (sexinput1 === true) {
+        sex = document.getElementById('inlineRadio1').value;
+      } else if (sexinput2 === true) {
+        sex = document.getElementById('inlineRadio2').value;
+      }
       /*Update the data in data base */
       $.ajax('http://localhost:5000/api/v1/users/' + user_id + '/pets', {
         type: 'POST',
