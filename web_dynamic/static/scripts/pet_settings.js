@@ -1,3 +1,4 @@
+#!/user/bin/node
 const $ = window.$;
 $(document).ready(function () {
   const pet_id = document.getElementById('pet_id').value;
@@ -49,6 +50,20 @@ $(document).ready(function () {
     const specie = document.getElementById('specie').value;
     const hair = document.getElementById('hair').value;
     const description = document.getElementById('description').value;
+    
+    /*  upload a picture */
+    const picture = document.getElementById('pet-pic').files[0];
+    let reader = new FileReader();
+    reader.onload = function (event) {
+      demoImage.src = reader.result;
+    }
+    reader.readAsDataURL(picture);
+    console.log(reader);
+
+    // console.log("reader", reader.readAsBinaryString(picture));
+
+
+    
     const sexinput1 = $('#inlineRadio1').is(':checked');
     const sexinput2 = $('#inlineRadio2').is(':checked');
     let sex = '';

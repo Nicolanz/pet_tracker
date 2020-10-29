@@ -5,6 +5,8 @@
     flex-flow: column wrap;
     width: 100%;
     height: auto;
+    background: white;
+    border-bottom: 1px solid #DADDE2;
     /* border-bottom: 1px solid #00000029; */
 }
 
@@ -19,4 +21,11 @@
 }
 .info{
     background-color: white;
+}
+.text-title {
+    position: absolute;
+    bottom: 200px;
+    left: 35px;
+    font-size: 53px;
+    font-family: 'League Spartan Bold', arial;
 }
