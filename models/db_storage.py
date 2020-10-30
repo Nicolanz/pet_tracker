@@ -7,12 +7,14 @@ from models.base_model import BaseModel, Base
 from models.collar import Collar
 from models.pet import Pet
 from models.user import User
+from models.picture import Picture
 from os import getenv
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-classes = {"User": User, "Pet": Pet, "Collar": Collar}
+classes = {"User": User, "Pet": Pet,
+           "Collar": Collar, "Picture": Picture}
 
 
 class DBStorage:

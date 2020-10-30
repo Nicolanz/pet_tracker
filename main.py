@@ -7,6 +7,7 @@ from models.user import User
 from models.collar import Collar
 from models.pet import Pet
 from datetime import date
+from models.picture import Picture
 
 """
  Objects creations
@@ -26,6 +27,11 @@ pet_2.save()
 
 collar_1 = Collar(user_id=user_1.id, pet_id=pet_1.id, numero_ref="1")
 collar_1.save()
+
+picture = Picture(pet_id=pet_1.id, name="firstpicture.jpg")
+picture.save()
+
+
 """
  Verification
 """

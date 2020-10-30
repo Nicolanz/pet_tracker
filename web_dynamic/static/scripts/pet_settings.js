@@ -19,7 +19,6 @@ $(document).ready(function () {
     $('#hair').val(pet_dict.hair);
     $('#description').val(pet_dict.description);
   });
-
   $('#boton-guardar').click(function () {
     const name = document.getElementById('name').value;
     if (name === '') {
@@ -51,19 +50,20 @@ $(document).ready(function () {
     const hair = document.getElementById('hair').value;
     const description = document.getElementById('description').value;
     
-    /*  upload a picture */
-    const picture = document.getElementById('pet-pic').files[0];
-    let reader = new FileReader();
-    reader.onload = function (event) {
-      demoImage.src = reader.result;
-    }
-    reader.readAsDataURL(picture);
-    console.log(reader);
-
-    // console.log("reader", reader.readAsBinaryString(picture));
-
-
     
+    const photo = document.getElementById('pet-pic').files[0];
+    const reader = new FileReader();
+    reader.onload = function () {
+      $.ajax('http://localhost:5000/api/v1/pictures/' + pet_id, {
+        cache: false,
+        contentType: false,
+        processData: false,
+        type: 'PUT',
+        data: reader.result
+      });
+    }
+    reader.readAsDataURL(photo)
+
     const sexinput1 = $('#inlineRadio1').is(':checked');
     const sexinput2 = $('#inlineRadio2').is(':checked');
     let sex = '';

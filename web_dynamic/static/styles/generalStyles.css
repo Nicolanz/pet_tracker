@@ -1,11 +1,14 @@
 .btn-default{
     background-color: #1E7272;
+    background: linear-gradient(59deg, #1E7272, #53895B);
     color: white;
+    box-shadow: 1px 1px 16px #86867f;
 }
 .btn-default:hover{
     transition: 0.2s ease-in;
     color: white;
     background-color: #279191;
+    
 }
 
 .header {
@@ -44,7 +47,7 @@
   font-size: 0.7rem;
   font-weight: 600;
   border-radius: 4px;
-  background: #009688;
+  background: linear-gradient(59deg, #1E7272, #53895B);
   color: white;
   padding: 4px 16px;
   margin-left: 20px;
@@ -68,7 +71,7 @@ footer {
   background: linear-gradient(59deg, #1E7272, #53895B); 
   color: white;
   height:auto;
-  margin-top:100px;
+  /* margin-top:100px; */
 }
 footer a {
   color: #fff;

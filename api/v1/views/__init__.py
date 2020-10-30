@@ -8,3 +8,4 @@ from api.v1.views.index import *
 from api.v1.views.pets import *
 from api.v1.views.collars import *
 from api.v1.views.users import *
+from api.v1.views.pictures import *
