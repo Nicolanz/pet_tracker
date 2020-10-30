@@ -15,8 +15,9 @@
     <link href="https://allfont.net/allfont.css?fonts=league-spartan" rel="stylesheet" type="text/css" />
     <link
       rel="stylesheet"
-      href="../static/styles/generalStyles.css?{{ cache_id }}"
-    />
+      href="../static/styles/generalStyles.css"
+      />
+      <!-- href="../static/styles/generalStyles.css?{{ cache_id }}" -->
     <link
       rel="stylesheet"
       href="../static/styles/stylesHome.css?{{ cache_id }}"
@@ -37,7 +38,7 @@
       <div class="header">
         <!-- Nav menu  -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">PET TRACKER</a>
+          <h3 class="text-light" href="#">Pet Tracker</h3>
           <button
             class="navbar-toggler"
             type="button"
@@ -50,29 +51,29 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-5 mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#description"
+                <a class="nav-link text-light" href="#description"
                   >Descripcion <span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#collarInfo">Collar Informacion</a>
+                <a class="nav-link text-light" href="#collarInfo">Collar Informacion</a>
               </li>
             </ul>
             <a id="qsLoginBtn" href="/login">
-              <button class="btn btn-default btn-login">Log In</button>
+              <button class="btn btn-light firstBtn btn-login">Log In</button>
             </a>
           </div>
         </nav>
         <!-- content of the header  -->
         <div class="headerContent">
-          <div class="text-title">PET TRACKER</div>
+          <!-- <div class="text-title">PET TRACKER</div>
           <div class="text-description">
             Una aplicacion web para localizar 
             <br>las mascotas en tiempo real 
             <br>utilizando un collar con GPS
-          </div>
+          </div> -->
           <img src="../static/images/perro4.jpg" class="img-fluid" id="parkImage" alt=""/>
         </div>
       </div>
@@ -184,10 +185,10 @@
                 <div class="footer-pad">
                   <h4>Miembros del equipo</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Juan Olivares</a></li>
-                    <li><a href="#">Bryan Builes</a></li>
-                    <li><a href="#">Erika Osorio</a></li>
-                    <li><a href="#">Nicolas Zarate</a></li>
+                    <li><a target="_blank" href="https://github.com/JuanOlivares1">Juan Olivares</a></li>
+                    <li><a target="_blank" href="https://github.com/bryanbuiles">Bryan Builes</a></li>
+                    <li><a target="_blank" href="https://github.com/erikaosgue">Erika Osorio</a></li>
+                    <li><a target="_blank" href="https://github.com/Nicolanz">Nicolas Zarate</a></li>
                   </ul>
                 </div>
               </div>
