@@ -50,7 +50,6 @@ $(document).ready(function () {
     const hair = document.getElementById('hair').value;
     const description = document.getElementById('description').value;
     
-    
     const photo = document.getElementById('pet-pic').files[0];
     const reader = new FileReader();
     reader.onload = function () {
@@ -62,7 +61,9 @@ $(document).ready(function () {
         data: reader.result
       });
     }
-    reader.readAsDataURL(photo)
+    if (photo) {
+      reader.readAsDataURL(photo)
+    }
 
     const sexinput1 = $('#inlineRadio1').is(':checked');
     const sexinput2 = $('#inlineRadio2').is(':checked');

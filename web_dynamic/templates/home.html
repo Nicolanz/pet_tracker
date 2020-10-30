@@ -15,8 +15,8 @@
     <link href="https://allfont.net/allfont.css?fonts=league-spartan" rel="stylesheet" type="text/css" />
     <link
       rel="stylesheet"
-      href="../static/styles/generalStyles.css"
-      />
+      href="../static/styles/generalStyles.css?{{ cache_id }}"
+    />
       <!-- href="../static/styles/generalStyles.css?{{ cache_id }}" -->
     <link
       rel="stylesheet"
@@ -74,7 +74,7 @@
             <br>las mascotas en tiempo real 
             <br>utilizando un collar con GPS
           </div> -->
-          <img src="../static/images/perro4.jpg" class="img-fluid" id="parkImage" alt=""/>
+          <img src="../static/images/perro_background2.jpg" class="img-fluid" id="parkImage" alt=""/>
         </div>
       </div>
       <!-- Section of the website -->
@@ -83,7 +83,7 @@
           id="description"
           class="d-flex flex-row flex-wrap justify-content-center"
         >
-          <h1 class="col-12 d-flex justify-content-center">Description</h1>
+          <h1 class="col-12 d-flex justify-content-center">Descripción</h1>
           <p class="col-lg-6 col-12 font-weight-light">
             Pet Tracker le ofrece una solución cómoda para saber la ubicación
             actual de tus mascotas. Pet Tracker es una aplicación web para
@@ -176,7 +176,7 @@
           </div>
         </div>
       </section>
-      <footer class="mainfooter" role="contentinfo">
+      <footer class="mainfooter mt-5" role="contentinfo">
         <div class="footer-middle">
           <div class="container">
             <div class="row">
@@ -195,33 +195,33 @@
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Info</h4>
+                  <h4>Información</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Descripcion</a></li>
-                    <li><a href="#">Collares</a></li>
+                    <li><a href="#description">Descripcion</a></li>
+                    <li><a href="#collarInfo">Collares</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
                 <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Run it</h4>
+                  <h4>Iniciar</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Log In</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="/login">Log In</a></li>
+                    <li><a href="/login">Sign Up</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-3">
-                <h4>Follow Us</h4>
+                <h4>Siguenos</h4>
                 <ul class="social-network social-circle">
                   <li>
-                    <a href="#" class="icoFacebook" title="Facebook"
+                    <a href="https://www.facebook.com/HolbertonSchoolColombia" target="_blank" class="icoFacebook" title="Facebook"
                       ><i class="fa fa-facebook"></i
                     ></a>
                   </li>
                   <li>
-                    <a href="#" class="icoLinkedin" title="Linkedin"
+                    <a href="https://www.linkedin.com/company/holberton-school-colombia/" target="_blank" class="icoLinkedin" title="Linkedin"
                       ><i class="fa fa-linkedin"></i
                     ></a>
                   </li>
