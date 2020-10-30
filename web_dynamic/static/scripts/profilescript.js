@@ -13,17 +13,16 @@ $(document).ready(function () {
     type: 'GET',
   }).done(function (data) {
     for (const pets of data) {
-       $.ajax('http://localhost:5000/api/v1/pictures/' + pets.id, {
-      type: 'GET',
-      },
-      ).done(result => {
-        if (result.status === "Not found") {
-          result = "../static/images/dog1.png"
+      $.ajax('http://localhost:5000/api/v1/pictures/' + pets.id, {
+        type: 'GET',
+      }).done((result) => {
+        if (result.status === 'Not found') {
+          result = '../static/images/dog1.png';
         }
         let new_date = new Date(pets.birthday);
         let birthday = new_date.toISOString().split('T')[0];
         $('.pet').prepend(
-        `<div class="pet_target col-9 d-flex align-items-center justify-content-around flex-row flex-wrap bg-light rounded border">
+          `<div class="pet_target col-9 d-flex align-items-center justify-content-around flex-row flex-wrap bg-light rounded border">
             <div class="foto col-xl-3 col-lg-4 col-md-6 col-sm-8 col-9 h-75 mt-4 mt-lg-0">
               <img src="${result}" class="img-fluid w-100 h-100 img-thumbnail rounded" alt="...">
               <div class="d-flex flex-row justify-content-center border d-lg-block my-4 my-md-0">
@@ -142,7 +141,8 @@ $(document).ready(function () {
 
         function requestApi(user_id, pet_id, collar_id) {
           // Request to API of company to get the id of the collar
-          const url = 'https://jsonplaceholder.typicode.com/todos?id=' + collar_id;
+          const url =
+            'https://jsonplaceholder.typicode.com/todos?id=' + collar_id;
           $.ajax({
             type: 'GET',
             url: url,
@@ -205,8 +205,8 @@ $(document).ready(function () {
             },
           });
         }
-      })
-    };
+      });
+    }
   });
 });
 // Function to remove pets onclick
