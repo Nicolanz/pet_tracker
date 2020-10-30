@@ -7,14 +7,24 @@
     color: white;
     background-color: #279191;
 }
+
+/* NAV */
+nav{
+  height: 80px;
+  background: linear-gradient(59deg, #00171F, #007EA7 );
+  border-bottom: 2px solid white;
+}
+.firstBtn{
+  width: 180px;
+}
+
+
 /*FOOTER*/
 footer {
-  background: #53895B;
-  background: -webkit-linear-gradient(59deg, #1E7272, #53895B);
-  background: linear-gradient(59deg, #1E7272, #53895B); 
+  /* border:2px solid black; */
+  background: linear-gradient(59deg, #003459, rgb(0, 0, 0) ); 
   color: white;
   height:auto;
-  margin-top:100px;
 }
 footer a {
   color: #fff;
