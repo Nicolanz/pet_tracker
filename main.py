@@ -14,7 +14,7 @@ from datetime import date
 # creating User must have nickname and email
 
 user_1 = User(nickname="bryan",
-              email="1482@holbertonschool.com", auth_id="a0t14527")
+              email="1482@holbertonschool.com", auth_id="a0t14527", password="1234")
 user_1.save()
 
 pet_1 = Pet(user_id=user_1.id, name="Napa",

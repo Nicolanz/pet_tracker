@@ -102,11 +102,12 @@ def callback_handling():
             user_exist = True
             user_id = user.id
             user_name = user.nickname
+            password = user.password
             break
     # Creating a new User
     if user_exist is False:
         new_user = User(email=userinfo['email'],
-                        nickname=userinfo['nickname'], auth_id=userinfo['sub'])
+                        nickname=userinfo['nickname'], auth_id=userinfo['sub'], password="1234")
         new_user.save()
         user_id = new_user.id
         user_name = user.nickname
@@ -125,7 +126,6 @@ def logout():
     params = {'returnTo': url_for(
         'home', _external=True), 'client_id': AUTH0_CLIENT_ID}
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
-
 
 @app.route('/MyProfile')
 @requires_auth
