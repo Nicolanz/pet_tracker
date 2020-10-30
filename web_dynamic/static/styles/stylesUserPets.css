@@ -1,0 +1,135 @@
+/* Dogs prfoile */
+body > div{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    max-height: auto;
+}
+
+.navbar-brand {
+    color: #313335;
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+.contentProfile{
+    /* border: 1px solid black; */
+    /* margin-top: 30px; /*Our changes */
+    /* padding-bottom: 65px; Our changes */
+    
+
+    background-image: url('../images/footprints2.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: auto;
+    max-height: auto;
+}
+.pet_target{
+    margin-top: 30px;
+    /* border: 1px solid grey; */
+    min-height: 350px;
+    max-height: 2000px;
+}
+.datos > h4{
+    font-size: 30px;
+}
+#qsLoginBtn{
+    background-color:#003459;
+}
+#qsLoginBtn:hover{
+    background-color:#007EA7;
+    transition: ease-in 0.5seg;
+}
+
+.iconos{
+    /* border:1px solid grey; */
+    height: 50px;
+}
+.pet_target a{
+    width:20%;
+    height: 50px;
+    /* border:1px solid black; */
+    color: black;
+}
+.pet_target a:hover{
+    color: grey;
+    transition: ease-in 0.2s;
+}
+
+.img-circle{
+    border-radius: 10px ;
+    /* border:2px solid black; */
+}
+/* Add Collar Styles */
+
+
+.add-delete{
+    max-height: 30px;
+    display:flex;
+    align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+    #img1{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+        
+    }
+    #img2{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+    }
+    #img5{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+    }
+}
+@media (max-width: 768px) {
+    #img3{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+        
+    }
+    #img4{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+    }
+    #img6{
+        width: 0px;
+        height:0px;
+        margin:0;
+        padding: 0;
+    }
+}
+#add_pet {
+    margin-top:50px;
+    width: 50%;
+}
+
+element.style {
+    background: white;
+    box-shadow: 0 2px 4px 1px #e6e6e677;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 6px 0;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #cf2232;
+    
+}
+.btn-success {
+    color: #fff;
+    background-color: #19a3b8;
+}

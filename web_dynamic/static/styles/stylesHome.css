@@ -1,0 +1,101 @@
+.header{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    min-height: auto;
+}
+.properties{
+    width: 100%;
+    height: auto;
+    margin-top: 300px;
+}
+#parkImage{
+    object-fit: cover;
+    width: 100%;
+    z-index: -1;
+}
+.text-title {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+.divDog{
+    height: auto;
+}
+#dog{
+    width:100%;
+    height: 280px;
+}
+/* SECTION STYLES */
+section{
+    height: auto;
+    margin-top:100px;
+    /* margin-bottom: 60px; Our changes */
+}
+h1{
+    font-size: 5vw;
+}
+#description p{
+    text-align:justify;
+}
+#collarInfo{
+    height: auto;
+    margin-top:100px;
+}
+.squares{
+    height:900px;
+}
+.square{
+    height:auto;
+}
+.squareImages{
+    width: 100%;
+    height: 240px;
+}
+.sizeImgs{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.contentSquare{
+    border: 1px solid grey;
+    border-radius: 0px 0px 40px 40px ;
+}
+.square p{
+    text-align: justify;
+    font-size: 13px;
+}
+/* MEDIA QUERIES */
+@media (max-width: 980px) {
+.sizeImgs{
+    height: 0%;
+    width: 0%;
+    padding:0;
+    margin:0;
+}
+.squareImages{
+    width: 0%;
+    height: 0px;
+    padding:0;
+    margin:0;
+}
+.squares{
+    height:0px;
+    padding:0;
+    margin:0;
+}
+}
+.text-title {
+    position: absolute;
+    bottom: 200px;
+    left: 35px;
+    font-size: 53px;
+    font-family: 'League Spartan Bold', arial;
+}
+.text-description {
+    position: absolute;
+    bottom: 80px;
+    left: 35px;
+    font-size: 30px;    
+    font-family: 'League Spartan', arial;
+}

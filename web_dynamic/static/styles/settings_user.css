@@ -1,0 +1,37 @@
+/* Changing size of the Form settings */
+.box {
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  border: 1px solid cornsilk;
+  background-color: white;
+  padding: 30px;
+  margin-top: 60px;
+  box-shadow: 1px 1px 16px #989891;
+}
+
+.box form {
+  width: 100%;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url('../images/perro_background3_filter.jpg') ;
+  background-size: cover;
+  padding-bottom: 65px;
+      /* box-shadow: 1px 1px 1px green; */
+}
+.title-form {
+  justify-content: center!important;
+  padding-top: 25px;
+}
+.title-form h5 {
+    color: #464444;
+    font-size: 2.3rem;
+    text-align: left;
+    margin-bottom: 55px;
+    margin-top: -20px;
+}

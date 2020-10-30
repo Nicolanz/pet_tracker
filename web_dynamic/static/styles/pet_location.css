@@ -1,0 +1,61 @@
+body > div{
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  max-height: auto;
+}
+.contenedor{
+  margin-top: 40px;
+}
+.border1 {
+  border: 4px solid white;
+}
+.map_box{
+  margin-top: 40px;
+}
+/* Boootstrap List Box */
+.single {
+  padding: 30px 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: #fcfcfc;
+  border: 1px solid #f0f0f0;
+  box-shadow: 1px 1px 16px #86867f;
+}
+.single h3.side-title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+.single h3.side-title:after {
+  width: 60px;
+  height: 1px;
+  content: '';
+  background: #1E7272;
+  display: block;
+  margin-top: 6px;
+}
+.single ul {
+  margin-bottom: 0; 
+}
+.single li  {
+  color: #666;
+  font-size: 14px;
+  border-bottom: 3px solid #f0f0f0;
+  line-height: 40px;
+  display: block;
+  text-decoration: none;
+  padding: 7px;
+}
+#map_loc {
+  height: 450px;
+}
+.justify-content-between {
+  background-image: url('../images/mapa_background5.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

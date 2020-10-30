@@ -1,0 +1,6 @@
+*__py*
+.DS_Store
+.vscode/
+web_dynamic/.DS_Store
+.gitignore
+*__pycache__*
