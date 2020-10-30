@@ -14,17 +14,34 @@ body > div{
 
 .contentProfile{
     /* border: 1px solid black; */
-    margin-top: 30px;
+    /* margin-top: 30px; /*Our changes */
+    /* padding-bottom: 65px; Our changes */
+    
+
+    background-image: url('../images/footprints2.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: auto;
+    max-height: auto;
 }
 .pet_target{
     margin-top: 30px;
-    /* border: 1px solid black; */
+    /* border: 1px solid grey; */
     min-height: 350px;
     max-height: 2000px;
 }
 .datos > h4{
     font-size: 30px;
 }
+#qsLoginBtn{
+    background-color:#003459;
+}
+#qsLoginBtn:hover{
+    background-color:#007EA7;
+    transition: ease-in 0.5seg;
+}
+
 .iconos{
     /* border:1px solid grey; */
     height: 50px;
@@ -41,13 +58,20 @@ body > div{
 }
 
 .img-circle{
-    border-radius: 60px ;
+    border-radius: 10px ;
     /* border:2px solid black; */
 }
 /* Add Collar Styles */
 
+
+.add-delete{
+    max-height: 30px;
+    display:flex;
+    align-items: center;
+}
+
 /* MEDIA QUERIES */
-@media (min-width: 750px) {
+@media (min-width: 768px) {
     #img1{
         width: 0px;
         height:0px;
@@ -68,7 +92,7 @@ body > div{
         padding: 0;
     }
 }
-@media (max-width: 750px) {
+@media (max-width: 768px) {
     #img3{
         width: 0px;
         height:0px;
@@ -90,7 +114,8 @@ body > div{
     }
 }
 #add_pet {
-  width: 50%;
+    margin-top:50px;
+    width: 50%;
 }
 
 element.style {
@@ -98,4 +123,13 @@ element.style {
     box-shadow: 0 2px 4px 1px #e6e6e677;
     border-bottom: 1px solid #EAEAEA;
     padding: 6px 0;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #cf2232;
+    
+}
+.btn-success {
+    color: #fff;
+    background-color: #19a3b8;
 }

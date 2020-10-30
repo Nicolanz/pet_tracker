@@ -2,6 +2,7 @@
 """ objects that handle all default RestFul API actions for User """
 from models.user import User
 from models.pet import Pet
+from models.picture import Picture
 from models import storage
 from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
@@ -126,9 +127,11 @@ def post_pet(user_id):
     data = request.get_json()
 
     data["user_id"] = user_id
-    instance = Pet(**data)
-    instance.save()
-    return make_response(jsonify(instance.to_dict()), 201)
+    pet = Pet(**data)
+    pet.save()
+    picture = Picture(pet_id=pet.id)
+    picture.save()
+    return make_response(jsonify(pet.to_dict()), 201)
 
 
 @app_views.route('/users/<user_id>/collars', methods=['GET'],

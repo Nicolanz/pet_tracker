@@ -82,6 +82,7 @@ def home():
 
 @app.route('/callback')
 def callback_handling():
+
     auth0.authorize_access_token()
     resp = auth0.get('userinfo')
     userinfo = resp.json()
@@ -110,7 +111,7 @@ def callback_handling():
                         nickname=userinfo['nickname'], auth_id=userinfo['sub'], password="1234")
         new_user.save()
         user_id = new_user.id
-        user_name = user.nickname
+        user_name = new_user.nickname
     # Id temporal
     return redirect('/MyProfile')
 
@@ -198,4 +199,5 @@ def add_pet():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=env.get('PORT', 5001), threaded=True)
+    app.run(host='0.0.0.0', port=env.get('PORT', 5001),
+            threaded=True, debug=app.debug)

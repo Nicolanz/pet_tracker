@@ -1,74 +1,33 @@
 .btn-default{
     background-color: #1E7272;
+    background: linear-gradient(59deg, #007EA7, #2a5e70 );
     color: white;
+    box-shadow: 1px 1px 16px #86867f;
 }
 .btn-default:hover{
     transition: 0.2s ease-in;
     color: white;
     background-color: #279191;
+    
 }
 
-.header {
-  background: white;
-  border-bottom: 1px solid #E1E3E5;
-  box-shadow: 0 2px 5px 0px #E1E3E588;
-  /* font-family: Open Sans; */
-  font-family: 'League Spartan', arial;
-  font-weight: 400;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
+/* NAV */
+nav{
+  height: 80px;
+  background: linear-gradient(59deg, #03303f, #007EA7 );
+  border-bottom: 2px solid white;
 }
-
-.header svg {
-  fill: #515459;
-  width: 1.6rem;
-  height: 1.6rem;
-}
-
-.header nav {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  padding: 0;
-}
-
-.header .navbar-collapse {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.header button {
-  border: none;
-  box-shadow: none;
-  font-size: 0.7rem;
-  font-weight: 600;
-  border-radius: 4px;
-  background: #009688;
-  color: white;
-  padding: 4px 16px;
-  margin-left: 20px;
-}
-
-
-.header button svg {
-  width: 1.4rem;
-  height: 1.4rem;
-  fill: #B1B3B5AA;
-}
-
-.header li {
-  font-size: 0.9rem;
+.firstBtn{
+  width: 180px;
 }
 
 /*FOOTER*/
 footer {
-  background: #53895B;
-  background: -webkit-linear-gradient(59deg, #1E7272, #53895B);
-  background: linear-gradient(59deg, #1E7272, #53895B); 
+  /* border:2px solid black; */
+  /* background: linear-gradient(59deg, #003459, rgb(0, 0, 0) ); */
+  background: linear-gradient(59deg,  #007EA7, #00171F ); 
   color: white;
   height:auto;
-  margin-top:100px;
 }
 footer a {
   color: #fff;

@@ -3,7 +3,7 @@
 from models.base_model import BaseModel, Base
 from os import getenv
 import sqlalchemy
-from sqlalchemy import Column, String, ForeignKey, Date
+from sqlalchemy import Column, String, ForeignKey, Date, LargeBinary
 from datetime import datetime
 from sqlalchemy.orm import relationship
 
@@ -22,6 +22,9 @@ class Pet(BaseModel, Base):
     collars = relationship("Collar",
                            backref="pet",
                            cascade="all, delete, delete-orphan")
+    pictures = relationship("Picture",
+                            backref="pet",
+                            cascade="all, delete, delete-orphan")
 
 
 def __init__(self, *args, **kwargs):
