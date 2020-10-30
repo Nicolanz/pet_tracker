@@ -23,8 +23,6 @@ import uuid
 import constants
 
 
-user_id = None
-user_name = None
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -91,28 +89,9 @@ def callback_handling():
     session[constants.PROFILE_KEY] = {
         'user_id': userinfo['sub'],
         'name': userinfo['name'],
-        'picture': userinfo['picture']
+        'picture': userinfo['picture'],
+        'email': userinfo['email']
     }
-    global user_id
-    global user_name
-    users = storage.all(User)
-    user_exist = False
-    # User already exist
-    for user in users.values():
-        if user.auth_id == userinfo['sub']:
-            user_exist = True
-            user_id = user.id
-            user_name = user.nickname
-            password = user.password
-            break
-    # Creating a new User
-    if user_exist is False:
-        new_user = User(email=userinfo['email'],
-                        nickname=userinfo['nickname'], auth_id=userinfo['sub'], password="1234")
-        new_user.save()
-        user_id = new_user.id
-        user_name = new_user.nickname
-    # Id temporal
     return redirect('/MyProfile')
 
 
@@ -128,11 +107,12 @@ def logout():
         'home', _external=True), 'client_id': AUTH0_CLIENT_ID}
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 
+
 @app.route('/MyProfile')
 @requires_auth
 def dashboard():
-    global user_id
-    global user_name
+    user_id, user_name, user_exist = usuarioinfo()
+
     if (user_id is None):
         return redirect('/logout')
 
@@ -143,9 +123,7 @@ def dashboard():
 @app.route('/settings_user')
 @requires_auth
 def settings_user():
-    global user_id
-    global user_name
-
+    user_id, user_name, user_exist = usuarioinfo()
     cache_id = str(uuid.uuid4())
     return render_template('settings_user.html', cache_id=cache_id, user_id=user_id, user_name=user_name)
 
@@ -153,8 +131,7 @@ def settings_user():
 @app.route('/pet_location')
 @requires_auth
 def pet_location():
-    global user_id
-    global user_name
+    user_id, user_name, user_exist = usuarioinfo()
 
     collar_id = ""
     cache_id = str(uuid.uuid4())
@@ -172,8 +149,7 @@ def pet_location():
 @app.route('/pet_settings')
 @requires_auth
 def pet_settings():
-    global user_id
-    global user_name
+    user_id, user_name, user_exist = usuarioinfo()
 
     cache_id = str(uuid.uuid4())
 
@@ -187,8 +163,7 @@ def pet_settings():
 @app.route('/add_pet')
 @requires_auth
 def add_pet():
-    global user_id
-    global user_name
+    user_id, user_name, user_exist = usuarioinfo()
 
     cache_id = str(uuid.uuid4())
 
@@ -196,6 +171,29 @@ def add_pet():
     if (user_id != userId):
         return redirect('/MyProfile')
     return render_template('add_pet.html', cache_id=cache_id, user_id=user_id, user_name=user_name)
+
+
+def usuarioinfo():
+    """ funcion que envia la informacion del usuari """
+    userinfo = session[constants.PROFILE_KEY]
+    users = storage.all(User)
+    user_exist = False
+    for user in users.values():
+        if user.auth_id == userinfo['user_id']:
+            user_id = user.id
+            user_name = user.nickname
+            password = user.password
+            user_exist = True
+            break
+
+    if user_exist is False:
+        new_user = User(email=userinfo['email'],
+                        nickname=userinfo['name'], auth_id=userinfo['user_id'], password="1234")
+        new_user.save()
+        user_id = new_user.id
+        user_name = new_user.nickname
+
+    return(user_id, user_name, user_exist)
 
 
 if __name__ == "__main__":
