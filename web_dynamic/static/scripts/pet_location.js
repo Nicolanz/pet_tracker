@@ -38,7 +38,7 @@ $(document).ready(() => {
 
   function requestApi(collar_id) {
     console.log('Collar id:', collar_id);
-    collar_id = 1; // Just for testing
+    // collar_id = 1; // Just for testing
     /* Request to API of company to get the id coordenates of the collar */
     const url = 'https://jsonplaceholder.typicode.com/todos?id=' + collar_id;
     $.ajax({
@@ -56,9 +56,9 @@ $(document).ready(() => {
   function getCoordenates(data) {
     /* hay que obtener longitud y latitude de la mascota con ese id */
     if (data === '[]') {
-      alert(' Id no existe en la the API! ');
+      // alert(' Id no existe en la the API! ');
     } else {
-      alert(' Id exist in the API! ');
+      // alert(' Id exist in the API! ');
       /* get coordenates from data of the API
       Here is represented with the coordates variable*/
       $.ajax({

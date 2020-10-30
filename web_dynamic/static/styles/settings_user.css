@@ -24,9 +24,6 @@
   padding-bottom: 65px;
       /* box-shadow: 1px 1px 1px green; */
 }
-.container-fluid:not(.boton-guardar) {
-  filter: grayscale(40%);
-}
 .title-form {
   justify-content: center!important;
   padding-top: 25px;

@@ -29,7 +29,7 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
       rel="stylesheet"
     />
-    <title>Pets Tracker</title>
+    <title>Pet Tracker | Pet Settings</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script
       type="text/javascript"
@@ -66,20 +66,9 @@
       <div class="header">
         <!-- Nav menu  -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <svg
-            width="2em"
-            height="2em"
-            viewBox="0 0 16 16"
-            class="bi bi-person"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
-            />
-          </svg>
-          <a class="navbar-brand" href="/MyProfile">{{user_name}}</a>
+        
+          <img src="../static/images/man.png" width="50px" height="50px" alt="">
+          <h3 class="text-light" href="#">{{user_name}}</h3>
           <button
             class="navbar-toggler"
             type="button"
@@ -92,18 +81,18 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/MyProfile">Mis mascotas</a>
-              </li>
+            <ul class="navbar-nav ml-5 mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/settings_user"
-                  >Opciones<span class="sr-only">(current)</span></a
+                <a class="nav-link text-light " href="/MyProfile"
+                  >Mis mascotas<span class="sr-only">(current)</span></a
                 >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/settings_user">Opciones</a>
               </li>
             </ul>
             <a id="qsLogoutBtn" href="/logout">
-              <button class="btn btn-default btn-logout">Logout</button>
+              <button class="btn btn-light btn-logout firstBtn">Logout</button>
             </a>
           </div>
         </nav>
@@ -204,10 +193,10 @@
                 <div class="footer-pad">
                   <h4>Miembros del equipo</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Juan Olivares</a></li>
-                    <li><a href="#">Bryan Builes</a></li>
-                    <li><a href="#">Erika Osorio</a></li>
-                    <li><a href="#">Nicolas Zarate</a></li>
+                    <li><a target="_blank" href="https://github.com/JuanOlivares1">Juan Olivares</a></li>
+                    <li><a target="_blank" href="https://github.com/bryanbuiles">Bryan Builes</a></li>
+                    <li><a target="_blank" href="https://github.com/erikaosgue">Erika Osorio</a></li>
+                    <li><a target="_blank" href="https://github.com/Nicolanz">Nicolas Zarate</a></li>
                   </ul>
                 </div>
               </div>
