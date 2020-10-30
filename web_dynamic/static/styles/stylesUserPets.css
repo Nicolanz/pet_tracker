@@ -14,7 +14,11 @@ body > div{
 
 .contentProfile{
     /* border: 1px solid black; */
-    background-image: url('../images/footprints.png');
+    /* margin-top: 30px; /*Our changes */
+    /* padding-bottom: 65px; Our changes */
+    
+
+    background-image: url('../images/footprints2.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -119,4 +123,13 @@ element.style {
     box-shadow: 0 2px 4px 1px #e6e6e677;
     border-bottom: 1px solid #EAEAEA;
     padding: 6px 0;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #cf2232;
+    
+}
+.btn-success {
+    color: #fff;
+    background-color: #19a3b8;
 }

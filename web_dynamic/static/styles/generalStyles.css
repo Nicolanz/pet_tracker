@@ -1,28 +1,31 @@
 .btn-default{
     background-color: #1E7272;
+    background: linear-gradient(59deg, #007EA7, #2a5e70 );
     color: white;
+    box-shadow: 1px 1px 16px #86867f;
 }
 .btn-default:hover{
     transition: 0.2s ease-in;
     color: white;
     background-color: #279191;
+    
 }
 
 /* NAV */
 nav{
   height: 80px;
-  background: linear-gradient(59deg, #00171F, #007EA7 );
+  background: linear-gradient(59deg, #03303f, #007EA7 );
   border-bottom: 2px solid white;
 }
 .firstBtn{
   width: 180px;
 }
 
-
 /*FOOTER*/
 footer {
   /* border:2px solid black; */
-  background: linear-gradient(59deg, #003459, rgb(0, 0, 0) ); 
+  /* background: linear-gradient(59deg, #003459, rgb(0, 0, 0) ); */
+  background: linear-gradient(59deg,  #007EA7, #00171F ); 
   color: white;
   height:auto;
 }

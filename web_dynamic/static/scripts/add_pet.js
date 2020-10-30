@@ -63,6 +63,9 @@ $(document).ready(function () {
       });
       // Display a success notification
       notyf.success('Su mascota ha sido agregada!');
+
+      
     }
+
   });
 });

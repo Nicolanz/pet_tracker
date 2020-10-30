@@ -97,16 +97,15 @@
           </div>
         </nav>
       </div>
-
       <!-- Adding boostrap  -->
       <div class="container-fluid align-items-center justify-content-between">
-        <div class="container">
-          <div class="row justify-content-center">
-            <h5>EDITAR DATOS MASCOTA</h5>
-          </div>
-        </div>
         <div class="container col-4">
           <div class="box">
+            <div class="container-title">
+              <div class="row justify-content-center title-form">
+                <h5>Editar Datos Mascota</h5>
+              </div>
+            </div>
             <form>
               <div class="form-group">
                 <label for="name">Nombre</label>
@@ -144,9 +143,9 @@
                 <input type="text" class="form-control" id="description" />
               </div>
               <!-- upload picture of the pet -->
-              <div>
-                <input class="file-upload" type="file" accept="image/*" id="pet-pic" height="200" width="200"/>
-              </div>
+              <!-- <div> -->
+              <input class="file-upload" type="file" accept="image/*" id="pet-pic" height="200" width="200"/>
+              <!-- </div> -->
               <label for="inlineRadio1">Sexo</label>
               <br />
               <div class="form-group form-check-inline">
@@ -177,7 +176,7 @@
               <button
                 type="button"
                 id="boton-guardar"
-                class="btn btn-default ml-2"
+                class="btn btn-default ml-2 boton-guardar"
               >
                 Guardar
               </button>

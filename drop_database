@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Configuring the Database from cero """
+
+# echo "Deleting Database-----"
+# echo "DROP DATABASE pet_db" | sudo -i -u postgres psql
+# echo "Deleting Tables-----"
+echo "DROP TABLE collars" | sudo -i -u postgres  psql pet_db
+echo "DROP TABLE pictures" | sudo -i -u postgres  psql pet_db
+echo "DROP TABLE pets" | sudo -i -u postgres  psql pet_db
+echo "DROP TABLE users" | sudo -i -u postgres  psql pet_db
+
+# to set up the database from cero
+# echo "-----------Setting Up DATABASE pet_db -----"
+# cat setup_db_postgres.sql | sudo -i -u postgres  psql
+
+echo "-----------ALl DATABASES -----"
+echo '\l' | sudo -i -u postgres  psql
+echo '\dt' | sudo -i -u postgres  psql pet_db
+
+echo "----------ALL PETS -----"
+echo 'select * from pets' | sudo -i -u postgres  psql pet_db
+echo 'select * from pictures' | sudo -i -u postgres  psql pet_db
+
+# POSTGREP_USER=cobra_team POSTGREP_PWD=cobra POSTGREP_HOST=127.0.0.1 POSTGREP_DB=pet_db python3.6  ./main.py

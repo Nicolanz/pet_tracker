@@ -13,12 +13,19 @@ $(document).ready(function () {
     type: 'GET',
   }).done(function (data) {
     for (const pets of data) {
+       $.ajax('http://localhost:5000/api/v1/pictures/' + pets.id, {
+      type: 'GET',
+      },
+      ).done(result => {
+        if (result.status === "Not found") {
+          result = "../static/images/dog.png"
+        }
       let new_date = new Date(pets.birthday);
       let birthday = new_date.toISOString().split('T')[0];
       $('.pet').prepend(
         `<div class="pet_target col-9 d-flex align-items-center justify-content-around flex-row flex-wrap bg-light rounded border">
         <div class="foto col-xl-3 col-lg-4 col-md-6 col-sm-8 col-9 h-75 mt-4 mt-lg-0">
-          <img src="../static/images/dog1.png" class="img-fluid w-100 h-100 img-thumbnail rounded" alt="...">
+          <img src="${result}" class="img-fluid w-100 h-100 img-thumbnail rounded" alt="...">
           <div class="d-flex flex-row justify-content-center border d-lg-block my-4 my-md-0">
               <a href="/pet_location?pet-id=${pets.id}" class="d-flex align-items-center" id="img1">
                 <svg width="80%" height="60%" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +96,28 @@ $(document).ready(function () {
         </div>
       </div>`
       );
+      });
     }
+  //   // Add new picture to pet
+  // $.ajax('http://localhost:5000/api/v1/users/' + user_id + '/pets', {
+  //   type: 'GET',
+  //   }).done(function (data) {
+  //   for (const pets of data) 
+  //   $.ajax('http://localhost:5000/api/v1/pictures/' + pets.id, {
+  //     type: 'GET',
+  //     },
+  //     ).done(result => {
+  //       if (result.status === "Not found")
+  //         result = "../static/images/dog.png"
+  //      console.log("result", result)
+  //      console.log("pets_id", pets.id)
+  //     $(`#pic-${pets.id}`).attr("src", result)
+  //    });
+  //   });
+
+    
+
+
     $('.button-add-collar').click((buttonElement) => {
       const petId = buttonElement.currentTarget.dataset.petId;
       const userId = buttonElement.currentTarget.dataset.userId;

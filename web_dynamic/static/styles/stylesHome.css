@@ -4,8 +4,6 @@
     width: 100%;
     min-height: auto;
 }
-.headerContent{
-}
 .properties{
     width: 100%;
     height: auto;
@@ -32,6 +30,7 @@
 section{
     height: auto;
     margin-top:100px;
+    /* margin-bottom: 60px; Our changes */
 }
 h1{
     font-size: 5vw;
