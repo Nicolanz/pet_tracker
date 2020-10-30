@@ -35,7 +35,8 @@ footer a {
   transition-duration: 0.2s;
 }
 footer a:hover {
-  color: #FA944B;
+  color: #a5a5a5;
+  transition: 0.3s ease-in ;
   text-decoration: none;
 }
 .copy {
