@@ -13,17 +13,16 @@ $(document).ready(function () {
     type: 'GET',
   }).done(function (data) {
     for (const pets of data) {
-       $.ajax('http://localhost:5000/api/v1/pictures/' + pets.id, {
-      type: 'GET',
-      },
-      ).done(result => {
-        if (result.status === "Not found") {
-          result = "../static/images/dog.png"
+      $.ajax('http://localhost:5000/api/v1/pictures/' + pets.id, {
+        type: 'GET',
+      }).done((result) => {
+        if (result.status === 'Not found') {
+          result = '../static/images/dog.png';
         }
-      let new_date = new Date(pets.birthday);
-      let birthday = new_date.toISOString().split('T')[0];
-      $('.pet').prepend(
-        `<div class="pet_target col-9 d-flex align-items-center justify-content-around flex-row flex-wrap bg-light rounded border">
+        let new_date = new Date(pets.birthday);
+        let birthday = new_date.toISOString().split('T')[0];
+        $('.pet').prepend(
+          `<div class="pet_target col-9 d-flex align-items-center justify-content-around flex-row flex-wrap bg-light rounded border">
         <div class="foto col-xl-3 col-lg-4 col-md-6 col-sm-8 col-9 h-75 mt-4 mt-lg-0">
           <img src="${result}" class="img-fluid w-100 h-100 img-thumbnail rounded" alt="...">
           <div class="d-flex flex-row justify-content-center border d-lg-block my-4 my-md-0">
@@ -95,137 +94,134 @@ $(document).ready(function () {
           </div>
         </div>
       </div>`
-      );
-      });
-    }
-  //   // Add new picture to pet
-  // $.ajax('http://localhost:5000/api/v1/users/' + user_id + '/pets', {
-  //   type: 'GET',
-  //   }).done(function (data) {
-  //   for (const pets of data) 
-  //   $.ajax('http://localhost:5000/api/v1/pictures/' + pets.id, {
-  //     type: 'GET',
-  //     },
-  //     ).done(result => {
-  //       if (result.status === "Not found")
-  //         result = "../static/images/dog.png"
-  //      console.log("result", result)
-  //      console.log("pets_id", pets.id)
-  //     $(`#pic-${pets.id}`).attr("src", result)
-  //    });
-  //   });
+        );
+        $('.button-add-collar').click((buttonElement) => {
+          const petId = buttonElement.currentTarget.dataset.petId;
+          const userId = buttonElement.currentTarget.dataset.userId;
 
-    
+          // Get the value of collar
+          const inputElement = document.querySelector('.pet-id-' + petId);
+          const collarId = inputElement.value;
 
+          requestApi(userId, petId, collarId);
+        });
+        $('.button-delete-collar').click((buttonElement) => {
+          const petId1 = buttonElement.currentTarget.dataset.petId;
 
-    $('.button-add-collar').click((buttonElement) => {
-      const petId = buttonElement.currentTarget.dataset.petId;
-      const userId = buttonElement.currentTarget.dataset.userId;
+          /* Get the value of collar */
+          const inputElement = document.querySelector('.pet-id-' + petId1);
+          const collar_id = inputElement.value;
 
-      // Get the value of collar
-      const inputElement = document.querySelector('.pet-id-' + petId);
-      const collarId = inputElement.value;
-
-      requestApi(userId, petId, collarId);
-    });
-    $('.button-delete-collar').click((buttonElement) => {
-      const petId1 = buttonElement.currentTarget.dataset.petId;
-
-      /* Get the value of collar */
-      const inputElement = document.querySelector('.pet-id-' + petId1);
-      const collar_id = inputElement.value;
-
-      const result = confirm('Desea eliminar el collar');
-      if (result) {
-        axios({
-          method: 'get',
-          url: 'http://localhost:5000/api/v1/pets/' + petId1 + '/collars',
-          responseType: 'json',
-        })
-          .then(function (response) {
-            if (response.data.status === 'EXIST') {
-              axios({
-                method: 'delete',
-                url: 'http://localhost:5000/api/v1/collars/' + collar_id,
-                responseType: 'json',
-              }).then(function (response) {
-                notyf.success('el collar ha sido eliminado');
+          const result = confirm('Desea eliminar el collar');
+          if (result) {
+            axios({
+              method: 'get',
+              url: 'http://localhost:5000/api/v1/pets/' + petId1 + '/collars',
+              responseType: 'json',
+            })
+              .then(function (response) {
+                if (response.data.status === 'EXIST') {
+                  axios({
+                    method: 'delete',
+                    url: 'http://localhost:5000/api/v1/collars/' + collar_id,
+                    responseType: 'json',
+                  }).then(function (response) {
+                    notyf.success('el collar ha sido eliminado');
+                  });
+                } else {
+                  notyf.error('el id del collar no esta asignado al usuario');
+                }
+              })
+              .catch(function (error) {
+                notyf.error('Verifica si el id es correcto');
               });
-            } else {
-              notyf.error('el id del collar no esta asignado al usuario');
-            }
-          })
-          .catch(function (error) {
-            notyf.error('Verifica si el id es correcto');
-          });
-      }
-    });
-
-    function requestApi(user_id, pet_id, collar_id) {
-      // Request to API of company to get the id of the collar
-      const url = 'https://jsonplaceholder.typicode.com/todos?id=' + collar_id;
-      $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'text',
-        error: function (xhr, status, error) {
-          const err = JSON.parse(xhr.responseText);
-          alert(err.Message);
-        },
-        success: function (data) {
-          if (data === '[]') {
-            notyf.error(' Id does not exist in the API! ');
-          } else {
-            verifyCollar(user_id, pet_id, collar_id);
           }
-        },
-      });
-    }
+        });
 
-    function verifyCollar(user_id, pet_id, collar_id) {
-      $.ajax('http://localhost:5000/api/v1/pets/' + pet_id + '/collars', {
-        type: 'GET',
-      }).done((data) => {
-        if (data.status === 'NO EXIST') {
-          /* La mascota no debe tener asociado ningun collar ni el collar debe existir */
-          $.ajax('http://localhost:5000/api/v1/collars/' + collar_id, {
+        function requestApi(user_id, pet_id, collar_id) {
+          // Request to API of company to get the id of the collar
+          const url =
+            'https://jsonplaceholder.typicode.com/todos?id=' + collar_id;
+          $.ajax({
             type: 'GET',
+            url: url,
+            dataType: 'text',
+            error: function (xhr, status, error) {
+              const err = JSON.parse(xhr.responseText);
+              alert(err.Message);
+            },
             success: function (data) {
-              if (data.status === 'NO EXIST') {
-                CreateCollar(user_id, pet_id, collar_id);
+              if (data === '[]') {
+                notyf.error(' Id does not exist in the API! ');
               } else {
-                notyf.error(' Collar ya existe ! ');
+                verifyCollar(user_id, pet_id, collar_id);
               }
             },
           });
-        } else {
-          notyf.error(' Pet ya tiene collar asignado ! ');
+        }
+
+        function verifyCollar(user_id, pet_id, collar_id) {
+          $.ajax('http://localhost:5000/api/v1/pets/' + pet_id + '/collars', {
+            type: 'GET',
+          }).done((data) => {
+            if (data.status === 'NO EXIST') {
+              /* La mascota no debe tener asociado ningun collar ni el collar debe existir */
+              $.ajax('http://localhost:5000/api/v1/collars/' + collar_id, {
+                type: 'GET',
+                success: function (data) {
+                  if (data.status === 'NO EXIST') {
+                    CreateCollar(user_id, pet_id, collar_id);
+                  } else {
+                    notyf.error(' Collar ya existe ! ');
+                  }
+                },
+              });
+            } else {
+              notyf.error(' Pet ya tiene collar asignado ! ');
+            }
+          });
+        }
+
+        function CreateCollar(user_id, pet_id, collar_id) {
+          /* Create a new Collar */
+          $.ajax('http://localhost:5000/api/v1/collars', {
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({
+              user_id: user_id,
+              pet_id: pet_id,
+              numero_ref: collar_id,
+            }),
+            error: function (xhr, status, error) {
+              const err = JSON.parse(xhr.responseText);
+              alert(err.Message);
+              notyf.error(' Error creando collar ! ');
+            },
+            success: function () {
+              $('.pet-id-' + pet_id).text('Collar id: ' + collar_id);
+              notyf.success(' Collar creado satisfactoriamente! ');
+            },
+          });
         }
       });
     }
-
-    function CreateCollar(user_id, pet_id, collar_id) {
-      /* Create a new Collar */
-      $.ajax('http://localhost:5000/api/v1/collars', {
-        type: 'POST',
-        contentType: 'application/json',
-        dataType: 'json',
-        data: JSON.stringify({
-          user_id: user_id,
-          pet_id: pet_id,
-          numero_ref: collar_id,
-        }),
-        error: function (xhr, status, error) {
-          const err = JSON.parse(xhr.responseText);
-          alert(err.Message);
-          notyf.error(' Error creando collar ! ');
-        },
-        success: function () {
-          $('.pet-id-' + pet_id).text('Collar id: ' + collar_id);
-          notyf.success(' Collar creado satisfactoriamente! ');
-        },
-      });
-    }
+    //   // Add new picture to pet
+    // $.ajax('http://localhost:5000/api/v1/users/' + user_id + '/pets', {
+    //   type: 'GET',
+    //   }).done(function (data) {
+    //   for (const pets of data)
+    //   $.ajax('http://localhost:5000/api/v1/pictures/' + pets.id, {
+    //     type: 'GET',
+    //     },
+    //     ).done(result => {
+    //       if (result.status === "Not found")
+    //         result = "../static/images/dog.png"
+    //      console.log("result", result)
+    //      console.log("pets_id", pets.id)
+    //     $(`#pic-${pets.id}`).attr("src", result)
+    //    });
+    //   });
   });
 });
 // Function to remove pets onclick
