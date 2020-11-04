@@ -59,6 +59,7 @@ def requires_auth(f):
     """ Function that verifies if a user requiere authetification """
     @wraps(f)
     def decorated(*args, **kwargs):
+        """ Create a decorator for the users identity """
         if constants.PROFILE_KEY not in session:
             return redirect('/login')
         return f(*args, **kwargs)
@@ -68,7 +69,7 @@ def requires_auth(f):
 
 @app.route('/')
 def home():
-    """ Render the home page HTML """
+    """ Route and Render the home page HTML """
     return render_template('home.html')
 
 
@@ -93,13 +94,14 @@ def callback_handling():
 
 @app.route('/login')
 def login():
+    """ Authorize authentication from Auth0 """
     return auth0.authorize_redirect(redirect_uri=AUTH0_CALLBACK_URL,
                                     audience=AUTH0_AUDIENCE)
 
 
 @app.route('/logout')
 def logout():
-    """ Auth0 logout function """
+    """ Clear the session and logout the user """
     session.clear()
     params = {'returnTo': url_for(
         'home', _external=True), 'client_id': AUTH0_CLIENT_ID}
@@ -109,10 +111,10 @@ def logout():
 @app.route('/MyProfile')
 @requires_auth
 def MyProfile():
-    """ Render the Myprofile HTML """
+    """ Route and Render the Myprofile HTML """
     user_id, user_name = user_info()
 
-    if (user_id is None):
+    if user_id is None:
         return redirect('/logout')
 
     cache_id = str(uuid.uuid4())
@@ -123,7 +125,7 @@ def MyProfile():
 @app.route('/settings_user')
 @requires_auth
 def settings_user():
-    """ Render the settings_user HTML """
+    """ Route and Render the settings_user HTML """
     user_id, user_name = user_info()
     cache_id = str(uuid.uuid4())
     return render_template('settings_user.html', cache_id=cache_id,
@@ -133,14 +135,14 @@ def settings_user():
 @app.route('/pet_location')
 @requires_auth
 def pet_location():
-    """ Render the pet_location HTML """
+    """ Route and Render the pet_location HTML """
     user_id, user_name = user_info()
     collar_id = ""
     cache_id = str(uuid.uuid4())
 
     pet_id = request.args.get('pet-id')
     pet = storage.get(Pet, pet_id)
-    if (pet is None or pet.user_id != user_id):
+    if pet is None or pet.user_id != user_id:
         return redirect('/MyProfile')
 
     if len(pet.collars) == 1:
@@ -154,7 +156,7 @@ def pet_location():
 @app.route('/pet_settings')
 @requires_auth
 def pet_settings():
-    """ Render the pet_settings HTML """
+    """ Route and render the pet_settings HTML """
     user_id, user_name = user_info()
     cache_id = str(uuid.uuid4())
 
@@ -190,14 +192,13 @@ def user_info():
         if user.auth_id == userinfo['user_id']:
             user_id = user.id
             user_name = user.nickname
-            password = user.password
             user_exist = True
             break
 
     if user_exist is False:
         new_user = User(email=userinfo['email'],
                         nickname=userinfo['name'],
-                        auth_id=userinfo['user_id'], password="1234")
+                        auth_id=userinfo['user_id'])
         new_user.save()
         user_id = new_user.id
         user_name = new_user.nickname
@@ -206,5 +207,6 @@ def user_info():
 
 
 if __name__ == "__main__":
+    """ Main Function """
     app.run(host='0.0.0.0', port=env.get('PORT', 5001),
             threaded=True, debug=app.debug)
