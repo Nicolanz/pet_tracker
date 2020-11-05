@@ -1,71 +1,87 @@
+/* Home styles for the home view */
+
+/* Header section styles */
 .header{
     display: flex;
     flex-flow: column wrap;
     width: 100%;
     min-height: auto;
 }
+/* Styles for the .properties class div  */
 .properties{
     width: 100%;
     height: auto;
     margin-top: 300px;
 }
+/* Styles fot the #parkImage id div */
 #parkImage{
     object-fit: cover;
     width: 100%;
     z-index: -1;
 }
+/* Styles for the text title */
 .text-title {
   position: absolute;
   bottom: 8px;
   left: 16px;
 }
+/* Style for the .divDog class */
 .divDog{
     height: auto;
 }
+/* Style for the #dog id */
 #dog{
     width:100%;
     height: 280px;
 }
-/* SECTION STYLES */
+/* Styles for the <section> tag */
 section{
     height: auto;
     margin-top:100px;
-    /* margin-bottom: 60px; Our changes */
 }
+/* Styles for all the <h1> tags */
 h1{
     font-size: 5vw;
 }
+/* Styles for all the <p> tags of the #description id div */
 #description p{
     text-align:justify;
 }
+/* Styles for the #collarInfo id div */
 #collarInfo{
     height: auto;
     margin-top:100px;
 }
+/* Styles for the .squares divs */
 .squares{
     height:900px;
 }
+/* Style for the .square class */
 .square{
     height:auto;
 }
+/* Styles for the images of the .squareImages class */
 .squareImages{
     width: 100%;
     height: 240px;
 }
+/* Defining size of the square images */
 .sizeImgs{
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
+/* Defining some little styles for the .contentSquare class */
 .contentSquare{
     border: 1px solid grey;
     border-radius: 0px 0px 40px 40px ;
 }
+/* Styles for the <p> tags of the .square class div */
 .square p{
     text-align: justify;
     font-size: 13px;
 }
-/* MEDIA QUERIES */
+/* Media Queries */
 @media (max-width: 980px) {
 .sizeImgs{
     height: 0%;
