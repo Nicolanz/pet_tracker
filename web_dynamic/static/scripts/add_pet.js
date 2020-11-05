@@ -1,7 +1,6 @@
 const $ = window.$;
 $(document).ready(function () {
   const user_id = document.getElementById('user_id').value;
-
   $('#boton-pet').click(function () {
     const pet_name = document.getElementById('fullname1').value;
     const birthday = document.getElementById('birthday1').value;
@@ -53,7 +52,6 @@ $(document).ready(function () {
           description: description,
         }),
       });
-
       let notyf = new Notyf({
         duration: 7000,
         position: {
@@ -62,10 +60,7 @@ $(document).ready(function () {
         },
       });
       // Display a success notification
-      notyf.success('Su mascota ha sido agregada!');
-
-      
+      notyf.success('Su mascota ha sido agregada!'); 
     }
-
   });
 });
