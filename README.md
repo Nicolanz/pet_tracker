@@ -16,7 +16,6 @@ Pet tracker is a web application developed for the company infinity systems. The
 - [Run web application](#Run-web-application-locally)
 - [Visit our web-site](#Visit-our-web-site)
 - [Folder Descriptions](#folder-descriptions)
-- [Examples of use](#examples-of-use)
 - [Bugs](#bugs)
 - [Authors](#authors)
 - [License](#license)
@@ -31,6 +30,10 @@ This web-application was interpreted/tested on Ubuntu 20.04 LTS using python3 (v
 - flask
 - jinja2
 - postgrepSQL
+- Auth0
+- nodejs
+- Bootstrap
+- Google maps API
 
 ## Run web application locally
 
@@ -48,7 +51,7 @@ This web-application was interpreted/tested on Ubuntu 20.04 LTS using python3 (v
 
 ## Visit our web site
 
-To avoid running the entire web application locally, you can simply visit our website at `www.pet-tracker.com`
+To avoid running the entire web application locally, you can simply visit our website at `http://34.75.204.221/`
 
 ## Folder descriptions
 
@@ -66,20 +69,16 @@ To avoid running the entire web application locally, you can simply visit our we
 | web_dynamic/static/styles  | All css files                     |
 | web_dynamic/templates/     | All html files                    |
 
-## Examples of use
-
-Faltan ejemplos
-
 ## Bugs
 
 No known bugs at this time.
 
 ## Authors
 
-- Bryan Builes - [Github](https://github.com/bryanbuiles) / [Twitter](https://twitter.com/bryan_builes)
-- Erika Osorio - [Github](https://twitter.com/erikaosgue) / [Twitter](https://twitter.com/earthtojhuang)
-- Nicolas zarate - [Github](https://github.com/Nicolanz) / [Twitter](https://twitter.com/nicolas_zg)
-- Juan Olivares - [Github](https://github.com/JuanOlivares1) / [Twitter](https://twitter.com/OlivaresP____)
+- Bryan Builes - [Github](https://github.com/bryanbuiles) / [Twitter](https://twitter.com/bryan_builes) / [Linkedin](https://www.linkedin.com/in/brayam-steven-builes-echavarria/)
+- Erika Osorio - [Github](https://twitter.com/erikaosgue) / [Twitter](https://twitter.com/earthtojhuang) / [Linkedin](https://www.linkedin.com/in/erika-osorio-guerrero/)
+- Nicolas zarate - [Github](https://github.com/Nicolanz) / [Twitter](https://twitter.com/nicolas_zg) / [Linkedin](https://www.linkedin.com/in/nicolas-zarate-b971b81a1/)
+- Juan Olivares - [Github](https://github.com/JuanOlivares1) / [Twitter](https://twitter.com/OlivaresP____) / [Linkedin](https://www.linkedin.com/in/juan-olivares-0700611a3/)
 
 ## License
 

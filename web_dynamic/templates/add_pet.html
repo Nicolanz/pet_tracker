@@ -12,18 +12,9 @@
       crossorigin="anonymous"
     />
     <!-- CSS Styles-->
-    <link
-      rel="stylesheet"
-      href="../static/styles/generalStyles.css?{{ cache_id }}"
-    />
-    <link
-      rel="stylesheet"
-      href="../static/styles/stylesUserPets.css?{{ cache_id }}"
-    />
-    <link
-      rel="stylesheet"
-      href="../static/styles/settings_user.css?{{ cache_id }}"
-    />
+    <link rel="stylesheet" href="../static/styles/generalStyles.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/stylesUserPets.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/settings_user.css?{{ cache_id }}"/>
     <!--footer Icons link-->
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
@@ -31,38 +22,26 @@
     />
     <title>Pet Tracker | Add Pet</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script
-      type="text/javascript"
-      src="../static/scripts/add_pet.js?{{ cache_id }}"
-    ></script>
+    <script type="text/javascript" src="../static/scripts/add_pet.js?{{ cache_id }}"></script>
     <!-- Message to success saving new data -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"/>
   </head>
   <body>
-    <input
-      id="user_id"
-      type="hidden"
-      name="myHiddenField"
-      value="{{ user_id }}"
-    />
-    <input
-      id="userName"
-      type="hidden"
-      name="myHiddenField"
-      value="{{ user_name }}"
-    />
-
+    <!-- User data for back-end -->
+    <input id="user_id" type="hidden" name="myHiddenField" value="{{ user_id }}"/>
+    <input id="userName" type="hidden" name="myHiddenField" value="{{ user_name }}"/>
     <!-- Main boostrap container -->
     <div class="d-flex flex-column justify-content-between">
       <!-- Header: nav, bakground image, sign up and dog image  -->
       <div class="header">
         <!-- Nav menu  -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        
-          <img src="../static/images/man.png" width="50px" height="50px" alt="">
+          <img
+            src="../static/images/man.png"
+            width="50px"
+            height="50px"
+            alt=""
+          />
           <h3 class="text-light" href="#">{{user_name}}</h3>
           <button
             class="navbar-toggler"
@@ -71,16 +50,15 @@
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+            aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-5 mr-auto">
               <li class="nav-item active">
-                <a class="nav-link text-light " href="/MyProfile"
-                  >Mis mascotas<span class="sr-only">(current)</span></a
-                >
+                <a class="nav-link text-light" href="/MyProfile">Mis mascotas
+                  <span class="sr-only">(current)</span>
+                </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light" href="/settings_user">Opciones</a>
@@ -92,8 +70,7 @@
           </div>
         </nav>
       </div>
-
-      <!-- Adding boostrap  -->
+      <!-- Boostrap container for form  -->
       <div class="container-fluid align-items-center justify-content-between">
         <div class="container col-4">
           <div class="box">
@@ -102,6 +79,7 @@
                 <h5>Agregar Nueva Mascota</h5>
               </div>
             </div>
+            <!-- Add pet form -->
             <form>
               <div class="form-group">
                 <label for="fullname1">Nombre mascota</label>
@@ -109,8 +87,7 @@
                   type="text"
                   class="form-control"
                   id="fullname1"
-                  required
-                />
+                  required/>
               </div>
               <div class="form-group">
                 <label for="specie1">Especie</label>
@@ -118,20 +95,13 @@
                   type="text"
                   class="form-control"
                   id="specie1"
-                  aria-describedby="specieHelp"
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >Gato, perro, etc.</small
-                >
+                  aria-describedby="specieHelp"/>
+                <small id="emailHelp" class="form-text text-muted">Gato, perro, etc.</small>
               </div>
               <div class="form-group">
                 <label for="race1">Raza</label>
-                <input type="text" class="form-control" id="race1" />
+                <input type="text" class="form-control" id="race1"/>
               </div>
-              <!-- <div class="form-group">
-                <label for="sex1">Sexo</label>
-                <input type="text" class="form-control" id="sex1" />
-              </div> -->
               <div class="form-group">
                 <label for="birthday1">Fecha de cumpleaños</label>
                 <input
@@ -141,8 +111,7 @@
                   id="birthday1"
                   min="2010-01-01"
                   max="2050-12-31"
-                  required
-                />
+                  required/>
               </div>
               <div class="form-group">
                 <label for="color1">Color</label>
@@ -160,11 +129,8 @@
                   type="radio"
                   name="inlineRadioOptions"
                   id="inlineRadio1"
-                  value="Masculino"
-                />
-                <label class="form-check-label" for="inlineRadio1"
-                  >Masculino</label
-                >
+                  value="Masculino"/>
+                <label class="form-check-label" for="inlineRadio1">Masculino</label>
               </div>
               <div class="form-group form-check-inline">
                 <input
@@ -172,26 +138,21 @@
                   type="radio"
                   name="inlineRadioOptions"
                   id="inlineRadio2"
-                  value="Femenino"
-                />
-                <label class="form-check-label" for="inlineRadio2"
-                  >Femenino</label
-                >
+                  value="Femenino"/>
+                <label class="form-check-label" for="inlineRadio2">Femenino</label>
               </div>
-              <br />
-              <button type="button" id="boton-pet" class="btn btn-default ml-2">
-                Registrar mascota
-              </button>
+              <br/>
+              <button type="button" id="boton-pet" class="btn btn-default ml-2">Registrar mascota</button>
             </form>
           </div>
         </div>
       </div>
+      <!-- Web page footer -->
       <footer class="mainfooter" role="contentinfo">
         <div class="footer-middle">
           <div class="container">
             <div class="row">
               <div class="col-md-3 col-sm-6">
-                <!--Column1-->
                 <div class="footer-pad">
                   <h4>Miembros del equipo</h4>
                   <ul class="list-unstyled">
@@ -203,53 +164,55 @@
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
-                <!--Column1-->
                 <div class="footer-pad">
-                  <h4>Informacion</h4>
+                  <h4>Mas</h4>
                   <ul class="list-unstyled">
-                    <li><a href="#">Descripcion</a></li>
-                    <li><a href="#">Collares</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <!--Column1-->
-                <div class="footer-pad">
-                  <h4>Run it</h4>
-                  <ul class="list-unstyled">
-                    <li><a href="#">Log In</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="/MyProfile">Mis mascotas</a></li>
+                    <li><a href="/settings_user">Opciones</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-3">
-                <h4>Follow Us</h4>
+                <div class="footer-pad">
+                  <h4>Salir</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="/logout">Logout</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <h4>Siguenos</h4>
                 <ul class="social-network social-circle">
                   <li>
-                    <a href="#" class="icoFacebook" title="Facebook"
-                      ><i class="fa fa-facebook"></i
-                    ></a>
+                    <a href="https://www.facebook.com/HolbertonSchoolColombia"
+                      target="_blank"
+                      class="icoFacebook"
+                      title="Facebook">
+                      <i class="fa fa-facebook"></i>
+                    </a>
                   </li>
                   <li>
-                    <a href="#" class="icoLinkedin" title="Linkedin"
-                      ><i class="fa fa-linkedin"></i
-                    ></a>
+                    <a href="https://www.linkedin.com/company/holberton-school-colombia/"
+                      target="_blank"
+                      class="icoLinkedin"
+                      title="Linkedin">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <br />
+            <br/>
             <div class="row">
               <div class="col-md-12 copy">
-                <p class="text-center">
-                  &copy; Copyright 2020 - Infinity Systems. All rights reserved.
-                </p>
+                <p class="text-center">&copy; Copyright 2020 - Infinity Systems. All rights reserved.</p>
               </div>
             </div>
           </div>
         </div>
       </footer>
     </div>
+
     <!-- JS, Popper.js, and jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

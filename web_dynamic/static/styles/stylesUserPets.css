@@ -1,23 +1,20 @@
-/* Dogs prfoile */
+/* Styles for the Dogs prfoile view */
+
+/* Defining the main div of the div which covers almost everything */
 body > div{
     margin: 0px;
     padding: 0px;
     min-height: 100vh;
     max-height: auto;
 }
-
+/* Changing the default bootstrap class .navbar-brand with some changes */
 .navbar-brand {
     color: #313335;
     font-size: 1rem;
     margin-left: 4px;
 }
-
+/* Defining the main content div and adding a background image into it */
 .contentProfile{
-    /* border: 1px solid black; */
-    /* margin-top: 30px; /*Our changes */
-    /* padding-bottom: 65px; Our changes */
-    
-
     background-image: url('../images/footprints2.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -25,52 +22,77 @@ body > div{
     min-height: auto;
     max-height: auto;
 }
+/* Defining some styles to new every target of the view */
 .pet_target{
     margin-top: 30px;
-    /* border: 1px solid grey; */
     min-height: 350px;
     max-height: 2000px;
 }
+/* Setting a font-size to all the <h4> tags of the .datos class */
 .datos > h4{
     font-size: 30px;
 }
+/* Setting the background color of the button with the #qsLoginBtn id */
 #qsLoginBtn{
     background-color:#003459;
 }
+/* Setting the background color of the button with the #qsLoginBtn id when the mouse is over */
 #qsLoginBtn:hover{
     background-color:#007EA7;
     transition: ease-in 0.5seg;
 }
-
+/* Setting the height of the dov with the .iconos class */
 .iconos{
-    /* border:1px solid grey; */
     height: 50px;
 }
+/* Defining some styles for the <a> tags of the .pet_target div */
 .pet_target a{
     width:20%;
     height: 50px;
-    /* border:1px solid black; */
     color: black;
 }
+/* Defining some styles for the <a> tags of the .pet_target div when the mouse is over */
 .pet_target a:hover{
     color: grey;
     transition: ease-in 0.2s;
 }
-
+/* Setting a border radius fo the images with the .img-circle bootstrap class */
 .img-circle{
-    border-radius: 10px ;
-    /* border:2px solid black; */
+    border-radius: 10px 
 }
+
 /* Add Collar Styles */
-
-
+/* Styles for the buttons with the class .add-delete */
 .add-delete{
     max-height: 30px;
     display:flex;
     align-items: center;
 }
+/* Style for the #add_pet id */
+#add_pet {
+    margin-top:50px;
+    width: 50%;
+}
+/* Styles for the .style class of the element parent */
+element.style {
+    background: white;
+    box-shadow: 0 2px 4px 1px #e6e6e677;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 6px 0;
+}
+/* Styles for the buttons with the bootstrap class .btn-danger */
+.btn-danger {
+    color: #fff;
+    background-color: #cf2232;
+    
+}
+/* Styles for the buttons with the bootstrap class .btn-sucess */
+.btn-success {
+    color: #fff;
+    background-color: #19a3b8;
+}
 
-/* MEDIA QUERIES */
+/* Media Queries */
 @media (min-width: 768px) {
     #img1{
         width: 0px;
@@ -112,24 +134,4 @@ body > div{
         margin:0;
         padding: 0;
     }
-}
-#add_pet {
-    margin-top:50px;
-    width: 50%;
-}
-
-element.style {
-    background: white;
-    box-shadow: 0 2px 4px 1px #e6e6e677;
-    border-bottom: 1px solid #EAEAEA;
-    padding: 6px 0;
-}
-.btn-danger {
-    color: #fff;
-    background-color: #cf2232;
-    
-}
-.btn-success {
-    color: #fff;
-    background-color: #19a3b8;
 }

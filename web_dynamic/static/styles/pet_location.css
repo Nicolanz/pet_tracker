@@ -1,15 +1,21 @@
+/* Pet location styles for the pet location view */
+
+/* Styles for the main parent div */
 body > div{
   margin: 0px;
   padding: 0px;
   min-height: 100vh;
   max-height: auto;
 }
+/* Style for the content -> .contenedor class*/
 .contenedor{
   margin-top: 40px;
 }
+/* Border style for the .border1 class */
 .border1 {
   border: 4px solid white;
 }
+/* Margin style for the .map_box class */
 .map_box{
   margin-top: 40px;
 }
@@ -50,9 +56,11 @@ body > div{
   text-decoration: none;
   padding: 7px;
 }
+/* Id styles for the map location box */
 #map_loc {
   height: 450px;
 }
+/* Styles for the background image of the view */
 .justify-content-between {
   background-image: url('../images/mapa_background5.jpg');
   background-attachment: fixed;

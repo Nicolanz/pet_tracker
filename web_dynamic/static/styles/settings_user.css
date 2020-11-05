@@ -1,3 +1,5 @@
+/* User settings styles for the user settings view */
+
 /* Changing size of the Form settings */
 .box {
   width: auto;
@@ -9,11 +11,12 @@
   margin-top: 60px;
   box-shadow: 1px 1px 16px #989891;
 }
-
+/* Style for the form of the .box class */
 .box form {
   width: 100%;
 }
-
+/* Changing size of the default bootstrap class: .container-fluid and adding background image
+for the entire view*/
 .container-fluid {
   width: 100%;
   padding: 0px;
@@ -22,12 +25,13 @@
   background-image: url('../images/perro_background3_filter.jpg') ;
   background-size: cover;
   padding-bottom: 65px;
-      /* box-shadow: 1px 1px 1px green; */
 }
+/* Style for the title of the form */
 .title-form {
   justify-content: center!important;
   padding-top: 25px;
 }
+/* Style for the title <h5> tag of the form */
 .title-form h5 {
     color: #464444;
     font-size: 2.3rem;

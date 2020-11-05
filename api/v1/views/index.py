@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-""" Index """
-from models.user import User
-from models.user import User
+""" Index View"""
 from models import storage
 from api.v1.views import app_views
 from flask import jsonify
@@ -11,4 +9,3 @@ from flask import jsonify
 def status():
     """ Status of API """
     return jsonify({"status": "OK"})
-

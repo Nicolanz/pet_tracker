@@ -9,7 +9,6 @@ $(document).ready(function () {
   }).done((pet_dict) => {
     let new_date = new Date(pet_dict.birthday);
     let birthday = new_date.toISOString().split('T')[0];
-
     $('#name').val(pet_dict.name);
     $('#birthday').val(birthday);
     $('#race').val(pet_dict.race);
@@ -50,7 +49,6 @@ $(document).ready(function () {
     const hair = document.getElementById('hair').value;
     const description = document.getElementById('description').value;
     
-    
     const photo = document.getElementById('pet-pic').files[0];
     const reader = new FileReader();
     reader.onload = function () {
@@ -62,7 +60,9 @@ $(document).ready(function () {
         data: reader.result
       });
     }
-    reader.readAsDataURL(photo)
+    if (photo) {
+      reader.readAsDataURL(photo)
+    }
 
     const sexinput1 = $('#inlineRadio1').is(':checked');
     const sexinput2 = $('#inlineRadio2').is(':checked');
@@ -89,7 +89,6 @@ $(document).ready(function () {
         description: description,
       }),
     });
-
     let notyf = new Notyf({
       duration: 5000,
       position: {

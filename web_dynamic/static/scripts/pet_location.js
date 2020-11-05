@@ -2,7 +2,6 @@ const $ = window.$;
 $(document).ready(() => {
   const pet_id = document.getElementById('pet_id').value;
   const collarId = document.getElementById('collar_id').value;
-
   $.ajax('http://localhost:5000/api/v1/pets/' + pet_id, {
     type: 'GET',
   }).done((pet_dict) => {
@@ -31,14 +30,11 @@ $(document).ready(() => {
       </div>`
     );
   });
-
+  
   $('#boton-location').click(function () {
     requestApi(collarId);
   });
-
   function requestApi(collar_id) {
-    console.log('Collar id:', collar_id);
-    // collar_id = 1; // Just for testing
     /* Request to API of company to get the id coordenates of the collar */
     const url = 'https://jsonplaceholder.typicode.com/todos?id=' + collar_id;
     $.ajax({
@@ -56,7 +52,7 @@ $(document).ready(() => {
   function getCoordenates(data) {
     /* hay que obtener longitud y latitude de la mascota con ese id */
     if (data === '[]') {
-      // alert(' Id no existe en la the API! ');
+      alert(' Id no existe en la the API! ');
     } else {
       // alert(' Id exist in the API! ');
       /* get coordenates from data of the API
@@ -72,10 +68,7 @@ $(document).ready(() => {
 
           document.getElementById('map_loc').src =
             'https://www.google.com/maps/embed/v1/place?key=AIzaSyDQxpJBu62z9e1WuzVIfUmf7bIFj16cBeQ&q=' +
-            latitude +
-            ',' +
-            longitude +
-            '&zoom=3';
+            latitude + ',' + longitude + '&zoom=3';
         },
       });
     }
