@@ -1,55 +1,61 @@
+/* Geneal styles for all the views */
+
+/* Styles fot the default bootstrap buttons */
 .btn-default{
     background-color: #1E7272;
     background: linear-gradient(59deg, #007EA7, #2a5e70 );
     color: white;
     box-shadow: 1px 1px 16px #86867f;
 }
+/* Styles for the bootstrap buttons when the mouse is over */
 .btn-default:hover{
     transition: 0.2s ease-in;
     color: white;
-    background-color: #279191;
-    
+    background-color: #279191; 
+}
+/* Styles fot the firstBtn class */
+.firstBtn{
+  width: 180px;
 }
 
-/* NAV */
+/* Nav styles */
 nav{
   height: 80px;
   background: linear-gradient(59deg, #03303f, #007EA7 );
   border-bottom: 2px solid white;
 }
-.firstBtn{
-  width: 180px;
-}
 
-/*FOOTER*/
+/*Footer Styles*/
 footer {
-  /* border:2px solid black; */
-  /* background: linear-gradient(59deg, #003459, rgb(0, 0, 0) ); */
   background: linear-gradient(59deg,  #007EA7, #00171F ); 
   color: white;
   height:auto;
 }
+/* Styles for the <a> tags of the footer */
 footer a {
   color: #fff;
   font-size: 14px;
   transition-duration: 0.2s;
 }
+/* Styles for the <a> tags of the footer when the mouse is over */
 footer a:hover {
   color: #a5a5a5;
   transition: 0.3s ease-in ;
   text-decoration: none;
 }
+/* Styles to the copy div of the footer */
 .copy {
   font-size: 12px;
   padding: 10px;
   border-top: 1px solid #FFFFFF;
 }
+/* Styles to the of .footer-middle class of the footer */
 .footer-middle {
   padding-top: 2em;
   color: white;
 }
-/*SOCİAL İCONS*/
-/* footer social icons */
+
+/*Social Icons styles*/
 ul.social-network {
   list-style: none;
   display: inline;
@@ -60,7 +66,7 @@ ul.social-network li {
   display: inline;
   margin: 0 5px;
 }
-/* footer social icons */
+/* footer social icons buttons styles: facebook and linkedin */
 .social-network a.icoFacebook:hover {
   background-color: #3B5998;
 }
@@ -92,6 +98,8 @@ ul.social-network li {
   line-height: 30px;
   text-align: center;
 }
+/*Styles for the <li> -> <a> tags of .social-circle class when the mouse is over.
+Suporting styles for all the web browsers. */
 .social-circle li a:hover i,
 .triggeredHover {
   -moz-transform: rotate(360deg);
@@ -104,6 +112,7 @@ ul.social-network li {
   -ms-transition: all 0.2s;
   transition: all 0.2s;
 }
+/*Styles for the <i> tag of .social-circle class. Suporting styles for all the web browsers. */
 .social-circle i {
   color: #595959;
   -webkit-transition: all 0.8s;
