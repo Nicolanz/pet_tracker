@@ -35,7 +35,7 @@ app.debug = True
 
 @app.errorhandler(Exception)
 def handle_auth_error(ex):
-    """ function to handle auth0 errors """
+    """Error handler Authenticating """
     response = jsonify(message=str(ex))
     response.status_code = (ex.code if isinstance(ex, HTTPException) else 500)
     return response
@@ -75,7 +75,8 @@ def home():
 
 @app.route('/callback')
 def callback_handling():
-    """ Auth0 callback function, this function call the auth0
+    """
+        Auth0 callback function, this function call the auth0
         autehntification service
     """
     auth0.authorize_access_token()
@@ -111,7 +112,7 @@ def logout():
 @app.route('/MyProfile')
 @requires_auth
 def MyProfile():
-    """ Route and Render the Myprofile HTML """
+    """ Route and Render the Myprofile HTML Main page """
     user_id, user_name = user_info()
 
     if user_id is None:
@@ -135,7 +136,7 @@ def settings_user():
 @app.route('/pet_location')
 @requires_auth
 def pet_location():
-    """ Route and Render the pet_location HTML """
+    """ Route and Render the pet_location HTML page """
     user_id, user_name = user_info()
     collar_id = ""
     cache_id = str(uuid.uuid4())
@@ -156,7 +157,7 @@ def pet_location():
 @app.route('/pet_settings')
 @requires_auth
 def pet_settings():
-    """ Route and render the pet_settings HTML """
+    """ Route and render the pet_settings HTML page """
     user_id, user_name = user_info()
     cache_id = str(uuid.uuid4())
 
@@ -172,12 +173,12 @@ def pet_settings():
 @app.route('/add_pet')
 @requires_auth
 def add_pet():
-    """ Render the add_pet HTML """
+    """ Route and render the add_pet HTML page """
     user_id, user_name = user_info()
     cache_id = str(uuid.uuid4())
 
     userId = request.args.get('user-id')
-    if (user_id != userId):
+    if user_id != userId:
         return redirect('/MyProfile')
     return render_template('add_pet.html', cache_id=cache_id,
                            user_id=user_id, user_name=user_name)
@@ -187,6 +188,7 @@ def user_info():
     """ function that get the user information of auth0 """
     userinfo = session[constants.PROFILE_KEY]
     users = storage.all(User)
+
     user_exist = False
     for user in users.values():
         if user.auth_id == userinfo['user_id']:

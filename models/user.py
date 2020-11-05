@@ -19,7 +19,6 @@ class User(BaseModel, Base):
     auth_id = Column(String(128), nullable=True)
     collars = relationship("Collar", backref="user")
     pets = relationship("Pet", backref="user")
-    password = Column(String(128), nullable=False)
 
     def __init__(self, *args, **kwargs):
         """initializes user class"""
