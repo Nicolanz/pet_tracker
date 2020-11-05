@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" class collar """
+""" class pet """
 from models.base_model import BaseModel, Base
 from os import getenv
 import sqlalchemy
@@ -9,7 +9,7 @@ from sqlalchemy.orm import relationship
 
 
 class Pet(BaseModel, Base):
-    """ pet class """
+    """ pet class representation as a table """
     __tablename__ = 'pets'
     user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
     name = Column(String(128), nullable=False, default="")
@@ -28,5 +28,5 @@ class Pet(BaseModel, Base):
 
 
 def __init__(self, *args, **kwargs):
-    """initializes user"""
+    """initializes Pet class"""
     super().__init__(*args, **kwargs)
