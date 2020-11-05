@@ -9,7 +9,6 @@ $(document).ready(function () {
   }).done((pet_dict) => {
     let new_date = new Date(pet_dict.birthday);
     let birthday = new_date.toISOString().split('T')[0];
-
     $('#name').val(pet_dict.name);
     $('#birthday').val(birthday);
     $('#race').val(pet_dict.race);
@@ -90,7 +89,6 @@ $(document).ready(function () {
         description: description,
       }),
     });
-
     let notyf = new Notyf({
       duration: 5000,
       position: {

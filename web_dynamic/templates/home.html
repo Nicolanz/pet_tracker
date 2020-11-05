@@ -12,31 +12,19 @@
       crossorigin="anonymous"
     />
     <!-- CSS Styles-->
-    <link
-      href="https://allfont.net/allfont.css?fonts=league-spartan"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="../static/styles/generalStyles.css?{{ cache_id }}"
-    />
+    <link href="https://allfont.net/allfont.css?fonts=league-spartan" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../static/styles/generalStyles.css?{{ cache_id }}"/>
     <!-- href="../static/styles/generalStyles.css?{{ cache_id }}" -->
-    <link
-      rel="stylesheet"
-      href="../static/styles/stylesHome.css?{{ cache_id }}"
-    />
+    <link rel="stylesheet" href="../static/styles/stylesHome.css?{{ cache_id }}"/>
     <!--footer Icons link-->
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}"
-      rel="stylesheet"
-    />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?{{ cache_id }}" rel="stylesheet"/>
     <title>Pet Tracker | Home</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
   <body>
+    <!-- User data for back-end -->
     <input id="sub" type="hidden" name="myHiddenField" value="{{ userinfo }}" />
-    <!-- Main boostrap container -->
+    <!-- Main container -->
     <div>
       <!-- Header: nav, bakground image, sign up and dog image  -->
       <div class="header">
@@ -50,21 +38,18 @@
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-5 mr-auto">
               <li class="nav-item active">
-                <a class="nav-link text-light" href="#description"
-                  >Descripcion <span class="sr-only">(current)</span></a
-                >
+                <a class="nav-link text-light" href="#description">Descripcion
+                  <span class="sr-only">(current)</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#collarInfo"
-                  >Collar Informacion</a
-                >
+                <a class="nav-link text-light" href="#collarInfo">Collar Informacion</a>
               </li>
             </ul>
             <a id="qsLoginBtn" href="/login">
@@ -72,28 +57,18 @@
             </a>
           </div>
         </nav>
-        <!-- content of the header  -->
+        <!-- Header content -->
         <div class="headerContent">
-          <!-- <div class="text-title">PET TRACKER</div>
-          <div class="text-description">
-            Una aplicacion web para localizar
-            <br>las mascotas en tiempo real
-            <br>utilizando un collar con GPS
-          </div> -->
           <img
             src="../static/images/perro_background2.jpg"
             class="img-fluid"
             id="parkImage"
-            alt=""
-          />
+            alt=""/>
         </div>
       </div>
       <!-- Section of the website -->
       <section class="col-12 d-flex flex-row flex-wrap container sec-container">
-        <div
-          id="description"
-          class="d-flex flex-row flex-wrap justify-content-center"
-        >
+        <div id="description" class="d-flex flex-row flex-wrap justify-content-center">
           <h1 class="col-12 d-flex justify-content-center">Descripción</h1>
           <p class="col-lg-6 col-12 font-weight-light">
             Pet Tracker le ofrece una solución cómoda para saber la ubicación
@@ -107,10 +82,7 @@
             mascota desde una tablet, un celular o cualquier otro dispositivo
           </p>
         </div>
-        <div
-          id="collarInfo"
-          class="col-12 d-flex flex-row flex-wrap justify-content-around"
-        >
+        <div id="collarInfo" class="col-12 d-flex flex-row flex-wrap justify-content-around">
           <div class="col-12 col-md-12 col-md-6 col-lg-5 col-xl-4">
             <h2>Collar</h2>
             <p class="text-justify">
@@ -149,82 +121,48 @@
               Ubicación de la mascota<br />
             </p>
           </div>
-          <div
-            class="squares col-0 col-md-6 col-lg-7 col-xl-8 d-flex flex-wrap justify-content-center align-items-center"
-          >
+          <!-- homepage images -->
+          <div class="squares col-0 col-md-6 col-lg-7 col-xl-8 d-flex flex-wrap justify-content-center align-items-center">
             <div class="square col-5">
               <div class="squareImages">
-                <img
-                  class="img-thumbnail img-fluid rounded sizeImgs"
-                  src="../static/images/collarImage1.png"
-                  alt=""
-                />
+                <img class="img-thumbnail img-fluid rounded sizeImgs" src="../static/images/collarImage1.png"/>
               </div>
             </div>
             <div class="square col-5">
               <div class="squareImages">
-                <img
-                  class="img-thumbnail img-fluid rounded sizeImgs"
-                  src="../static/images/perro1.jpg"
-                  alt=""
-                />
+                <img class="img-thumbnail img-fluid rounded sizeImgs" src="../static/images/perro1.jpg"/>
               </div>
             </div>
             <div class="square col-5">
               <div class="squareImages">
-                <img
-                  class="img-thumbnail img-fluid rounded sizeImgs"
-                  src="../static/images/collarImage3.png"
-                  alt=""
-                />
+                <img class="img-thumbnail img-fluid rounded sizeImgs" src="../static/images/collarImage3.png"/>
               </div>
             </div>
             <div class="square col-5">
               <div class="squareImages">
-                <img
-                  class="img-thumbnail img-fluid rounded sizeImgs"
-                  src="../static/images/perro6.jpg"
-                  alt=""
-                />
+                <img class="img-thumbnail img-fluid rounded sizeImgs" src="../static/images/perro6.jpg"/>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <!-- Web page footer -->
       <footer class="mainfooter mt-5" role="contentinfo">
         <div class="footer-middle">
           <div class="container">
             <div class="row">
               <div class="col-md-3 col-sm-6">
-                <!--Column1-->
                 <div class="footer-pad">
                   <h4>Miembros del equipo</h4>
                   <ul class="list-unstyled">
-                    <li>
-                      <a target="_blank" href="https://github.com/JuanOlivares1"
-                        >Juan Olivares</a
-                      >
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://github.com/bryanbuiles"
-                        >Bryan Builes</a
-                      >
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://github.com/erikaosgue"
-                        >Erika Osorio</a
-                      >
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://github.com/Nicolanz"
-                        >Nicolas Zarate</a
-                      >
-                    </li>
+                    <li><a target="_blank" href="https://github.com/JuanOlivares1">Juan Olivares</a></li>
+                    <li><a target="_blank" href="https://github.com/bryanbuiles">Bryan Builes</a></li>
+                    <li><a target="_blank" href="https://github.com/erikaosgue">Erika Osorio</a></li>
+                    <li><a target="_blank" href="https://github.com/Nicolanz">Nicolas Zarate</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
-                <!--Column1-->
                 <div class="footer-pad">
                   <h4>Información</h4>
                   <ul class="list-unstyled">
@@ -234,7 +172,6 @@
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
-                <!--Column1-->
                 <div class="footer-pad">
                   <h4>Iniciar</h4>
                   <ul class="list-unstyled">
@@ -247,32 +184,28 @@
                 <h4>Siguenos</h4>
                 <ul class="social-network social-circle">
                   <li>
-                    <a
-                      href="https://www.facebook.com/HolbertonSchoolColombia"
+                    <a href="https://www.facebook.com/HolbertonSchoolColombia"
                       target="_blank"
                       class="icoFacebook"
-                      title="Facebook"
-                      ><i class="fa fa-facebook"></i
-                    ></a>
+                      title="Facebook">
+                      <i class="fa fa-facebook"></i>
+                    </a>
                   </li>
                   <li>
-                    <a
-                      href="https://www.linkedin.com/company/holberton-school-colombia/"
+                    <a href="https://www.linkedin.com/company/holberton-school-colombia/"
                       target="_blank"
                       class="icoLinkedin"
-                      title="Linkedin"
-                      ><i class="fa fa-linkedin"></i
-                    ></a>
+                      title="Linkedin">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <br />
+            <br/>
             <div class="row">
               <div class="col-md-12 copy">
-                <p class="text-center">
-                  &copy; Copyright 2020 - Infinity Systems. All rights reserved.
-                </p>
+                <p class="text-center">&copy; Copyright 2020 - Infinity Systems. All rights reserved.</p>
               </div>
             </div>
           </div>
@@ -283,17 +216,17 @@
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
   </body>
 </html>
