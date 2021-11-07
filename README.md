@@ -1,4 +1,4 @@
-# Pet tracker - Web application
+# <h1 align = "center">Pet tracker - Web application</h1><br>
 <p align="center">
     <img width="330" height="200" src="web_dynamic/static/images/dogRunning.png">
 </p>
